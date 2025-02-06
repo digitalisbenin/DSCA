@@ -82,15 +82,16 @@
                                             </div>
                                         @endif
 
-                                        @if ($chapter->image_url)
+                                        {{-- @if ($chapter->image_url)
                                             <div class="overview-course-video">
                                                 <img src="/assets/uploads/chapitre_images/{{ $chapter->image_url }}"
                                                     alt="{{ $chapter->formation->titre }}" class="img-fluid">
                                             </div>
-                                        @endif
-                                        <p>
+                                        @endif --}}
+                                        <p style="text-align: justify;">
                                             {!! $chapter->description !!}
                                         </p>
+                                        
 
 
                                         <p class="text-2xl"><a target="bank"

@@ -21,14 +21,21 @@
                     
                     <!-- Texte à droite -->
                     <div class="col-lg-6 col-md-6 col-12">
-                        <div class="hero-text" style="color: #000; margin-top: 200px;">
+                        <div class="hero-text d-none d-lg-block" style="color: #000; margin-top: -210px !important;">
                             <h1 class="wow fadeInUp" data-wow-delay=".5s" style="color: #000;">Bienvenue sur la plateforme <br> E-learning de la DSCA</h1>
-                            <p class="wow fadeInUp" data-wow-delay=".7s" style="color: #000;">Explorez une nouvelle façon d'apprendre et développez vos compétences.</p>
-                            <div class="button wow fadeInUp" data-wow-delay=".9s">
+                            <h6 class="wow fadeInUp" data-wow-delay=".7s" style="color: #000;">Mot du Directeur.</h6>
+                            {{-- <div class="button wow fadeInUp" data-wow-delay=".9s">
                                 <a href="#about" class="btn btn-primary">En savoir plus</a>
                                 <a href="#courses" class="btn btn-outline-secondary">Nos cours</a>
-                            </div>
+                            </div> --}}
                         </div>
+                        <div class="hero-text d-lg-none" style="color: #000; margin-top: 15px !important;">
+                            <h1 class="wow fadeInUp" data-wow-delay=".5s" style="color: #000;">
+                                Bienvenue sur la plateforme <br> E-learning de la DSCA
+                            </h1>
+                            <h6 class="wow fadeInUp" data-wow-delay=".7s" style="color: #000;">Mot du Directeur.</h6>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -172,7 +179,14 @@
                         <p class="price">{{$value->difficulete->name}}</p>
                     </div>
                     <div class="content">
-                        <h5><a href="{{url('/details-cours/'.$value->id)}}">{{$value->titre}}</a></h5>
+                        <h5 style="
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-align: justify;
+                    ">{{$value->titre}}</h5>
                         <br>
                         {{--  <p>{{$value->description}}</p>  --}}
                         <p style="

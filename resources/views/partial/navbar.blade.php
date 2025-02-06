@@ -71,10 +71,12 @@
             <div class="col-lg-12">
                 <div class="nav-inner">
                     <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="{{ url('/') }}" style="margin-left: -70px !important; padding-left: 0 !important;">
+                        <a class="navbar-brand d-none d-lg-block" href="{{ url('/') }}" style="margin-left: -70px !important; padding-left: 0 !important;">
                             <img src="{{ asset('assets/images/logo/Logos.png') }}" alt="Logo">
                         </a>
-                        
+                        <a class="navbar-brand d-lg-none" href="{{ url('/') }}" >
+                            <img src="{{ asset('assets/images/logo/Logos.png') }}" alt="Logo">
+                        </a>
                         <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">

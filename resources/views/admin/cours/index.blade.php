@@ -44,7 +44,7 @@
                            <div class="col-xxl-3 col-lg-4 col-sm-6">
                             <div class="card border border-gray-100">
                                 <div class="card-body p-8">
-                                    <a href="{{url('/admin-cours-detail')}}" class="bg-main-100 rounded-8 overflow-hidden text-center mb-8 h-164 flex-center p-8">
+                                    <a href="#" class="bg-main-100 rounded-8 overflow-hidden text-center mb-8 h-164 flex-center p-8">
                                         {{--  <img src="admin/assets/images/thumbs/course-img1.png" alt="Course Image">  --}}
                                         <img src="{{ asset('assets/uploads/formation_images/'.$value->image_url) }}" alt="Course Image">
                                     </a>

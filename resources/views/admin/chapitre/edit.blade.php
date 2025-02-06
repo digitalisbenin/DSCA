@@ -1,3 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord</title>
+    <script src="{{ URL::asset('admin_assets/tinymce/tinymce.min.js') }}"></script>
+    <script>
+      tinymce.init({
+        selector: 'textarea',
+        plugins: 'link image media',
+        toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright | link image media',
+      });
+    </script>
+    {{-- <script src="{{ URL::asset('admin_assets/tinymce/tinymce.min.js') }}"></script>
+
+    <script type="text/javascript">
+
+                tinymce.init({
+                    selector: "textarea",
+                    height: 300,
+                    relative_urls: false,
+                    remove_script_host: false,
+                    file_picker_callback: elFinderBrowser,
+                    plugins: [
+                        'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+                        'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+                        'insertdatetime', 'media', 'table', 'help', 'wordcount'
+                    ],
+                    toolbar: 'undo redo | blocks | ' +
+                        'bold italic backcolor | alignleft aligncenter ' +
+                        'alignright alignjustify | bullist numlist outdent indent | ' +
+                        'removeformat | help',
+                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+                });
+
+    </script> --}}
+</head>
+<body>
 @extends('layouts.admin')
 
 @section('content')
@@ -56,19 +95,10 @@
                                 <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Titre <span class="text-13 text-gray-400 fw-medium">(Requis)</span> </label>
                                 <div class="position-relative">
                                     <input type="text" class="text-counter placeholder-13 form-control py-11 pe-77" name="titre" value="{{ old('titre', $chapitre->titre) }}"   maxlength="100" id="courseTitle" placeholder="">
-                                    <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
-                                        <span id="current">3</span>
-                                        <span id="maximum">/ 100</span>
-                                    </div>
+                                    
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Description <span class="text-13 text-gray-400 fw-medium"></span> </label>
-                                <div class="position-relative">
-                                    <input type="text" class="text-counte placeholder-13 form-control py-11 pe-76" name="description"value="{{ old('description', $chapitre->description) }}"   maxlength="300" id="course" placeholder="">
-                                   
-                                </div>
-                            </div>
+                            
                             <div class="col-sm-6">
                                 <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Formation <span class="text-13 text-gray-400 fw-medium">(Requis)</span></label>
                                 <div class="position-relative">
@@ -98,6 +128,16 @@
                            
                         </div>
                     </div>
+                    <div class="col-sm-12">
+                        <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Description <span class="text-13 text-gray-400 fw-medium"></span> </label>
+                        <div class="position-relative">
+                            <textarea  class=" placeholder-13 form-control py-11 pe-76" name="description"  id="course" placeholder="">{{ old('description', $chapitre->description) }} </textarea>
+
+                        </div>
+
+
+
+                    </div>
                     <div class="flex-align justify-content-end gap-8">
                         <a href="{{url('chapitres')}}" class="btn btn-outline-main rounded-pill py-9">Cancel</a>
                         <button type="submit" class="btn btn-success rounded-pill py-9">Mettre a jour</button>
@@ -109,3 +149,6 @@
     <!-- Course Tab End -->
 </div>
 @endsection
+
+</body>
+</html>

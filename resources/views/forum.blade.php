@@ -119,7 +119,7 @@
       <!-- Texte principal -->
       <div  style="margin-left: 3rem; margin-right: 6rem;" >
         <a href="" class="text-decoration-none hover text-dark">
-          <h1 class="h3 font-monospace">{{$value->titre}}</h1>
+          <h1 class="h3 ">{{$value->titre}}</h1>
         </a>
         <p class="text-left">Par {{$value->user->name}}  {{$value->user->prenom}}, {{ \Carbon\Carbon::parse($value->created_at)->translatedFormat('d F Y') }} </p>
 

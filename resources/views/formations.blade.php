@@ -53,7 +53,14 @@
                         <p class="date">{{$value->category->name}} </p>
 
                         <p class="date"> {{$value->difficulete->name}}</p>
-                        <h5> {{$value->titre}}</h5>
+                        <h5 style="
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-align: justify;
+                    "> {{$value->titre}}</h5>
                         <br>
                         <a href="{{url('details-cours/'.$value->id)}}"></a>
                         <div class="" >
