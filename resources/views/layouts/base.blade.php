@@ -52,7 +52,7 @@
     <!-- Start Footer Area -->
     <footer class="footer">
         <!-- Start Middle Top -->
-        <div class="footer-middle">
+        <div class="footer-middle"style=" padding-top: 0 !important; padding-bottom: 10px !important;" >
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-12">

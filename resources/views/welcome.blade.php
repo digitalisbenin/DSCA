@@ -11,14 +11,14 @@
                 <div class="row align-items-center">
                     <!-- Image à gauche -->
                     <div class="col-lg-6 col-md-6 col-12">
-                        <img 
-                            src="assets/images/hero/slider.jpeg" 
-                            alt="Hero Image" 
+                        <img
+                            src="assets/images/hero/slider.jpeg"
+                            alt="Hero Image"
                             class="img-fluid rounded"
                             style="max-width: 100%; height: auto;"
                         />
                     </div>
-                    
+
                     <!-- Texte à droite -->
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="hero-text d-none d-lg-block" style="color: #000; margin-top: -140px !important;">
@@ -26,11 +26,11 @@
                             <p class="wow fadeInUp" data-wow-delay=".7s" style="color: #fff; font-size: 22px; background-color: rgb(12, 170, 12); padding: 10px; border-radius: 5px; display: inline-block;">
                                 Mot du Directeur.
                             </p>
-                            
-                            <p class="wow fadeInUp mt-5" data-wow-delay=".7s" style="color: #000; text-align: justify;"> 
+
+                            <p class="wow fadeInUp mt-5" data-wow-delay=".7s" style="color: #000; text-align: justify;">
                                 Le Directeur de la DCSCA (Direction Centrale des Services de Commissariat de l'Armée) souligne l'importance des missions de cette entité, qui est dirigée par un commissaire général hors classe, un officier général du rang de quatre étoiles. Il est essentiel de souligner le rôle de la DCSCA dans le soutien logistique et administratif des Forces de Défense et de Sécurité.
                             </p>
-                            
+
                             {{-- <div class="button wow fadeInUp" data-wow-delay=".9s">
                                 <a href="#about" class="btn btn-primary">En savoir plus</a>
                                 <a href="#courses" class="btn btn-outline-secondary">Nos cours</a>
@@ -42,13 +42,13 @@
                             </h1>
                             <h6 class="wow fadeInUp" data-wow-delay=".7s" style="color: #000;">Mot du Directeur.</h6>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
         </div>
-        
-        
+
+
         <!--/ End Single Slider -->
         <!-- Single Slider -->
         {{--  <div class="hero-inner overlay" style="background-image: url('assets/images/hero/slider-bg2.jpg');">
@@ -157,7 +157,7 @@
 
 
 <!-- Start Courses Area -->
-<section class="courses section">
+<section class="courses section" style=" padding-top: 0 !important; padding-bottom: 10px !important;">
     <div class="container">
         <div class="row">
             <div class="col-12">
