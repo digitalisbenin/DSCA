@@ -26,7 +26,7 @@
                         <div class="toolbar-text">
                             <p class="mb-0 text-white montserrat fw-bold"
                                 style="text-transform: uppercase; font-size: 18px; margin-left: -70px !important;">
-                                DIRECTION CENTRALE DU SERVICES DU COMMISSARIAT DES ARMÉES
+                                DIRECTION CENTRALE DU SERVICE DU COMMISSARIAT DES ARMÉES
                             </p>
                         </div>
 
