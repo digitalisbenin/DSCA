@@ -85,12 +85,12 @@
                     <span class="text">Visio Conférence</span>
                 </a>
             </li>
-            <li class="sidebar-menu__item">
+            {{-- <li class="sidebar-menu__item">
                 <a href="{{url('meets')}}" class="sidebar-menu__link">
                     <span class="icon"><i class="ph ph-calendar-dots"></i></span>
                     <span class="text">Meet</span>
                 </a>
-            </li>
+            </li> --}}
            <hr>
             <li class="sidebar-menu__item">
                 <a href="{{url('ressources')}}" class="sidebar-menu__link">
