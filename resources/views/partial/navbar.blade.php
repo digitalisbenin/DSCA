@@ -26,7 +26,7 @@
                         <div class="toolbar-text">
                             <p class="mb-0 text-white montserrat fw-bold"
                                 style="text-transform: uppercase; font-size: 18px; margin-left: -70px !important;">
-                                Direction du Service du Commissariat des Armées
+                                DIRECTION CENTRALE DU SERVICES DU COMMISSARIAT DES ARMÉES
                             </p>
                         </div>
 
@@ -35,16 +35,15 @@
                             <!-- Section des icônes sociales -->
                             <div class="toolbar-social me-3">
                                 <ul class="d-flex">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-original"
-                                                style="font-size: 18px;"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"
-                                                style="font-size: 18px;"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-instagram"
-                                                style="font-size: 18px;"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"
-                                                style="font-size: 18px;"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-google"
-                                                style="font-size: 18px;"></i></a></li>
+                                   
+                                    <li>
+                                        <a href="http://www.dcsca.bj/" target="_blank">
+                                            <i class="lni lni-world" style="font-size: 18px;"></i>
+                                        </a>
+                                    </li>
+                                    
+                                    
+                                    
                                 </ul>
                             </div>
 

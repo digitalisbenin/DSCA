@@ -65,10 +65,9 @@
                                  pour permettre l’atteinte des objectifs pédagogiques . </p>
                             <div class="footer-social">
                                 <ul>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-original"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-google"></i></a></li>
+                                    <a href="http://www.dcsca.bj/" target="_blank">
+                                        <i class="lni lni-world" style="font-size: 18px;"></i>
+                                    </a>
                                 </ul>
                             </div>
                         </div>
@@ -117,7 +116,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="left">
-                                <p>Tous droits réservés par la DSIA.</p>
+                                <p>Tous droits réservés par la DCSCA.</p>
                             </div>
                         </div>
                     </div>

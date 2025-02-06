@@ -22,7 +22,7 @@
                     <!-- Texte à droite -->
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="hero-text d-none d-lg-block" style="color: #000; margin-top: -210px !important;">
-                            <h1 class="wow fadeInUp" data-wow-delay=".5s" style="color: #000;">Bienvenue sur la plateforme <br> E-learning de la DSCA</h1>
+                            <h1 class="wow fadeInUp" data-wow-delay=".5s" style="color: #000;">Bienvenue sur la plateforme <br> E-learning de la DCSCA</h1>
                             <h6 class="wow fadeInUp" data-wow-delay=".7s" style="color: #000;">Mot du Directeur.</h6>
                             {{-- <div class="button wow fadeInUp" data-wow-delay=".9s">
                                 <a href="#about" class="btn btn-primary">En savoir plus</a>
