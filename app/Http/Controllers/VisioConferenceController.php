@@ -76,15 +76,15 @@ class VisioConferenceController extends Controller
      */
     public function show( $id)
     {
-        // $users=User::where('role_id',3)->get();
-        $users=User::all();
+         $users=User::where('role_id',3)->get();
+       //Y $users=User::all();
         $conference = VisioConference::findOrFail($id);
         return view('admin.conference.show',compact('conference','users')); 
     }
     public function shows( $id)
     {
-        // $users=User::where('role_id',3)->get();
-        $users=User::all();
+         $users=User::where('role_id',3)->get();
+        //$users=User::all();
         $conference = VisioConference::findOrFail($id);
         $selectedUsers = Meet::where('visio_conferences_id', $id)->pluck('user_id')->toArray();
         return view('admin.conference.shows',compact('conference','users','selectedUsers')); 
