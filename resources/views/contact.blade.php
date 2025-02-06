@@ -25,7 +25,7 @@
 <!-- End Breadcrumbs -->
 
 <!-- Start Contact Area -->
-<section id="contact-us" class="contact-us section">
+<section id="contact-us" class="contact-us section" style=" padding-top: 10px !important; padding-bottom: 10px !important;">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-12 col-12">

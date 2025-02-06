@@ -47,7 +47,7 @@
     </div>
 </div>
 <div class=" h-screen">
-    <div class="mt-5 " style="margin-left: 6rem; margin-right: 6rem;">
+    <div class="mt-O " style="margin-left: 6rem; margin-right: 6rem; padding-top:10px !important">
        @auth
        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bi bi-question-circle-fill" style="width: 24px;">
@@ -101,10 +101,6 @@
            
            
 
-            <!-- Champ de recherche -->
-            <div class="ms-auto mt-3">
-              
-            </div>
           </div>
 
           

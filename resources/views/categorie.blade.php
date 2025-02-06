@@ -25,7 +25,7 @@
 
 
 <!-- Start Courses Area -->
-<section class="courses style2 section" id="filtre">
+<section class="courses style2 section" id="filtre"  style=" padding-top: 10px !important; padding-bottom: 10px !important;">
     <div class="container">
         <div class="row">
             <div class="col-12 ">

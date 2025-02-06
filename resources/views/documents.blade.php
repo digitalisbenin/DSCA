@@ -25,7 +25,7 @@
 
 
 <!-- Teacher Details -->
-<div class="teacher-details-area section">
+<div class="teacher-details-area section" style=" padding-top: 10px !important; padding-bottom: 10px !important;">
     <div class="container">
         <div class="row">
             <div class="col-12">

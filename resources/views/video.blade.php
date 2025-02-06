@@ -24,7 +24,7 @@
 </div>
 <!-- End Breadcrumbs -->
 
-<section class="courses section">
+<section class="courses section" style=" padding-top: 10px !important; padding-bottom: 10px !important;">
     <div class="container">
         {{--  <div class="row">
             <div class="col-12">

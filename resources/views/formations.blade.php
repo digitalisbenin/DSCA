@@ -25,7 +25,7 @@
 
 
 <!-- Start Courses Area -->
-<section class="courses style2 section">
+<section class="courses style2 section" style=" padding-top: 10px !important; padding-bottom: 10px !important;">
     <div class="container">
         <div class="row">
             <div class="col-12 ">
