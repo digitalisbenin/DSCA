@@ -890,6 +890,115 @@ ol {
   overflow: hidden;
   text-align: center;
 }
+.breadcrumbs1 {
+  background-image: url("../images/breadcrumb/cate.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 200px 0 120px 0;
+  z-index: 2;
+  overflow: hidden;
+  text-align: center;
+}
+.breadcrumbs2 {
+  background-image: url("../images/breadcrumb/forum.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 200px 0 120px 0;
+  z-index: 2;
+  overflow: hidden;
+  text-align: center;
+}
+.breadcrumbs1.overlay::before {
+  background-color: #081828;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.breadcrumbs1 .breadcrumbs-content {
+  position: relative;
+  float: none;
+  padding: 0px 100px;
+}
+
+.breadcrumbs1 .breadcrumbs-content p {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 25px;
+}
+
+.breadcrumbs1 .breadcrumbs-content .page-title {
+  font-size: 35px;
+  color: #fff;
+  font-weight: 700;
+  position: relative;
+  line-height: 50px;
+  padding-bottom: 20px;
+}
+
+.breadcrumbs1 .breadcrumbs-content .page-title:before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  bottom: 0;
+  height: 4px;
+  width: 80px;
+  background: #048050;
+  border-radius: 5px;
+  margin-left: -40px;
+}
+
+.breadcrumbs1 .breadcrumbs-content .breadcrumb-nav {
+  background: transparent;
+  border-radius: 0;
+  margin-bottom: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.breadcrumbs1 .breadcrumb-nav {
+  float: none;
+  margin-top: 40px !important;
+  background: #fff3;
+  padding: 20px 25px;
+  border-radius: 5px;
+  margin: 0;
+  display: inline-block;
+}
+
+.breadcrumbs1 .breadcrumb-nav li {
+  display: inline-block;
+}
+
+.breadcrumbs1 .breadcrumb-nav li,
+.breadcrumbs1 .breadcrumb-nav li a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.breadcrumbs1 .breadcrumb-nav li a {
+  padding-right: 15px;
+  margin-right: 15px;
+  position: relative;
+}
+
+.breadcrumbs1 .breadcrumb-nav li a:hover {
+  color: #048050;
+}
+
+.breadcrumbs1 .breadcrumb-nav li a:after {
+  content: '';
+  height: 80%;
+  width: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 2px;
+  right: 0;
+}
 
 .breadcrumbs.overlay::before {
   background-color: #081828;
@@ -984,7 +1093,93 @@ ol {
   padding-bottom: 120px;
   position: relative;
 }
+.breadcrumbs2.overlay::before {
+  background-color: #081828;
+  opacity: 0.9;
+  z-index: -1;
+}
 
+.breadcrumbs2 .breadcrumbs-content {
+  position: relative;
+  float: none;
+  padding: 0px 100px;
+}
+
+.breadcrumbs2 .breadcrumbs-content p {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 25px;
+}
+
+.breadcrumbs2 .breadcrumbs-content .page-title {
+  font-size: 35px;
+  color: #fff;
+  font-weight: 700;
+  position: relative;
+  line-height: 50px;
+  padding-bottom: 20px;
+}
+
+.breadcrumbs2 .breadcrumbs-content .page-title:before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  bottom: 0;
+  height: 4px;
+  width: 80px;
+  background: #048050;
+  border-radius: 5px;
+  margin-left: -40px;
+}
+
+.breadcrumbs2 .breadcrumbs-content .breadcrumb-nav {
+  background: transparent;
+  border-radius: 0;
+  margin-bottom: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.breadcrumbs2 .breadcrumb-nav {
+  float: none;
+  margin-top: 40px !important;
+  background: #fff3;
+  padding: 20px 25px;
+  border-radius: 5px;
+  margin: 0;
+  display: inline-block;
+}
+
+.breadcrumbs2 .breadcrumb-nav li {
+  display: inline-block;
+}
+
+.breadcrumbs2 .breadcrumb-nav li,
+.breadcrumbs2 .breadcrumb-nav li a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.breadcrumbs2 .breadcrumb-nav li a {
+  padding-right: 15px;
+  margin-right: 15px;
+  position: relative;
+}
+
+.breadcrumbs2 .breadcrumb-nav li a:hover {
+  color: #048050;
+}
+
+.breadcrumbs2 .breadcrumb-nav li a:after {
+  content: '';
+  height: 80%;
+  width: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 2px;
+  right: 0;
+}
 /* Section Title */
 .section-title {
   text-align: center;
