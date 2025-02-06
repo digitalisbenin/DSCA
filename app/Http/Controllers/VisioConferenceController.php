@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\VisioConference;
+use App\Models\User;
+use App\Models\Meet;
 use Illuminate\Http\Request;
 
 class VisioConferenceController extends Controller
@@ -72,9 +74,20 @@ class VisioConferenceController extends Controller
      * @param  \App\Models\VisioConference  $visioConference
      * @return \Illuminate\Http\Response
      */
-    public function show(VisioConference $visioConference)
+    public function show( $id)
     {
-        //
+        // $users=User::where('role_id',3)->get();
+        $users=User::all();
+        $conference = VisioConference::findOrFail($id);
+        return view('admin.conference.show',compact('conference','users')); 
+    }
+    public function shows( $id)
+    {
+        // $users=User::where('role_id',3)->get();
+        $users=User::all();
+        $conference = VisioConference::findOrFail($id);
+        $selectedUsers = Meet::where('visio_conferences_id', $id)->pluck('user_id')->toArray();
+        return view('admin.conference.shows',compact('conference','users','selectedUsers')); 
     }
 
     /**
@@ -117,6 +130,29 @@ class VisioConferenceController extends Controller
         $conference->fin = $request->fin;
         $conference->user_id= Auth::id();
         $conference->save();
+
+        return redirect('/visio-conferences');
+    }
+    public function updates(Request $request, $id)
+    {
+      
+        // $conference = VisioConference::findOrFail($id);
+
+        $selectedUsers = $request->input('selected_users', []);
+
+    // Supprimer les anciens utilisateurs liés à cette visioconférence
+    Meet::where('visio_conferences_id', $id)->delete();
+
+    // Ajouter les nouveaux utilisateurs sélectionnés
+    foreach ($selectedUsers as $userId) {
+        Meet::create([
+            'visio_conferences_id' => $id,
+            'user_id' => $userId,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+    }
+
 
         return redirect('/visio-conferences');
     }

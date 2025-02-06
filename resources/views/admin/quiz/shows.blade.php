@@ -83,7 +83,7 @@
                         <div class="col-xxl-12 col-md-12 col-sm-7">
                             <div class="row g-20">
                                 <div class="col-sm-6">
-                                    <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Titre <span class="text-13 text-gray-400 fw-medium">(Requis)</span> </label>
+                                    <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Titre <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
                                     <div class="position-relative">
                                         <input type="text" class="text-counter placeholder-13 form-control py-11 pe-77" name="title" maxlength="100" id="courseTitle" placeholder="">
                                         <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
@@ -100,7 +100,7 @@
                                     </div>
                                 </div>  --}}
                                 <div class="col-sm-6">
-                                    <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Chapitre <span class="text-13 text-gray-400 fw-medium">(Requis)</span></label>
+                                    <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Chapitre <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
                                     <div class="position-relative">
                   
     

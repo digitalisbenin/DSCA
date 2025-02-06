@@ -25,7 +25,11 @@ class MeetController extends Controller
             $meet = Meet::all();
         } else {
 
-            $meet = Meet::where('user_id', $user->id)->get();
+            // $meet = Meet::where('user_id', $user->id)->get();
+            $meet = Meet::whereHas('visioConference', function ($query) use ($user) {
+                $query->where('user_id', $user->id);
+            })->get();
+            
         }
         return view('admin.meet.index',compact('meet'));
     }
@@ -59,17 +63,33 @@ class MeetController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+
+        $selectedUsers = $request->input('selected_users', []);
+
+        if (!empty($selectedUsers)) {
+            foreach ($selectedUsers as $userId) {
+                // Exemple d'ajout à une table intermédiaire (ajuste selon ton besoin)
+                Meet::create([
+                    'visio_conferences_id' => $request->visio_conferences_id,
+                    'user_id' => $userId,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            }
+            return back()->with('success', 'Utilisateurs enregistrés avec succès.');
+        }
+
+        // $validatedData = $request->validate([
            
-            'visio_conferences_id' => 'required|exists:visio_conferences,id',
-            'user_id' => 'required|exists:users,id',
-        ]);
+        //     'visio_conferences_id' => 'required|exists:visio_conferences,id',
+        //     'user_id' => 'required|exists:users,id',
+        // ]);
         //$formation = Formation::create($validatedData);
-        $meet = new Meet();
-        $meet->visio_conferences_id = $request->visio_conferences_id;
-        $meet->user_id=$request->user_id ;
-        $meet->save();
-        return redirect('/meets'); 
+        // $meet = new Meet();
+        // $meet->visio_conferences_id = $request->visio_conferences_id;
+        // $meet->user_id=$request->user_id ;
+        // $meet->save();
+        return redirect('/visio-conferences'); 
 
     }
 
@@ -104,7 +124,7 @@ class MeetController extends Controller
      */
     public function update(Request $request, Meet $meet)
     {
-        //
+        
     }
 
     /**

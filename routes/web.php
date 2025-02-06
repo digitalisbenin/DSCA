@@ -271,9 +271,11 @@ Route::get('discussions-reponses/{id}', [DiscutionReponseController::class, 'des
 Route::get('visio-conferences', [VisioConferenceController::class, 'index']);
 Route::get('create-visio-conferences', [VisioConferenceController::class, 'create']);
 Route::get('visio-conferences/{id}', [VisioConferenceController::class, 'show']);
+Route::get('visio-conference/{id}', [VisioConferenceController::class, 'shows']);
 Route::get('visio-conferences/{id}/edit', [VisioConferenceController::class, 'edit']);
 Route::post('visio-conferences', [VisioConferenceController::class, 'store']);
 Route::put('visio-conferences/{id}/update', [VisioConferenceController::class, 'update']);
+Route::post('visio-conferences/{id}/updates', [VisioConferenceController::class, 'updates']);
 Route::get('visio-conferences/{id}/destroy', [VisioConferenceController::class, 'destroy']);
 
 
