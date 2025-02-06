@@ -62,20 +62,20 @@
                             </li>
                         @endforeach
                     </ul>
-                    <div class="tab-content" id="myTabContent" style=" padding-top: 10px !important; padding-bottom: 10px !important;">
+                    <div class="tab-content" id="myTabContent" >
                         @foreach ($chapitre as $index => $chapter)
                             <div class="tab-pane fade {{ $index == 0 ? 'show active' : '' }}"
                                 id="chapter-{{ $chapter->id }}" role="tabpanel"
                                 aria-labelledby="chapter-{{ $chapter->id }}-tab">
-                                <div class="course-content" style=" padding-top: 0 !important; margin-top: 0 !important;">
+                                <div class="course-content">
 
                                     <br>
 
-                                    <div class="course-overview" style=" padding-top: 0 !important; margin-top: 0 !important;">
+                                    <div class="course-overview" >
                                         {{-- <h3 class="title"> {{ $chapter->titre }}</h3> --}}
 
                                         @if ($chapter->video_url)
-                                            <div class="overview-course-video">
+                                            <div class="overview-course-video" style=" padding-top: 0 !important; margin-top: 0 !important;">
                                                 <iframe title="{{ $chapter->formation->titre }}"
                                                     src="/assets/uploads/chapitre_video/{{ $chapter->video_url }}">
                                                 </iframe>
