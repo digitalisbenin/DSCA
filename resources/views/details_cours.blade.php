@@ -23,13 +23,13 @@
 
 
     <!-- Course Details Section Start -->
-    <div class="course-details section">
+    <div class="course-details section" style=" padding-top: 10px !important; padding-bottom: 10px !important;" >
         <div class="container">
             <div class="row">
                 <!-- Course Details Wrapper Start -->
                 @if ($chapitre->isNotEmpty())
                     {{-- Vérifie si la liste des chapitres n'est pas vide --}}
-                    <h3 class="title text-center mb-5"> {{ $chapitre->first()->formation->titre }}</h3>
+                    <h3 class="title text-center mb-3"> {{ $chapitre->first()->formation->titre }}</h3>
                 @endif
                 <div class="col-lg-12 col-12">
                     @if (!$quiz->isEmpty())
@@ -40,7 +40,7 @@
 
 
 
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist" style=" margin-bottom: 0 !important;">
 
                         @foreach ($chapitre as $index => $chapter)
                             <li class="nav-item" role="presentation">
@@ -62,16 +62,16 @@
                             </li>
                         @endforeach
                     </ul>
-                    <div class="tab-content" id="myTabContent">
+                    <div class="tab-content" id="myTabContent" style=" padding-top: 10px !important; padding-bottom: 10px !important;">
                         @foreach ($chapitre as $index => $chapter)
                             <div class="tab-pane fade {{ $index == 0 ? 'show active' : '' }}"
                                 id="chapter-{{ $chapter->id }}" role="tabpanel"
                                 aria-labelledby="chapter-{{ $chapter->id }}-tab">
-                                <div class="course-content">
+                                <div class="course-content" style=" padding-top: 0 !important; margin-top: 0 !important;">
 
                                     <br>
 
-                                    <div class="course-overview">
+                                    <div class="course-overview" style=" padding-top: 0 !important; margin-top: 0 !important;">
                                         {{-- <h3 class="title"> {{ $chapter->titre }}</h3> --}}
 
                                         @if ($chapter->video_url)
@@ -91,7 +91,7 @@
                                         <p style="text-align: justify;">
                                             {!! $chapter->description !!}
                                         </p>
-                                        
+
 
 
                                         <p class="text-2xl"><a target="bank"
