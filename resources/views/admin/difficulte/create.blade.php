@@ -45,7 +45,7 @@
                     <div class="col-xxl-12 col-md-12 col-sm-7">
                         <div class="row g-20 mb-6">
                             <div class="col-sm-6">
-                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Nom de la difficulté <span class="text-13 text-gray-400 fw-medium">(Requis)</span> </label>
+                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Nom de la difficulté <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
                                 <div class="position-relative">
                                     <input type="text" class="text-counter placeholder-13 form-control py-11 pe-76" name="name" maxlength="200" id="courseTitle" placeholder="">
                                     <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">

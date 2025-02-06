@@ -18,10 +18,10 @@
         <!-- Breadcrumb Right Start -->
         <div class="flex-align gap-8 flex-wrap">
             <div class="position-relative text-gray-500 flex-align gap-4 text-13">
-                <a href="{{url('/create-meets')}}" class="btn btn-main rounded-pill py-7 flex-align gap-4 fw-normal">
+                {{--  <a href="{{url('/create-meets')}}" class="btn btn-main rounded-pill py-7 flex-align gap-4 fw-normal">
                     <span class="d-flex text-md"><i class="ph ph-plus"></i></span>
                     Ajouter un particitant
-                </a>
+                </a>  --}}
                 <span class="text-inherit"> </span>
                 {{--  <div class="flex-align text-gray-500 text-13 border border-gray-100 rounded-4 ps-20 focus-border-main-600 bg-white">
 

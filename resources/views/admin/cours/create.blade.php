@@ -41,7 +41,7 @@
                 <div class="row gy-20">
                     <div class="col-xxl-3 col-md-4 col-sm-5">
                         <div class="mb-20">
-                            <label class="h5 fw-semibold font-heading mb-0">Image de la Formation <span class="text-13 text-gray-400 fw-medium">(Requis)</span> </label>
+                            <label class="h5 fw-semibold font-heading mb-0">Image de la Formation <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
                         </div>
 
                         <div class="">
@@ -52,7 +52,7 @@
                     <div class="col-xxl-9 col-md-8 col-sm-7">
                         <div class="row g-20">
                             <div class="col-sm-6">
-                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Titre <span class="text-13 text-gray-400 fw-medium">(Requis)</span> </label>
+                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Titre <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
                                 <div class="position-relative">
                                     <input type="text" class="text-counter placeholder-13 form-control py-11 pe-77" name="titre" maxlength="500" id="courseTitle" placeholder="">
                                     <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
@@ -63,7 +63,7 @@
                             </div>
 
                             <div class="col-sm-6">
-                                <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Catégorie <span class="text-13 text-gray-400 fw-medium">(Requis)</span></label>
+                                <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Catégorie <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
                                 <div class="position-relative">
                                     <select id="courseCategory" name="categorie_id" class="form-select py-9 placeholder-13 text-15">
                                         <option value="" selected>Aucune</option>
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <label for="courseLesson" class="h5 mb-8 fw-semibold font-heading">Statut <span class="text-13 text-gray-400 fw-medium">(Requis)</span></label>
+                                <label for="courseLesson" class="h5 mb-8 fw-semibold font-heading">Statut <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
                                 <div class="position-relative">
                                     <select id="courseLesson" name="status" class="form-select py-9 placeholder-13 text-15">
                                         <option value="1" selected>Aucune</option>
@@ -86,7 +86,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <label for="courseLevel" class="h5 mb-8 fw-semibold font-heading">Difficultés <span class="text-13 text-gray-400 fw-medium">(Requis)</span></label>
+                                <label for="courseLevel" class="h5 mb-8 fw-semibold font-heading">Difficultés <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
                                 <div class="position-relative">
                                     <select id="courseLevel" name="difficulte_id" class="form-select py-9 placeholder-13 text-15">
                                         <option value="" selected>Aucune</option>

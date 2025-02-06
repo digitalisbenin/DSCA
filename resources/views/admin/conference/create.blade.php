@@ -45,7 +45,7 @@
                     <div class="col-xxl-12 col-md-12 col-sm-7">
                         <div class="row g-20 mb-6">
                             <div class="col-sm-4">
-                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Titre <span class="text-13 text-gray-400 fw-medium">(Requis)</span> </label>
+                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Titre <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
                                 <div class="position-relative">
                                     <input type="text" class="text-counter placeholder-13 form-control py-11 pe-76" name="titre" maxlength="200" id="courseTitle" placeholder="">
                                     <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-4">
-                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Date <span class="text-13 text-gray-400 fw-medium">(Requis)</span> </label>
+                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Date <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
                                 <div class="position-relative">
                                     <input type="date" class="text-counte placeholder-13 form-control py-11 pe-76" name="date" maxlength="500" id="courseTitle" placeholder="">
                                     <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
@@ -66,7 +66,7 @@
                             </div>
 
                             <div class="col-sm-4">
-                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Lien du meet <span class="text-13 text-gray-400 fw-medium">(Requis)</span> </label>
+                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Lien du meet <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
                                 <div class="position-relative">
                                     <input type="text" class="text-counte placeholder-13 form-control py-11 pe-76" name="lien_meet" maxlength="500" id="courseTitle" placeholder="">
                                     <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
@@ -77,7 +77,7 @@
                             </div>
 
                             <div class="col-sm-4">
-                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Heure début <span class="text-13 text-gray-400 fw-medium">(Requis)</span> </label>
+                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Heure début <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
                                 <div class="position-relative">
                                     <input type="time" class="text-counte placeholder-13 form-control py-11 pe-76" name="debut" maxlength="500" id="courseTitle" placeholder="">
                                     <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
@@ -90,7 +90,7 @@
 
 
                             <div class="col-sm-4">
-                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">heure fin <span class="text-13 text-gray-400 fw-medium">(Requis)</span> </label>
+                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">heure fin <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
                                 <div class="position-relative">
                                     <input type="time" class="text-counte placeholder-13 form-control py-11 pe-76" name="fin" maxlength="500" id="courseTitle" placeholder="">
                                     <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
