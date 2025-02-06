@@ -37,6 +37,7 @@
                                 <ul class="d-flex">
                                    
                                     <li>
+                                        <span class="text-white -mt-1">Suivez-nous</span>
                                         <a href="http://www.dcsca.bj/" target="_blank">
                                             <i class="lni lni-world" style="font-size: 18px;"></i>
                                         </a>

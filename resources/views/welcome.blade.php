@@ -21,9 +21,16 @@
                     
                     <!-- Texte à droite -->
                     <div class="col-lg-6 col-md-6 col-12">
-                        <div class="hero-text d-none d-lg-block" style="color: #000; margin-top: -210px !important;">
+                        <div class="hero-text d-none d-lg-block" style="color: #000; margin-top: -140px !important;">
                             <h1 class="wow fadeInUp" data-wow-delay=".5s" style="color: #000;">Bienvenue sur la plateforme <br> E-learning de la DCSCA</h1>
-                            <h6 class="wow fadeInUp" data-wow-delay=".7s" style="color: #000;">Mot du Directeur.</h6>
+                            <p class="wow fadeInUp" data-wow-delay=".7s" style="color: #fff; font-size: 22px; background-color: rgb(12, 170, 12); padding: 10px; border-radius: 5px; display: inline-block;">
+                                Mot du Directeur.
+                            </p>
+                            
+                            <p class="wow fadeInUp mt-5" data-wow-delay=".7s" style="color: #000; text-align: justify;"> 
+                                Le Directeur de la DCSCA (Direction Centrale des Services de Commissariat de l'Armée) souligne l'importance des missions de cette entité, qui est dirigée par un commissaire général hors classe, un officier général du rang de quatre étoiles. Il est essentiel de souligner le rôle de la DCSCA dans le soutien logistique et administratif des Forces de Défense et de Sécurité.
+                            </p>
+                            
                             {{-- <div class="button wow fadeInUp" data-wow-delay=".9s">
                                 <a href="#about" class="btn btn-primary">En savoir plus</a>
                                 <a href="#courses" class="btn btn-outline-secondary">Nos cours</a>

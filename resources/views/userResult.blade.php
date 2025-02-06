@@ -1,5 +1,5 @@
 @extends('layouts.base')
-@section('title','R2ponse quiz')
+@section('title','Mes resultats')
 
 @section('content')
 @include ('partial.navbar')
