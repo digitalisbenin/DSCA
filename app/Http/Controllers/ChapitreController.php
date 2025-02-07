@@ -103,7 +103,7 @@ class ChapitreController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the  resource.
      *
      * @param  \App\Models\Chapitre  $chapitre
      * @return \Illuminate\Http\Response
