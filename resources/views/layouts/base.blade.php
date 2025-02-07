@@ -125,6 +125,162 @@
         </div>
         <!-- End Footer Middle -->
     </footer>
+{{--  
+<footer style="background-color: #0C1B2B; color: white; padding: 30px 0; font-family: Arial, sans-serif;">
+    <div style="width: 90%; margin: auto;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+            <div style="width: 16%; min-width: 180px;">
+                <h3 style="font-size: 14px; font-weight: bold; margin-bottom: 10px;">GOUVERNEMENT</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Programme d'Actions</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Membres du gouvernement</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Tous les ministères</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Plateformes et e-services</a></li>
+                </ul>
+            </div>
+            <div style="width: 16%; min-width: 180px;">
+                <h3 style="font-size: 14px; font-weight: bold; margin-bottom: 10px;">PUBLICATIONS</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Actualités</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Vidéos</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Documents</a></li>
+                </ul>
+            </div>
+            <div style="width: 16%; min-width: 180px;">
+                <h3 style="font-size: 14px; font-weight: bold; margin-bottom: 10px;">OPPORTUNITÉS</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Offres d'emploi</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Marchés publics</a></li>
+                </ul>
+                <h3 style="font-size: 14px; font-weight: bold; margin-top: 10px;">ÉVÉNEMENTS</h3>
+            </div>
+            <div style="width: 16%; min-width: 180px;">
+                <h3 style="font-size: 14px; font-weight: bold; margin-bottom: 10px;">LE BÉNIN</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Histoire</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Les armoiries</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Le drapeau</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">L'hymne national</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Géographie</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Communes du Bénin</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Attractions et monuments</a></li>
+                </ul>
+            </div>
+            <div style="width: 16%; min-width: 180px;">
+                <h3 style="font-size: 14px; font-weight: bold; margin-bottom: 10px;">CORONAVIRUS</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Dernières informations</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Mesures de riposte</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Actualités</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Infographies</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Audios</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Vidéos</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Documents</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Foire aux questions</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Initiatives solidaires</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Dons reçus</a></li>
+                </ul>
+            </div>
+            <div style="width: 16%; min-width: 180px;">
+                <h3 style="font-size: 14px; font-weight: bold; margin-bottom: 10px;">LIENS UTILES</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Présidence du Bénin</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Programme d'Action du Gouvernement</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Secrétariat général du Gouvernement</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">#AskGouvBénin</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Service Public</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Investir au Bénin</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Obtenir un e-Visa</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; border-top: 1px solid #2A3B4C; padding: 15px 0; margin-top: 20px;">
+        <p style="margin: 0;">© Présidence de la République du Bénin - 2023</p>
+        <a href="#" style="color: #FFC107; text-decoration: none; font-weight: bold;">Mentions légales et gestions des cookies</a>
+    </div>
+</footer>  --}}
+ {{--  <footer style="background-color: #0C1B2B; color: white; padding: 40px 0; font-family: Arial, sans-serif;">
+        <div style="width: 90%; margin: auto;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+                <div style="flex: 1; min-width: 180px;">
+                    <h3 style="font-size: 14px; font-weight: bold;">GOUVERNEMENT</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Programme d'Actions</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Membres du gouvernement</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Tous les ministères</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Plateformes et e-services</a></li>
+                    </ul>
+                </div>
+
+                <div style="flex: 1; min-width: 180px;">
+                    <h3 style="font-size: 14px; font-weight: bold;">PUBLICATIONS</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Actualités</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Vidéos</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Documents</a></li>
+                    </ul>
+                </div>
+
+                <div style="flex: 1; min-width: 180px;">
+                    <h3 style="font-size: 14px; font-weight: bold;">OPPORTUNITÉS</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Offres d'emploi</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Marchés publics</a></li>
+                    </ul>
+                    <h3 style="font-size: 14px; font-weight: bold; margin-top: 10px;">ÉVÉNEMENTS</h3>
+                </div>
+
+                <div style="flex: 1; min-width: 180px;">
+                    <h3 style="font-size: 14px; font-weight: bold;">LE BÉNIN</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Histoire</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Les armoiries</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Le drapeau</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">L'hymne national</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Géographie</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Communes du Bénin</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Attractions et monuments</a></li>
+                    </ul>
+                </div>
+
+                <div style="flex: 1; min-width: 180px;">
+                    <h3 style="font-size: 14px; font-weight: bold;">CORONAVIRUS</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Dernières informations</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Mesures de riposte</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Actualités</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Infographies</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Audios</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Vidéos</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Documents</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Foire aux questions</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Initiatives solidaires</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Dons reçus</a></li>
+                    </ul>
+                </div>
+
+                <div style="flex: 1; min-width: 180px;">
+                    <h3 style="font-size: 14px; font-weight: bold;">LIENS UTILES</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Présidence du Bénin</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Programme d'Action du Gouvernement</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Secrétariat général du Gouvernement</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">#AskGouvBénin</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Service Public</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Investir au Bénin</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none; font-size: 13px;">Obtenir un e-Visa</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; border-top: 1px solid #2A3B4C; padding: 15px 0; margin-top: 20px;">
+            <p style="margin: 0;">© Présidence de la République du Bénin - 2023</p>
+            <a href="#" style="color: #FFC107; text-decoration: none; font-weight: bold;">Mentions légales et gestions des cookies</a>
+        </div>
+    </footer>  --}}
+
     <!--/ End Footer Area -->
 
     <!-- ========================= scroll-top ========================= -->

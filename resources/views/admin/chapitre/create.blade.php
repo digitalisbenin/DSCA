@@ -80,11 +80,11 @@
                 <div class="row gy-20">
                     <div class="col-xxl-3 col-md-4 col-sm-5">
                         <div class="mb-20">
-                            <label class="h5 fw-semibold font-heading mb-0">Image du chapitre <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
+                            <label class="h5 fw-semibold font-heading mb-0">Image du chapitre <span class="text-13 text-gray-400 fw-medium"></span> </label>
                         </div>
 
                         <div class="">
-                            <input type="file" class=" placeholder-13 form-control py-11 pe-76" name="image_url" id="" required>
+                            <input type="file" class=" placeholder-13 form-control py-11 pe-76" name="image_url" id="" >
                         </div>
 
                     </div>
