@@ -63,13 +63,15 @@
                             </div>
                             <p>Ce projet a pour ambition de développer une plateforme e-learning accessible et conviviale
                                  pour permettre l’atteinte des objectifs pédagogiques . </p>
-                            <div class="footer-social">
-                                <ul>
-                                    <a href="http://www.dcsca.bj/" target="_blank">
-                                        <i class="lni lni-world" style="font-size: 18px;"></i>
-                                    </a>
-                                </ul>
-                            </div>
+                                 <div class="footer-social">
+                                    <ul class="d-flex" style="align-items: center; gap: 10px;">
+                                        <p style="margin: 0;">Suivez-nous</p>
+                                        <a href="http://www.dcsca.bj/" target="_blank">
+                                            <i class="lni lni-world" style="font-size: 18px;"></i>
+                                        </a>
+                                    </ul>
+                                </div>
+                                
                         </div>
                         <!-- End Single Widget -->
                     </div>
