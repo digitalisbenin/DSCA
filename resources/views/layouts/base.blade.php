@@ -14,7 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
         rel="stylesheet">
-
+       
     <!-- ========================= CSS here ========================= -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/LineIcons.2.0.css')}}" />
@@ -22,7 +22,35 @@
     <link rel="stylesheet" href="{{asset('assets/css/tiny-slider.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/glightbox.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+    <style>
+        .footer {
+            background-color: #f6fff4; /* Couleur de fond */
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer .contact-info {
+            font-weight: bold;
+        }
+        .footer .social-icons a {
+            color: black;
+            font-size: 20px;
+            margin: 0 10px;
+        }
+        .footer .social-icons a:hover {
+            color: #007bff;
+        }
+        .footer .copyright {
+            font-size: 14px;
+            color: gray;
+        }
+        .footer .bottom-bar {
+            height: 5px;
+            background: linear-gradient(to right, green 30%, yellow 30%, yellow 60%, red 60%);
+        }
+    </style>
 </head>
 
 <body>
@@ -73,7 +101,7 @@
                         </div>
                         <!-- End Single Widget -->
                     </div>
-                   
+
                     <div class="col-lg-4 col-md-6 col-12 text-center">
                         <!-- Single Widget -->
                         <div class="single-footer sm-custom-border f-link ">
@@ -82,7 +110,7 @@
                                 <li><a href="/">ACCUEIL</a></li>
                                 <li><a href="formation">FORMATIONS</a></li>
                                 <li><a href="documents">DOCUMENTS</a></li>
-                                
+
                                 <li><a href="video">VIDEOS</a></li>
                                 <li><a href="contact">CONTACTS</a></li>
                             </ul>
@@ -110,7 +138,7 @@
         </div>
         <!--/ End Footer Middle -->
         <!-- Start Footer Bottom -->
-        <div class="footer-bottom">
+        {{--  <div class="footer-bottom">
             <div class="container">
                 <div class="inner">
                     <div class="row">
@@ -122,10 +150,76 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>  --}}
         <!-- End Footer Middle -->
     </footer>
-{{--  
+    <footer class="footer">
+        <div class="container">
+        
+
+        <!-- Deuxième ligne : Centre -->
+        <div class="d-flex flex-column align-items-center text-center ">
+            <div  style="color:black;" class="d-flex flex-column flex-md-row mb-2 text-black text-center text-md-start">
+    <p class="fw-bold me-md-3">01 BP 2493 Cotonou</p>
+    <p class="me-md-3 fs-6"><i class="fa-solid fa-envelope"></i> mdn.contact@gouv.bj</p>
+    <p><i class="fa-solid fa-phone"></i> +229 21 30 05 36</p>
+</div>
+
+            {{--  <div class="d-flex mb-2 " style="color:black;">
+                <p  class="fw-bold me-3">01 BP 2493 Cotonou</p>
+                <p class="me-3 fs-6"><i class="fa-solid fa-envelope"></i> mdn.contact@gouv.bj</p>
+                <p><i class="fa-solid fa-phone"></i> +229 21 30 05 36</p>
+            </div>  --}}
+            <div>
+                <h6 style="color:black;" class="fw-bold mb-2">Réseaux sociaux</h6>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Troisième ligne : Copyright centré -->
+        <div class="text-center mt-3">
+           
+        </div>
+
+        <!-- Première ligne : Texte à gauche et à droite -->
+        {{--  <div class="d-flex justify-content-between align-items-center mb-3">
+             <p class="copyright fs-6">Copyright © 2022 Ministère de la Défense Nationale</p>
+            <p class="text-muted">Made by EASY ITEAM</p>
+        </div>  --}}
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-3 text-center text-md-start">
+    <p class="copyright fs-6">Copyright © 2022 Ministère de la Défense Nationale</p>
+    <p class="text-muted">Made by EASY ITEAM</p>
+</div>
+
+    </div>
+   {{-- <div class="container">
+          <div class=" align-items-center">
+            <div class=" d-flex text-center">
+                <p class="contact-info">01 BP 2493 Cotonou</p>
+                <p><i class="fas fa-envelope"></i> mdn.contact@gouv.bj</p>
+                <p><i class="fas fa-phone"></i> +229 21 30 05 36</p>
+            </div>
+            <div class="col-md-4 text-md-center text-center">
+                <p class="fw-bold">Réseaux sociaux</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4 text-md-end text-center">
+                <p class="copyright">Copyright © 2022 Ministère de la Défense Nationale</p>
+                <p class="text-muted">Made by EASY ITEAM</p>
+            </div>
+        </div>
+    </div>  --}}
+    <div class="bottom-bar"></div>
+</footer>
+{{--
 <footer style="background-color: #0C1B2B; color: white; padding: 30px 0; font-family: Arial, sans-serif;">
     <div style="width: 90%; margin: auto;">
         <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
@@ -377,18 +471,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @if (Session::has('success'))
     <script>
-    
+
             swal( "{!!Session::get('success')!!}","", 'success', {
                 button: true,
                 button:"OK",
                 timer: 5000,
             });
-    
-    
-    
+
+
+
     </script>
     @endif
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 
