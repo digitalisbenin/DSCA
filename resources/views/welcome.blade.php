@@ -237,7 +237,7 @@
                             <li><i class="lni lni-star-filled"></i></li>
                             <li><i class="lni lni-star-filled"></i></li>
                             <li><i class="lni lni-star-filled"></i></li>  --}}
-                            {{-- <button class="btn text-white  ajouter-formation" data-id="{{ $value->id }}" style="background-color: rgb(199,175,13)">Ajouter</button> --}}
+                            <button class="btn text-white  ajouter-formation" data-id="{{ $value->id }}" style="background-color: rgb(199,175,13)">Ajouter</button>
                         </ul>
                         <span class="tag">
                             <i class="lni lni-tag"></i>
