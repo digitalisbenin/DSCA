@@ -77,7 +77,7 @@
                         </br>
                         </div>
                         <div>
-                            <button class="btn btn-success ajouter-formation" data-id="{{ $value->id }}">Ajouter</button>
+                            <button class="btn text-white ajouter-formation" data-id="{{ $value->id }}" style="background-color: rgb(199,175,13)">Ajouter</button>
                         </div>
                     </div>
                 </div>

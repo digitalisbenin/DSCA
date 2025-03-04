@@ -19,7 +19,7 @@
             <div>
                 <a href="/">
                     {{--  <x-application-logo class="w-20 h-20 fill-current text-gray-500" />  --}}
-                    <img src="assets/images/logo/Logos.png" class="w-30 h-20 fill-current text-gray-500" alt="Logo">
+                    <img src="assets/images/logo/logo-removebg-preview.png" class="w-20 h-20 fill-current text-gray-500" alt="Logo">
                 </a>
             </div>
 

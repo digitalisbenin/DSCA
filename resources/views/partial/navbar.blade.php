@@ -37,9 +37,9 @@
                                 <ul class="d-flex">
                                    
                                     <li>
-                                        <span class="text-white -mt-1">Suivez-nous</span>
+                                        
                                         <a href="http://www.dcsca.bj/" target="_blank">
-                                            <i class="lni lni-world" style="font-size: 18px;"></i>
+                                            <span class="text-white " style="font-size: 20px;">Suivez-nous</span> <i class="lni lni-world" style="font-size: 18px;"></i>
                                         </a>
                                     </li>
                                     
@@ -66,16 +66,16 @@
 
 
     <!-- Toolbar End -->
-    <div class="container">
+    <div class="container " style="">
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <div class="nav-inner">
                     <nav class="navbar navbar-expand-lg">
                         <a class="navbar-brand d-none d-lg-block" href="{{ url('/') }}" style="margin-left: -70px !important; padding-left: 0 !important;">
-                            <img src="{{ asset('assets/images/logo/Logos.png') }}" alt="Logo">
+                            <img src="{{ asset('assets/images/logo/logo-removebg-preview.png') }}" alt="Logo" style="height: 80px; width: 80px;">
                         </a>
                         <a class="navbar-brand d-lg-none" href="{{ url('/') }}" >
-                            <img src="{{ asset('assets/images/logo/Logos.png') }}" alt="Logo">
+                            <img src="{{ asset('assets/images/logo/logo-removebg-preview.png') }}" style="height: 50px; width: 50px;" alt="Logo">
                         </a>
                         <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

@@ -4,7 +4,7 @@
     <!-- sidebar close btn -->
 
     <a href="{{url('/')}}" class="sidebar__logo text-center p-20 position-sticky inset-block-start-0 bg-white w-100 z-1 pb-10">
-        <img src="{{asset('assets/images/logo/Logos.png')}}" alt="Logo">
+        <img src="{{asset('assets/images/logo/logo-removebg-preview.png')}}" alt="Logo" style="height: 60px; width: 60px;">
     </a>
 
    @auth
