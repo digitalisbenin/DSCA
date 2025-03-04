@@ -14,7 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
         rel="stylesheet">
-       
+
     <!-- ========================= CSS here ========================= -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/LineIcons.2.0.css')}}" />
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/tiny-slider.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/glightbox.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
-  
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <style>
@@ -87,7 +87,7 @@
                         <!-- Single Widget -->
                         <div class="f-about single-footer">
                             <div class="logo">
-                                <a href="{{url('/')}}"><img src="{{asset('assets/images/logo/Logos.png')}}" alt="Logo"></a>
+                                <a href="{{url('/')}}"><img src="{{asset('assets/images/logo/logo-removebg-preview.png')}}" alt="Logo" style="height: 60px; width: 60px;"></a>
                             </div>
                             <p>Ce projet a pour ambition de développer une plateforme e-learning accessible et conviviale
                                  pour permettre l’atteinte des objectifs pédagogiques . </p>
@@ -105,7 +105,7 @@
                     <div class="col-lg-4 col-md-6 col-12 text-center">
                         <!-- Single Widget -->
                         <div class="single-footer sm-custom-border f-link ">
-                            <h3>Lien Rapide</h3>
+                            <h3>Liens Rapides</h3>
                             <ul>
                                 <li><a href="/">ACCUEIL</a></li>
                                 <li><a href="formation">FORMATIONS</a></li>
@@ -127,7 +127,7 @@
                                     onfocus="this.placeholder = ''"
                                     onblur="this.placeholder = 'Your email address'" required="" type="email">
                                 <div class="button text-center">
-                                    <button class="btn ">Abonnez-vous Maintenant !</button>
+                                    <button class="btn " style="background-color: rgb(199,175,13)">Abonnez-vous Maintenant !</button>
                                 </div>
                             </form>
                         </div>
@@ -155,14 +155,14 @@
     </footer>
     <footer class="footer">
         <div class="container">
-        
+
 
         <!-- Deuxième ligne : Centre -->
         <div class="d-flex flex-column align-items-center text-center ">
             <div  style="color:black;" class="d-flex flex-column flex-md-row mb-2 text-black text-center text-md-start">
     <p class="fw-bold me-md-3">01 BP 2493 Cotonou</p>
-    <p class="me-md-3 fs-6"><i class="fa-solid fa-envelope"></i> mdn.contact@gouv.bj</p>
-    <p><i class="fa-solid fa-phone"></i> +229 21 30 05 36</p>
+    <p class="me-md-3 fs-6"><i class="fa-solid fa-envelope"></i> courrierdcsca@mil.bj</p>
+    {{-- <p><i class="fa-solid fa-phone"></i> +229 21 30 05 36</p> --}}
 </div>
 
             {{--  <div class="d-flex mb-2 " style="color:black;">
@@ -170,19 +170,19 @@
                 <p class="me-3 fs-6"><i class="fa-solid fa-envelope"></i> mdn.contact@gouv.bj</p>
                 <p><i class="fa-solid fa-phone"></i> +229 21 30 05 36</p>
             </div>  --}}
-            <div>
+            {{-- <div>
                 <h6 style="color:black;" class="fw-bold mb-2">Réseaux sociaux</h6>
                 <div class="social-icons">
                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
                     <a href="#"><i class="fa-brands fa-youtube"></i></a>
                     <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <!-- Troisième ligne : Copyright centré -->
         <div class="text-center mt-3">
-           
+
         </div>
 
         <!-- Première ligne : Texte à gauche et à droite -->
@@ -191,8 +191,8 @@
             <p class="text-muted">Made by EASY ITEAM</p>
         </div>  --}}
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-3 text-center text-md-start">
-    <p class="copyright fs-6">Copyright © 2022 Ministère de la Défense Nationale</p>
-    <p class="text-muted">Made by EASY ITEAM</p>
+    <p class="copyright fs-6">Copyright © 2025 Tous droits réservés par la DCSCA.</p>
+    <p class="text-muted">DCSCA</p>
 </div>
 
     </div>
@@ -482,7 +482,7 @@
 
     </script>
     @endif
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ 
 </body>
 
 

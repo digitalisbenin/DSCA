@@ -4,7 +4,7 @@
     <!-- sidebar close btn -->
 
     <a href="{{url('/')}}" class="sidebar__logo text-center p-20 position-sticky inset-block-start-0 bg-white w-100 z-1 pb-10">
-        <img src="{{asset('assets/images/logo/Logos.png')}}" alt="Logo">
+        <img src="{{asset('assets/images/logo/logo-removebg-preview.png')}}" alt="Logo" style="height: 60px; width: 60px;">
     </a>
 
    @auth
@@ -63,6 +63,12 @@
                     <span class="text">Formateurs</span>
                 </a>
             </li>
+            <li class="sidebar-menu__item">
+                <a href="{{url('users')}}" class="sidebar-menu__link">
+                    <span class="icon"><i class="ph ph-bookmarks"></i></span>
+                    <span class="text">Utilisateurs</span>
+                </a>
+            </li>
             @endif
 
             <li class="sidebar-menu__item">
@@ -85,12 +91,12 @@
                     <span class="text">Visio Conférence</span>
                 </a>
             </li>
-            <li class="sidebar-menu__item">
+            {{-- <li class="sidebar-menu__item">
                 <a href="{{url('meets')}}" class="sidebar-menu__link">
                     <span class="icon"><i class="ph ph-calendar-dots"></i></span>
                     <span class="text">Meet</span>
                 </a>
-            </li>
+            </li> --}}
            <hr>
             <li class="sidebar-menu__item">
                 <a href="{{url('ressources')}}" class="sidebar-menu__link">

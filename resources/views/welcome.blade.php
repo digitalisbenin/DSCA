@@ -8,7 +8,27 @@
         <!-- Single Slider -->
         <div class="hero-inner d-flex align-items-center" style="background-color: #f8f9fa; padding: 20px;">
             <div class="container">
-                <div class="row align-items-center">
+                <h3 class="wow fadeInUp text-center scrolling-text" data-wow-delay=".5s" style="color: #000;">
+                    Bienvenue sur la Plateforme E-learning de la DCSCA
+                </h3>
+                <style>
+                    @keyframes scrollText {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.scrolling-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollText 20s linear infinite;
+}
+
+                </style>
+                <div class="row align-items-center mt-3">
                     <!-- Image à gauche -->
                     <div class="col-lg-6 col-md-6 col-12">
                         <img
@@ -21,14 +41,14 @@
 
                     <!-- Texte à droite -->
                     <div class="col-lg-6 col-md-6 col-12">
-                        <div class="hero-text d-none d-lg-block" style="color: #000; margin-top: -140px !important;">
-                            <h1 class="wow fadeInUp" data-wow-delay=".5s" style="color: #000;">Bienvenue sur la plateforme <br> E-learning de la DCSCA</h1>
-                            <p class="wow fadeInUp" data-wow-delay=".7s" style="color: #fff; font-size: 22px; background-color: rgb(12, 170, 12); padding: 10px; border-radius: 5px; display: inline-block;">
-                                Mot du Directeur.
+                        <div class="hero-text d-none d-lg-block" style="color: #000; margin-top: -100px !important;">
+                           
+                            <p class="wow fadeInUp " data-wow-delay=".7s" style="color: #fff; font-size: 22px; background-color: rgb(199,175,13); padding: 10px; border-radius: 5px; display: inline-block;">
+                                 MOT DU DIRECTEUR
                             </p>
-
-                            <p class="wow fadeInUp mt-5" data-wow-delay=".7s" style="color: #000; text-align: justify;">
-                                Le Directeur de la DCSCA (Direction Centrale des Services de Commissariat de l'Armée) souligne l'importance des missions de cette entité, qui est dirigée par un commissaire général hors classe, un officier général du rang de quatre étoiles. Il est essentiel de souligner le rôle de la DCSCA dans le soutien logistique et administratif des Forces de Défense et de Sécurité.
+                            
+                            <p class="wow fadeInUp mt-5" data-wow-delay=".7s" style="color: #000; text-align: justify;"> 
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                             </p>
 
                             {{-- <div class="button wow fadeInUp" data-wow-delay=".9s">
@@ -37,10 +57,12 @@
                             </div> --}}
                         </div>
                         <div class="hero-text d-lg-none" style="color: #000; margin-top: 15px !important;">
-                            <h1 class="wow fadeInUp" data-wow-delay=".5s" style="color: #000;">
+                            {{-- <h1 class="wow fadeInUp" data-wow-delay=".5s" style="color: #000;">
                                 Bienvenue sur la plateforme <br> E-learning de la DSCA
-                            </h1>
-                            <h6 class="wow fadeInUp" data-wow-delay=".7s" style="color: #000;">Mot du Directeur.</h6>
+                            </h1> --}}
+                            <p class="wow fadeInUp " data-wow-delay=".7s" style="color: #fff; font-size: 22px; background-color: rgb(199,175,13); padding: 10px; border-radius: 5px; display: inline-block;">
+                                MOT DU DIRECTEUR
+                            </p>
                         </div>
 
                     </div>
@@ -215,7 +237,7 @@
                             <li><i class="lni lni-star-filled"></i></li>
                             <li><i class="lni lni-star-filled"></i></li>
                             <li><i class="lni lni-star-filled"></i></li>  --}}
-                            <button class="btn btn-success ajouter-formation" data-id="{{ $value->id }}">Ajouter</button>
+                            <button class="btn text-white  ajouter-formation" data-id="{{ $value->id }}" style="background-color: rgb(199,175,13)">Ajouter</button>
                         </ul>
                         <span class="tag">
                             <i class="lni lni-tag"></i>

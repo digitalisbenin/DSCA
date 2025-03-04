@@ -347,10 +347,10 @@ Route::get('suivis/{id}', [SuivyController::class, 'destroy']);
 Route::get('users', [UserController::class, 'index']);
 Route::get('create-users', [UserController::class, 'create']);
 Route::get('users/{id}', [UserController::class, 'show']);
-Route::get('users/{id}', [UserController::class, 'edit']);
+Route::get('users/{id}/edit', [UserController::class, 'edit']);
 Route::post('users', [UserController::class, 'store']);
-Route::put('users/{id}', [UserController::class, 'update']);
-Route::get('users/{id}', [UserController::class, 'destroy']);
+Route::put('users/{id}/update', [UserController::class, 'update']);
+Route::get('users/{id}/destroy', [UserController::class, 'destroy']);
 
 /*-----------------User categories--------------------------*/
 Route::get('user-categories', [UserCategoryController::class, 'index']);

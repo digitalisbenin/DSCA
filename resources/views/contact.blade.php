@@ -86,19 +86,19 @@
                     </div>
                     <!-- End Single Info -->
                     <!-- Start Single Info -->
-                    <div class="single-info">
+                    {{-- <div class="single-info">
                         <i class="lni lni-phone"></i>
                         <h4>Téléphone</h4>
                         <p class="no-margin-bottom">Téléphone: (+229) 123 456 789
                             <br> Fax: 123 456 789</p>
-                    </div>
+                    </div> --}}
                     <!-- End Single Info -->
                     <!-- Start Single Info -->
                     <div class="single-info">
                         <i class="lni lni-envelope"></i>
                         <h4>E-mail </h4>
-                        <p class="no-margin-bottom"><a href="mailto:info@yourdomain.com">info@yourdomain.com</a>
-                            <br> <a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a></p>
+                        <p class="no-margin-bottom"><a href="mailto:courrierdcsca@mil.bj">courrierdcsca@mil.bj</a>
+                            {{-- <br> <a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a></p> --}}
                     </div>
                     <!-- End Single Info -->
                 </div>
