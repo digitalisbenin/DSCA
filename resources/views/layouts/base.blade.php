@@ -160,7 +160,7 @@
         <!-- Deuxième ligne : Centre -->
         <div class="d-flex flex-column align-items-center text-center ">
             <div  style="color:black;" class="d-flex flex-column flex-md-row mb-2 text-black text-center text-md-start">
-    <p class="fw-bold me-md-3">01 BP 2493 Cotonou</p>
+    {{-- <p class="fw-bold me-md-3">01 BP 2493 Cotonou</p> --}}
     <p class="me-md-3 fs-6"><i class="fa-solid fa-envelope"></i> courrierdcsca@mil.bj</p>
     {{-- <p><i class="fa-solid fa-phone"></i> +229 21 30 05 36</p> --}}
 </div>
@@ -482,7 +482,7 @@
 
     </script>
     @endif
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 

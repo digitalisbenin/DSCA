@@ -40,7 +40,7 @@ class User extends Authenticatable implements MustVerifyEmail
     /**
      * @var array
      */
-    protected $fillable = ['role_id', 'user_categorie_id', 'name', 'prenom', 'adresse', 'telephone', 'post', 'corps', 'sex','diplome','specialie','services','age','situation_matrimoniale','nombre_enfant', 'profile_photo_path', 'email', 'email_verified_at', 'password', 'remember_token', 'created_at', 'updated_at'];
+    protected $fillable = ['role_id', 'user_categorie_id','user_class_id', 'name', 'prenom', 'adresse', 'telephone', 'post', 'corps', 'sex','diplome','specialie','services','age','situation_matrimoniale','nombre_enfant', 'profile_photo_path', 'email', 'email_verified_at', 'password', 'remember_token', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -132,7 +132,11 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->belongsTo('App\Models\UserCategory', 'user_categorie_id');
     }
-
+    public function userClass()
+    {
+        return $this->belongsTo('App\Models\ClassUser', 'user_class_id');
+    }
+    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

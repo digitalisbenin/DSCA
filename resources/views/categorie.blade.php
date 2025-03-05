@@ -79,7 +79,7 @@
                 <!-- Start Single Course -->
                 <div class="single-course wow fadeInUp" data-wow-delay=".2s">
                     <div class="course-image" style="height: 200px">
-                        <a href="{{url('details-cours/'.$value->id)}}"><img src="{{ asset('assets/uploads/formation_images/'.$value->image_url) }}"
+                        <a href="{{url('details-formation/'.$value->id)}}"><img src="{{ asset('assets/uploads/formation_images/'.$value->image_url) }}"
                                 alt="#" style="height: 200px; width: 350px;">
                             </a>
                             {{--  <p class="price">Categorie</p>     --}}
@@ -97,7 +97,7 @@
                         text-align: justify;
                     "> {{$value->titre}}</h5>
                         <br>
-                        <a href="{{url('details-cours/'.$value->id)}}"></a>
+                        <a href="{{url('details-formation/'.$value->id)}}"></a>
                         <p style="
                         display: -webkit-box;
                         -webkit-line-clamp: 3;
@@ -109,9 +109,9 @@
                         {{$value->description}}
                     </p>
                             <br>
-                        <div>
+                        {{-- <div>
                             <button class="btn text-white ajouter-formation" data-id="{{ $value->id }}" style="background-color: rgb(199,175,13)">Ajouter</button>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <!-- End Single Course -->

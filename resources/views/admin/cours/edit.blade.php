@@ -86,7 +86,7 @@
                                     </select>                                            
                                 </div>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-6">
                                 <label for="courseLesson" class="h5 mb-8 fw-semibold font-heading">Statut <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
                                 <div class="position-relative">
                                     <select id="courseLesson" name="status"   class="form-select py-9 placeholder-13 text-15">
@@ -97,7 +97,7 @@
                                     </select>                                            
                                 </div>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-6">
                                 <label for="courseLevel" class="h5 mb-8 fw-semibold font-heading">Difficultés <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
                                 <div class="position-relative">
                                     <select id="courseLevel" name="difficulte_id" class="form-select py-9 placeholder-13 text-15">
@@ -109,6 +109,20 @@
                                     @endforeach                              
 
                                     </select>                                            
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mb-5">
+                                <label for="user_class_id" class="h5 mb-8 fw-semibold font-heading">Classe <span
+                                        class="text-13 text-gray-400 fw-medium">(*)</span> </label>
+                                <div class="position-relative">
+                                    <select id="user_class_id" name="user_class_id"
+                                        class="form-select py-9 placeholder-13 text-15">
+                                        @foreach ($userClass as $value)
+                                            <option value="{{ $value->id }}"
+                                                {{ $value->id == old('user_class_id', $formation->user_class_id) ? 'selected' : '' }}>
+                                                {{ $value->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                            

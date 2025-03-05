@@ -104,6 +104,18 @@
                     <span class="text">Vidéos</span>
                 </a>
             </li>
+            <li class="sidebar-menu__item">
+                <a href="{{url('class')}}" class="sidebar-menu__link">
+                    <span class="icon"><i class="ph ph-coins"></i></span>
+                    <span class="text">Classe</span>
+                </a>
+            </li>
+            <li class="sidebar-menu__item">
+                <a href="{{url('users')}}" class="sidebar-menu__link">
+                    <span class="icon"><i class="ph ph-coins"></i></span>
+                    <span class="text">Utilisateurs</span>
+                </a>
+            </li>
             {{-- <li class="sidebar-menu__item">
                 <a href="{{url('quizs')}}" class="sidebar-menu__link">
                     <span class="icon"><i class="ph ph-coins"></i></span>

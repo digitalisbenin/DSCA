@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('role_id');
             $table->unsignedBigInteger('user_categorie_id');
+             $table->unsignedBigInteger('user_class_id')->nullable();
             $table->string('name');
             $table->string('prenom');
             $table->string('adresse');
@@ -47,6 +48,8 @@ return new class extends Migration
             ->references('id')
             ->on('user_categories')
             ->onDelete('cascade');
+
+            
         });
     }
 
