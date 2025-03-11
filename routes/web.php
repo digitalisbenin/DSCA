@@ -10,6 +10,7 @@ use App\Models\DiscutionReponse;
 use App\Models\Video;
 use App\Models\Difficulete;
 use App\Models\Quiz;
+use App\Models\Cours;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\CategoryController;
@@ -35,9 +36,16 @@ use App\Http\Controllers\VisioConferenceController;
 use App\Http\Controllers\MeetController;
 use App\Http\Controllers\AnswersController;
 use App\Http\Controllers\NotequizControleur;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\PosteController;
+use App\Http\Controllers\CorpsController;
+use App\Http\Controllers\CoursController;
+use App\Http\Controllers\ModuleController;
+use App\Http\Controllers\NiveauDificulteController;
 use App\Models\Answers;
 use App\Models\Notequiz;
+use App\Models\Service;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -53,8 +61,9 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    $formation=Formation::orderBy('created_at', 'desc')->take(9)->get();
-    return view('welcome',compact('formation'));
+    $cours=Cours::orderBy('created_at', 'desc')->take(9)->get();
+    $formation=Formation::all();
+    return view('welcome',compact('cours','formation'));
 });
 Route::get('/cours', function () {
     return view('cours');
@@ -78,11 +87,19 @@ Route::get('/details-cours/{id}', function ($id) {
     return view('details_cours',compact('chapitre','formationId','commentaire' ,'quiz','quizz','repose'));
 });
 
+Route::get('/cours-details/{id}', function ($id) {
+    $cours=Cours::where('id',$id)->first();
+    //$formation=Formation::where('id',$id)->first();
+    $formation = Formation::where('cours_id',$id)->get();
+    $coursId = $id;
+   
+    return view('detail_formation',compact('cours','coursId','formation'));
+});
 Route::get('/details-formation/{id}', function ($id) {
-    $formation = Formation::where('id',$id)->first();
+    $formation=Formation::where('id',$id)->first();
     $formationId = $id;
    
-    return view('detail_formation',compact('formation','formationId'));
+    return view('formation_detail',compact('formation','formationId'));
 });
 Route::get('/video', function () {
     $video= Video::all();
@@ -245,12 +262,12 @@ Route::put('commentaires/{id}', [CommentaireController::class, 'update']);
 Route::get('commentaires/{id}', [CommentaireController::class, 'destroy']);
 
 /*-----------------Difficulte--------------------------*/
-Route::get('difficultes', [DifficuleteController::class, 'index']);
-Route::get('create-difficultes', [DifficuleteController::class, 'create']);
-Route::get('difficultes/{id}/edit', [DifficuleteController::class, 'edit']);
-Route::post('difficultes', [DifficuleteController::class, 'store']);
-Route::put('difficultes/{id}/update', [DifficuleteController::class, 'update']);
-Route::get('difficultes/{id}/destroy', [DifficuleteController::class, 'destroy']);
+Route::get('difficultes', [NiveauDificulteController::class, 'index']);
+Route::get('create-difficultes', [NiveauDificulteController::class, 'create']);
+Route::get('difficultes/{id}/edit', [NiveauDificulteController::class, 'edit']);
+Route::post('difficultes', [NiveauDificulteController::class, 'store']);
+Route::put('difficultes/{id}/update', [NiveauDificulteController::class, 'update']);
+Route::get('difficultes/{id}/destroy', [NiveauDificulteController::class, 'destroy']);
 
 
 Route::get('class', [ClassUserController::class, 'index']);
@@ -259,6 +276,23 @@ Route::get('class/{id}/edit', [ClassUserController::class, 'edit']);
 Route::post('class', [ClassUserController::class, 'store']);
 Route::put('class/{id}/update', [ClassUserController::class, 'update']);
 Route::get('class/{id}/destroy', [ClassUserController::class, 'destroy']);
+
+
+Route::get('services', [ServiceController::class, 'index']);
+Route::get('create-services', [ServiceController::class, 'create']);
+Route::get('services/{id}/edit', [ServiceController::class, 'edit']);
+Route::post('services', [ServiceController::class, 'store']);
+Route::put('services/{id}/update', [ServiceController::class, 'update']);
+Route::get('services/{id}/destroy', [ServiceController::class, 'destroy']);
+
+
+Route::get('postes', [PosteController::class, 'index']);
+Route::get('create-postes', [PosteController::class, 'create']);
+Route::get('postes/{id}/edit', [PosteController::class, 'edit']);
+Route::post('postes', [PosteController::class, 'store']);
+Route::get('postes/{id}', [PosteController::class, 'show']);
+Route::put('postes/{id}/update', [PosteController::class, 'update']);
+Route::get('postes/{id}/destroy', [PosteController::class, 'destroy']);
 /*-----------------Discussion--------------------------*/
 Route::get('discussions', [DiscutionController::class, 'index']);
 Route::get('create-discussions', [DiscutionController::class, 'create']);
@@ -317,7 +351,14 @@ Route::get('formations/{id}/edit', [FormationController::class, 'edit']);
 Route::post('formations', [FormationController::class, 'store']);
 Route::put('formations/{id}/update', [FormationController::class, 'update']);
 Route::get('formations/{id}/destroy', [FormationController::class, 'destroy']);
-
+/*-----------------Module--------------------------*/
+Route::get('modules', [ModuleController::class, 'index']);
+Route::get('create-modules', [ModuleController::class, 'create']);
+Route::get('modules/{id}', [ModuleController::class, 'show']);
+Route::get('modules/{id}/edit', [ModuleController::class, 'edit']);
+Route::post('modules', [ModuleController::class, 'store']);
+Route::put('modules/{id}/update', [ModuleController::class, 'update']);
+Route::get('modules/{id}/destroy', [ModuleController::class, 'destroy']);
 /*-----------------Mes cours--------------------------*/
 Route::get('mes-cours', [MesCourController::class, 'index']);
 Route::get('create-mes-cours', [MesCourController::class, 'create']);
@@ -372,14 +413,23 @@ Route::post('users', [UserController::class, 'store']);
 Route::put('users/{id}/update', [UserController::class, 'update']);
 Route::get('users/{id}/destroy', [UserController::class, 'destroy']);
 
+Route::get('/get-services/{post_id}', function ($post_id) {
+    $services = Service::whereHas('postes', function ($query) use ($post_id) {
+        $query->where('id', $post_id);
+    })->get();
+
+    return response()->json($services);
+});
+
 /*-----------------User categories--------------------------*/
 Route::get('user-categories', [UserCategoryController::class, 'index']);
 Route::get('create-user-categories', [UserCategoryController::class, 'create']);
 Route::get('user-categories/{id}', [UserCategoryController::class, 'show']);
-Route::get('user-categories/{id}', [UserCategoryController::class, 'edit']);
+Route::get('user-categories/{id}/edit', [UserCategoryController::class, 'edit']);
 Route::post('user-categories', [UserCategoryController::class, 'store']);
-Route::put('user-categories/{id}', [UserCategoryController::class, 'update']);
-Route::get('user-categories/{id}', [UserCategoryController::class, 'destroy']);
+Route::put('user-categories/{id}/update', [UserCategoryController::class, 'update']);
+Route::get('user-categories/{id}/destroy', [UserCategoryController::class, 'destroy']);
+
 
 /*-----------------Video--------------------------*/
 Route::get('videos', [VideoController::class, 'index']);
@@ -390,7 +440,23 @@ Route::post('videos', [VideoController::class, 'store']);
 Route::put('videos/{id}/update', [VideoController::class, 'update']);
 Route::get('videos/{id}/destroy', [VideoController::class, 'destroy']);
 
+/*-----------------Cours--------------------------*/
+Route::get('cours', [CoursController::class, 'index']);
+Route::get('create-cours', [CoursController::class, 'create']);
+Route::get('cours/{id}', [CoursController::class, 'show']);
+Route::get('cours/{id}/edit', [CoursController::class, 'edit']);
+Route::post('cours', [CoursController::class, 'store']);
+Route::put('cours/{id}/update', [CoursController::class, 'update']);
+Route::get('cours/{id}/destroy', [CoursController::class, 'destroy']);
 
+/*-----------------Corps--------------------------*/
+Route::get('corps', [ CorpsController::class, 'index']);
+Route::get('create-corps', [CorpsController::class, 'create']);
+Route::get('corps/{id}', [CorpsController::class, 'show']);
+Route::get('corps/{id}/edit', [CorpsController::class, 'edit']);
+Route::post('corps', [CorpsController::class, 'store']);
+Route::put('corps/{id}/update', [CorpsController::class, 'update']);
+Route::get('corps/{id}/destroy', [CorpsController::class, 'destroy']);
 /*-----------------Ansers --------------------------*/
 Route::get('answers', [AnswersController::class, 'index']);
 Route::get('create-answers', [AnswersController::class, 'create']);

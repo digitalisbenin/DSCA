@@ -23,7 +23,7 @@ class Chapitre extends Model
     /**
      * @var array
      */
-    protected $fillable = ['formation_id', 'titre', 'description', 'image_url', 'video_url', 'document_url', 'created_at', 'updated_at'];
+    protected $fillable = ['module_id', 'titre', 'description', 'image_url', 'video_url', 'document_url', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -32,7 +32,10 @@ class Chapitre extends Model
     {
         return $this->belongsTo('App\Models\Formation');
     }
-
+    public function modules()
+    {
+        return $this->belongsTo('App\Models\Module');
+    }
     public function notequiz()
     {
         return $this->hasMany('App\Models\Notequiz');

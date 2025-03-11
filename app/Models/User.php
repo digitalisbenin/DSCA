@@ -40,7 +40,7 @@ class User extends Authenticatable implements MustVerifyEmail
     /**
      * @var array
      */
-    protected $fillable = ['role_id', 'user_categorie_id','user_class_id', 'name', 'prenom', 'adresse', 'telephone', 'post', 'corps', 'sex','diplome','specialie','services','age','situation_matrimoniale','nombre_enfant', 'profile_photo_path', 'email', 'email_verified_at', 'password', 'remember_token', 'created_at', 'updated_at'];
+    protected $fillable = ['role_id', 'user_categorie_id','user_class_id','service_user_id','user_corps_id','post_user_id', 'name', 'prenom', 'adresse', 'telephone', 'post', 'corps', 'sex','diplome','specialie','services','matricule','situation_matrimoniale','nombre_enfant', 'profile_photo_path', 'email', 'email_verified_at', 'password', 'remember_token', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -92,7 +92,10 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany('App\Models\Formation');
     }
-
+    public function modules()
+    {
+        return $this->hasMany('App\Models\Module');
+    }
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -100,7 +103,10 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany('App\Models\MesCour');
     }
-
+    public function mesModules()
+    {
+        return $this->hasMany('App\Models\MesModule');
+    }
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -135,6 +141,18 @@ class User extends Authenticatable implements MustVerifyEmail
     public function userClass()
     {
         return $this->belongsTo('App\Models\ClassUser', 'user_class_id');
+    }
+    public function sercices()
+    {
+        return $this->belongsTo('App\Models\Service', 'service_user_id');
+    }
+    public function corps()
+    {
+        return $this->belongsTo('App\Models\Corp', 'user_corps_id');
+    }
+    public function poste()
+    {
+        return $this->belongsTo('App\Models\Poste', 'post_user_id');
     }
     
     /**

@@ -26,4 +26,9 @@ class Category extends Model
     {
         return $this->hasMany('App\Models\Formation', 'categorie_id');
     }
+
+    public function modules()
+    {
+        return $this->hasMany('App\Models\Module', 'categorie_id');
+    }
 }

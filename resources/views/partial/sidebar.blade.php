@@ -22,9 +22,9 @@
             </li>
             @endif
             <li class="sidebar-menu__item">
-                <a href="{{url('/formations')}}" class="sidebar-menu__link">
+                <a href="{{url('/modules')}}" class="sidebar-menu__link">
                     <span class="icon"><i class="ph ph-graduation-cap"></i></span>
-                    <span class="text">Formations</span>
+                    <span class="text">Modules</span>
                 </a>
 
             </li>
@@ -104,6 +104,31 @@
                     <span class="text">Vidéos</span>
                 </a>
             </li>
+            @if (Auth::user()->role_id == '1' )
+            <li class="sidebar-menu__item">
+                <a href="{{url('cours')}}" class="sidebar-menu__link">
+                    <span class="icon"><i class="ph ph-coins"></i></span>
+                    <span class="text">Cours</span>
+                </a>
+            </li>
+            <li class="sidebar-menu__item">
+                <a href="{{url('user-categories')}}" class="sidebar-menu__link">
+                    <span class="icon"><i class="ph ph-coins"></i></span>
+                    <span class="text">Grade</span>
+                </a>
+            </li>
+            <li class="sidebar-menu__item">
+                <a href="{{url('corps')}}" class="sidebar-menu__link">
+                    <span class="icon"><i class="ph ph-coins"></i></span>
+                    <span class="text">Corps</span>
+                </a>
+            </li>
+            <li class="sidebar-menu__item">
+                <a href="{{url('services')}}" class="sidebar-menu__link">
+                    <span class="icon"><i class="ph ph-coins"></i></span>
+                    <span class="text">Service</span>
+                </a>
+            </li>
             <li class="sidebar-menu__item">
                 <a href="{{url('class')}}" class="sidebar-menu__link">
                     <span class="icon"><i class="ph ph-coins"></i></span>
@@ -116,6 +141,7 @@
                     <span class="text">Utilisateurs</span>
                 </a>
             </li>
+            @endif
             {{-- <li class="sidebar-menu__item">
                 <a href="{{url('quizs')}}" class="sidebar-menu__link">
                     <span class="icon"><i class="ph ph-coins"></i></span>

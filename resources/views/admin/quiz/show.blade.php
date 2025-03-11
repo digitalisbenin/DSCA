@@ -149,8 +149,8 @@
                                 </div>
                             </div>
                             <div class="flex-align justify-content-end gap-8">
-                                <a href="" class="btn btn-outline-main rounded-pill py-9">Cancel</a>
-                                <button type="submit" class="btn btn-success rounded-pill py-9">Envoyer</button>
+                                <a href="" class="btn btn-outline-main rounded-pill py-9">Annuler</a>
+                                <button type="submit" class="btn btn-success rounded-pill py-9">Ajouter</button>
                             </div>
                         </div>
                     </form>

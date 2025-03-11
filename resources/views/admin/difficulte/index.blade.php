@@ -10,7 +10,7 @@
             <ul class="flex-align gap-4">
                 <li><a href="{{url('dashboard')}}" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
                 <li> <span class="text-gray-500 fw-normal d-flex"><i class="ph ph-caret-right"></i></span> </li>
-                <li><span class="text-main-600 fw-normal text-15">Difficultés</span></li>
+                <li><span class="text-main-600 fw-normal text-15">Niveau de Difficultés</span></li>
             </ul>
         </div>
                     <!-- Breadcrumb End -->
@@ -20,7 +20,7 @@
             <div class="position-relative text-gray-500 flex-align gap-4 text-13">
                 <a href="{{url('/create-difficultes')}}" class="btn btn-main rounded-pill py-7 flex-align gap-4 fw-normal">
                     <span class="d-flex text-md"><i class="ph ph-plus"></i></span>
-                    Ajouter une difficulte
+                    Ajouter une Niveau de difficulte
                 </a>
                 <span class="text-inherit"> </span>
                 {{--  <div class="flex-align text-gray-500 text-13 border border-gray-100 rounded-4 ps-20 focus-border-main-600 bg-white">
@@ -58,14 +58,14 @@
                             </div>
                         </th>
                         <th class="h6 text-gray-300">N°</th>
-                        <th class="h6 text-gray-300">Nom de la difficulté</th>
+                        <th class="h6 text-gray-300">Niveau de la difficulté</th>
                         <th class="h6 text-gray-300">Description</th>
 
                         <th class="h6 text-gray-300">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($difficulete as $key => $value)
+                    @foreach($difficulte as $key => $value)
                     <tr>
                         <td class="fixed-width">
                             <div class="form-check">

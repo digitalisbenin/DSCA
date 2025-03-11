@@ -9,7 +9,7 @@ class Notequiz extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['formation_id', 'user_id','chapitre_id','quiz_id','description','status','titre','note', 'created_at', 'updated_at'];
+    protected $fillable = ['module_id', 'user_id','chapitre_id','quiz_id','description','status','titre','note', 'created_at', 'updated_at'];
 
     public function user()
     {
@@ -21,6 +21,11 @@ class Notequiz extends Model
         return $this->belongsTo('App\Models\Formation');
     }
 
+    
+    public function modules()
+    {
+        return $this->belongsTo('App\Models\Module');
+    }
     public function chapitres()
     {
         return $this->belongsTo('App\Models\Chapitre');

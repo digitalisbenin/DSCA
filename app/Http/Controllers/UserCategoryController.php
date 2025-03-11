@@ -14,7 +14,8 @@ class UserCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $userCategory=UserCategory::all();
+        return view('admin.grade.index',compact('userCategory'));
     }
 
     /**
@@ -24,7 +25,7 @@ class UserCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.grade.create');
     }
 
     /**
@@ -35,7 +36,13 @@ class UserCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'nullable',
+        ]);
+        $userCategory = UserCategory::create($validatedData);
+
+        return redirect('/user-categories');
     }
 
     /**
@@ -55,9 +62,10 @@ class UserCategoryController extends Controller
      * @param  \App\Models\UserCategory  $userCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(UserCategory $userCategory)
+    public function edit( $id)
     {
-        //
+        $userCategory = UserCategory::findOrFail($id);
+        return view('admin.grade.edit',compact('userCategory'));
     }
 
     /**
@@ -67,9 +75,17 @@ class UserCategoryController extends Controller
      * @param  \App\Models\UserCategory  $userCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserCategory $userCategory)
+    public function update(Request $request, UserCategory $userCategory, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'nullable',
+        ]);
+        $userCategory = UserCategory::findOrfail($id);
+        $userCategory->name = $request->name;
+        $userCategory->description = $request->description;
+        $userCategory->save();
+        return redirect('/user-categories');
     }
 
     /**
@@ -78,8 +94,11 @@ class UserCategoryController extends Controller
      * @param  \App\Models\UserCategory  $userCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UserCategory $userCategory)
+    public function destroy(UserCategory $userCategory, $id)
     {
-        //
+        $userCategory = UserCategory::findOrfail($id);
+        $userCategory->delete();
+        // session()->flash('success', 'Suppression de la catégorie réussie !');
+        return redirect('/user-categories');
     }
 }

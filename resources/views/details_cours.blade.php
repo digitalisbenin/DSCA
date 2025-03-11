@@ -13,7 +13,7 @@
                     <p>Détails sur la formation</p>
                 </div>
                 <ul class="breadcrumb-nav">
-                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#">Accueil</a></li>
                     <li> Détails cours</li>
                 </ul>
             </div>

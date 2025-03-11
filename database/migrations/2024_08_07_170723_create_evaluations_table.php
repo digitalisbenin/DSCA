@@ -17,13 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('evaluation');
             $table->string('nameProf');
-            $table->unsignedBigInteger('formation_id');
+            $table->unsignedBigInteger('module_id');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('formation_id')
+            $table->foreign('module_id')
             ->references('id')
-            ->on('formations')
+            ->on('modules')
             ->onDelete('cascade');
 
             $table->foreign('user_id')

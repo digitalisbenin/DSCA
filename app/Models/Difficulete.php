@@ -26,4 +26,9 @@ class Difficulete extends Model
     {
         return $this->hasMany('App\Models\Formation', 'difficulte_id');
     }
+
+    public function modules()
+    {
+        return $this->hasMany('App\Models\Module', 'difficulte_id');
+    }
 }

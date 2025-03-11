@@ -18,11 +18,15 @@ return new class extends Migration
             $table->unsignedBigInteger('role_id');
             $table->unsignedBigInteger('user_categorie_id');
              $table->unsignedBigInteger('user_class_id')->nullable();
+             $table->unsignedBigInteger('user_corps_id')->nullable();
+             $table->unsignedBigInteger('service_user_id')->nullable();
+             $table->unsignedBigInteger('post_user_id')->nullable();
+            
             $table->string('name');
             $table->string('prenom');
             $table->string('adresse');
             $table->string('telephone');
-            $table->string('post');
+            $table->string('post')->nullable();
             $table->string('corps')->nullable();
             $table->string('sex')->nullable();
             $table->string('diplome')->nullable();
@@ -48,6 +52,21 @@ return new class extends Migration
             ->references('id')
             ->on('user_categories')
             ->onDelete('cascade');
+
+            $table->foreign('user_corps_id')
+                ->references('id')
+                ->on('corps')
+                ->onDelete('cascade');
+
+                $table->foreign('service_user_id')
+                ->references('id')
+                ->on('services')
+                ->onDelete('cascade');
+
+                $table->foreign('post_user_id')
+                ->references('id')
+                ->on('postes')
+                ->onDelete('cascade');
 
             
         });

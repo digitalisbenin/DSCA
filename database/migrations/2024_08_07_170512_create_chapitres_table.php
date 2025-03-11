@@ -20,13 +20,13 @@ return new class extends Migration
             $table->string('image_url')->nullable();
             $table->string('video_url')->nullable();
             $table->string('document_url')->nullable();
-            $table->unsignedBigInteger('formation_id');
+            $table->unsignedBigInteger('module_id');
             $table->timestamps();
 
 
-            $table->foreign('formation_id')
+            $table->foreign('module_id')
             ->references('id')
-            ->on('formations')
+            ->on('modules')
             ->onDelete('cascade');
         });
     }

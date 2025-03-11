@@ -23,7 +23,7 @@ class Quiz extends Model
     /**
      * @var array
      */
-    protected $fillable = ['formation_id', 'chapitre_id', 'title', 'description', 'status', 'created_at', 'updated_at'];
+    protected $fillable = ['module_id', 'chapitre_id', 'title', 'description', 'status', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -52,7 +52,11 @@ class Quiz extends Model
     {
         return $this->belongsTo('App\Models\Formation');
     }
-
+    public function modules()
+    {
+        return $this->belongsTo('App\Models\Module');
+    }
+    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

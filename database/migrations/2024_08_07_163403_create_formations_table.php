@@ -22,6 +22,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('categorie_id')->nullable();
             $table->unsignedBigInteger('difficulte_id')->nullable();
+            $table->unsignedBigInteger('user_class_id')->nullable();
+            $table->unsignedBigInteger('cours_id')->nullable();
             $table->timestamps();
 
 
@@ -38,6 +40,16 @@ return new class extends Migration
             $table->foreign('difficulte_id')
             ->references('id')
             ->on('difficuletes')
+            ->onDelete('cascade');
+
+            $table->foreign('user_class_id')
+            ->references('id')
+            ->on('class_users')
+            ->onDelete('cascade');
+
+        $table->foreign('cours_id')
+            ->references('id')
+            ->on('cours')
             ->onDelete('cascade');
         });
     }

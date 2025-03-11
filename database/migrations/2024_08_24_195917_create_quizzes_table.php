@@ -18,14 +18,20 @@ return new class extends Migration
             $table->string('title');
             $table->string('description')->nullable();
             $table->enum('status', ['question', 'reponse']);
-            $table->unsignedBigInteger('formation_id');
+            $table->unsignedBigInteger('module_id')->nullable();
+            $table->unsignedBigInteger('chapitre_id')->nullable();
             $table->timestamps();
 
 
-            $table->foreign('formation_id')
+            $table->foreign('module_id')
             ->references('id')
-            ->on('formations')
+            ->on('modules')
             ->onDelete('cascade');
+
+            $table->foreign('chapitre_id')
+                ->references('id')
+                ->on('chapitres')
+                ->onDelete('cascade');
             
         });
     }

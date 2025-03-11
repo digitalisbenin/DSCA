@@ -10,7 +10,7 @@
         <!-- Breadcrumb Start -->
 <div class="breadcrumb mb-24">
 <ul class="flex-align gap-4">
-<li><a href="index.html" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
+<li><a href="#" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
 <li> <span class="text-gray-500 fw-normal d-flex"><i class="ph ph-caret-right"></i></span> </li>
 <li><span class="text-main-600 fw-normal text-15">Créer un utilisateur</span></li>
 </ul>
@@ -93,38 +93,28 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-sm-4">
-                                <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Groupe utilisateurs <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
+                            <div class="col-sm-6">
+                                <label for="sex" class="h5 mb-8 fw-semibold font-heading">
+                                    Sexe <span class="text-13 text-gray-400 fw-medium">(*)</span>
+                                </label>
                                 <div class="position-relative">
-                                    <select id="courseCategory" name="role_id" class="form-select py-9 placeholder-13 text-15" >
-                                        
-                                        @foreach($role as $value)
-                                        <option value="{{ $value->id }}">{{ $value->name }}</option>
-                                    @endforeach
-                                        
-                                    </select>                                            
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Grade <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
-                                <div class="position-relative">
-                                    <select id="courseCategory" name="user_categorie_id" class="form-select py-9 placeholder-13 text-15" >
-                                        
-                                        @foreach($userCategory as $value)
-                                        <option value="{{ $value->id }}">{{ $value->name }}</option>
-                                    @endforeach
-                                        
-                                    </select>                                            
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">email <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
-                                <div class="position-relative">
-                                    <input type="text" class="text-counte placeholder-13 form-control py-11 pe-76" name="email" maxlength="500" id="courseTitle" placeholder="">
+                                    <select class="form-select py-9 placeholder-13 text-15" name="sex" id="sex">
+                                        <option value="" disabled selected>Choisissez votre sexe</option>
+                                        <option value="M">Masculin</option>
+                                        <option value="F">Féminin</option>
+                                    </select>
                                     <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
-                                        {{--  <span id="current">3</span>
-                                        <span id="maximum">/ 300</span>  --}}
+                                        <!-- Icône optionnelle -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <label for="courseSpet" class="h5 mb-8 fw-semibold font-heading">Matricule <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
+                                <div class="position-relative">
+                                    <input type="text" class="text-counter placeholder-13 form-control py-11 pe-76" name="matricule" maxlength="200" id="courseSpet" placeholder="">
+                                    <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -149,36 +139,29 @@
                                 </div>
                             </div>
                             <div class="col-sm-4">
-                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Post <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
+                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">email <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
                                 <div class="position-relative">
-                                    <input type="text" class="text-counte placeholder-13 form-control py-11 pe-76" name="post" maxlength="500" id="courseTitle" placeholder="">
+                                    <input type="text" class="text-counte placeholder-13 form-control py-11 pe-76" name="email" maxlength="500" id="courseTitle" placeholder="">
                                     <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
                                         {{--  <span id="current">3</span>
                                         <span id="maximum">/ 300</span>  --}}
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
-                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Mot de passe <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
+                           
+                            <div class="col-sm-6">
+                                <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Grade <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
                                 <div class="position-relative">
-                                    <input type="password" class="text-counte placeholder-13 form-control py-11 pe-76" name="password" maxlength="500" id="courseTitle" placeholder="">
-                                    <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
-                                        {{--  <span id="current">3</span>
-                                        <span id="maximum">/ 300</span>  --}}
-                                    </div>
+                                    <select id="courseCategory" name="user_categorie_id" class="form-select py-9 placeholder-13 text-15" >
+                                        
+                                        @foreach($userCategory as $value)
+                                        <option value="{{ $value->id }}">{{ $value->description }}</option>
+                                    @endforeach
+                                        
+                                    </select>                                            
                                 </div>
                             </div>
-                            <div class="col-sm-4">
-                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Confirmer votre mot d passe <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
-                                <div class="position-relative">
-                                    <input type="password" class="text-counte placeholder-13 form-control py-11 pe-76" name="password_confirmation" maxlength="500" id="courseTitle" placeholder="">
-                                    <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
-                                        {{--  <span id="current">3</span>
-                                        <span id="maximum">/ 300</span>  --}}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-6">
                                 <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Classe <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
                                 <div class="position-relative">
                                     {{-- <input type="text" class="text-counte placeholder-13 form-control py-11 pe-76" name="classe" maxlength="500" id="courseTitle" placeholder=""> --}}
@@ -195,14 +178,81 @@
                                     </select>    
                                 </div>
                             </div>
+                            
+                            <div class="col-sm-6">
+                                <label for="coursePoste" class="h5 mb-8 fw-semibold font-heading">Poste occupé <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
+                                <div class="position-relative">
+                                    <select id="coursePoste" name="post_user_id" class="form-select py-9 placeholder-13 text-15" >
+                                        
+                                        @foreach($postes as $value)
+                                        <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                    @endforeach
+                                        
+                                    </select>                                            
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="courseService" class="h5 mb-8 fw-semibold font-heading">
+                                    Service <span class="text-13 text-gray-400 fw-medium">(*)</span>
+                                </label>
+                                <div class="position-relative">
+                                    <input type="text" id="courseService" class="text-counte placeholder-13 form-control py-11 pe-76" readonly>
+                                    <!-- Input caché pour stocker l'ID du service -->
+                                    <input type="hidden" id="service_user_id" name="service_user_id">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="courseCorp" class="h5 mb-8 fw-semibold font-heading">Corps <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
+                                <div class="position-relative">
+                                    <select id="courseCorp" name="user_corps_id" class="form-select py-9 placeholder-13 text-15" >
+                                        
+                                        @foreach($corps as $value)
+                                        <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                    @endforeach
+                                        
+                                    </select>                                            
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Groupe utilisateurs <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
+                                <div class="position-relative">
+                                    <select id="courseCategory" name="role_id" class="form-select py-9 placeholder-13 text-15" >
+                                        
+                                        @foreach($role as $value)
+                                        <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                    @endforeach
+                                        
+                                    </select>                                            
+                                </div>
+                            </div>
+                            <div class="col-sm-4 mb-5">
+                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Mot de passe <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
+                                <div class="position-relative">
+                                    <input type="password" class="text-counte placeholder-13 form-control py-11 pe-76" name="password" maxlength="500" id="courseTitle" placeholder=""  value="Default@123">
+                                    <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
+                                        {{--  <span id="current">3</span>
+                                        <span id="maximum">/ 300</span>  --}}
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- <div class="col-sm-4">
+                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Confirmer votre mot d passe <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
+                                <div class="position-relative">
+                                    <input type="password" class="text-counte placeholder-13 form-control py-11 pe-76" name="password_confirmation" maxlength="500" id="courseTitle" placeholder="">
+                                    <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
+                                        
+                                    </div>
+                                </div>
+                            </div> --}}
+                            
                            
                            
                         
                         
                     </div>
-                    <div class="flex-align justify-content-end gap-8">
-                        <a href="{{url('create-categories')}}" class="btn btn-outline-main rounded-pill py-9">Cancel</a>
-                        <button type="submit" class="btn btn-success rounded-pill py-9">Envoyer</button>
+                    <div class="flex-align justify-content-end gap-8 mt-5">
+                        <a href="{{url('create-categories')}}" class="btn btn-outline-main rounded-pill py-9">Annuler</a>
+                        <button type="submit" class="btn btn-success rounded-pill py-9">Ajouter</button>
                     </div>
                 </div>
             </form>
@@ -210,4 +260,33 @@
     </div>
     <!-- Course Tab End -->
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#coursePoste').on('change', function () {
+            var postId = $(this).val(); // Récupère l'ID du poste sélectionné
+            
+            if (postId) {
+                $.ajax({
+                    url: '/get-services/' + postId, // Route pour récupérer le service
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.length > 0) {
+                            $('#courseService').val(data[0].name); // Affiche le nom dans l'input texte
+                            $('#service_user_id').val(data[0].id); // Stocke l'ID dans l'input caché
+                        } else {
+                            $('#courseService').val('');
+                            $('#service_user_id').val('');
+                        }
+                    }
+                });
+            } else {
+                $('#courseService').val('');
+                $('#service_user_id').val('');
+            }
+        });
+    });
+    </script>
 @endsection

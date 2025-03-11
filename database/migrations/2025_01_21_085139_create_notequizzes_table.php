@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->enum('status', ['echouer', 'valider'])->nullable();
             $table->unsignedBigInteger('quiz_id')->nullable();
-            $table->unsignedBigInteger('formation_id')->nullable();
+            $table->unsignedBigInteger('module_id')->nullable();
             $table->unsignedBigInteger('chapitre_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
@@ -30,9 +30,9 @@ return new class extends Migration
             ->on('users')
             ->onDelete('cascade');
 
-            $table->foreign('formation_id')
+            $table->foreign('module_id')
             ->references('id')
-            ->on('formations')
+            ->on('modules')
             ->onDelete('cascade');
 
             $table->foreign('chapitre_id')
