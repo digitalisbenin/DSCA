@@ -10,7 +10,7 @@
             <ul class="flex-align gap-4">
                 <li><a href="{{url('dashboard')}}" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
                 <li> <span class="text-gray-500 fw-normal d-flex"><i class="ph ph-caret-right"></i></span> </li>
-                <li><span class="text-main-600 fw-normal text-15">Utilisateurs</span></li>
+                <li><span class="text-main-600 fw-normal text-15">Classe</span></li>
             </ul>
         </div>
                     <!-- Breadcrumb End -->
@@ -18,13 +18,30 @@
         <!-- Breadcrumb Right Start -->
         <div class="flex-align gap-8 flex-wrap">
             <div class="position-relative text-gray-500 flex-align gap-4 text-13">
-                <span class="text-inherit"> </span>
-                <a href="{{url('/create-users')}}" class="btn btn-main rounded-pill py-7 flex-align gap-4 fw-normal">
+                <a href="{{url('/create-class')}}" class="btn btn-main rounded-pill py-7 flex-align gap-4 fw-normal">
                     <span class="d-flex text-md"><i class="ph ph-plus"></i></span>
-                    Ajouter un utilisateur
+                    Ajouter une classe
                 </a>
+                <span class="text-inherit"> </span>
+                {{--  <div class="flex-align text-gray-500 text-13 border border-gray-100 rounded-4 ps-20 focus-border-main-600 bg-white">
+
+                    <span class="text-lg"><i class="ph ph-funnel-simple"></i></span>
+                    <select class="form-control ps-8 pe-20 py-16 border-0 text-inherit rounded-4 text-center">
+                        <option value="1" selected>Populaire</option>
+                      <option value="1">Latest</option>
+                        <option value="1">Trending</option>
+                        <option value="1">Matches</option>
+                    </select>
+                </div>  --}}
             </div>
-            
+            {{--  <div class="flex-align text-gray-500 text-13 border border-gray-100 rounded-4 ps-20 focus-border-main-600 bg-white">
+                <span class="text-lg"><i class="ph ph-layout"></i></span>
+                <select class="form-control ps-8 pe-20 py-16 border-0 text-inherit rounded-4 text-center" id="exportOptions">
+                    <option value="" selected disabled>Exporter</option>
+                    <option value="csv">CSV</option>
+                    <option value="json">JSON</option>
+                </select>
+            </div>  --}}
         </div>
         <!-- Breadcrumb Right End -->
     </div>
@@ -34,78 +51,53 @@
         <div class="card-body p-0 overflow-x-auto">
             <table id="studentTable" class="table table-striped">
                 <thead>
-                    <tr>
+                    <tr class="">
                         <th class="fixed-width">
                             <div class="form-check">
                                 <input class="form-check-input border-gray-200 rounded-4" type="checkbox" id="selectAll">
                             </div>
                         </th>
-                        <th class="h6 text-gray-300">Utilisateurs</th>
-                        <th class="h6 text-gray-300">Role</th>
-                        <th class="h6 text-gray-300">Email</th>
-                        <th class="h6 text-gray-300">Adresse</th>
-                        <th class="h6 text-gray-300">Téléphone</th>
-                        <th class="h6 text-gray-300">Poste</th>
-                        <th class="h6 text-gray-300">Actions</th>
+                        <th class="h6 text-gray-300">N°</th>
+                        <th class="h6 text-gray-300">Nom de la classe</th>
+                        <th class="h6 text-gray-300">Description</th>
 
+                        <th class="h6 text-gray-300">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($users as $value )
+                    @foreach($class as $key => $value)
                     <tr>
                         <td class="fixed-width">
                             <div class="form-check">
                                 <input class="form-check-input border-gray-200 rounded-4" type="checkbox">
                             </div>
                         </td>
+
                         <td>
-                            <div class="flex-align gap-8">
-                                {{--  <img src="admin/assets/images/thumbs/student-img1.png" alt="" class="w-40 h-40 rounded-circle">  --}}
-                                <span class="h6 mb-0 fw-medium text-gray-300">{{$value->name}} {{$value->prenom}}</span>
-                            </div>
+                            <span class="h6 mb-0 fw-medium text-gray-300">{{$key + 1}}</span>
                         </td>
                         <td>
-                            <span class="h6 mb-0 fw-medium text-gray-300">{{$value->role->name}}</span>
+                            <span class="h6 mb-0 fw-medium text-gray-300">{{$value->name}}</span>
+                        </td>
+
+                        <td>
+                            <span class="h6 mb-0 fw-medium text-gray-300">
+
+                                {{$value->description}}
+                            </span>
                         </td>
                         <td>
-                            <span class="h6 mb-0 fw-medium text-gray-300">{{$value->email}}</span>
-                        </td>
-                        <td>
-                            <span class="h6 mb-0 fw-medium text-gray-300">{{$value->adresse}}</span>
-                        </td>
-                       
-                        <td>
-                            <span class="h6 mb-0 fw-medium text-gray-300">{{$value->telephone}}</span>
-                        </td>
-                        <td>
-                            <span class="h6 mb-0 fw-medium text-gray-300">{{$value->post}}</span>
-                           
-                        </td>
-                        <td>
-                           
-<<<<<<< HEAD
-                            <a href="{{url('ressources/'.$value->id.'/edit')}}" class="bg-success-600 text-white py-2 px-14 rounded-pill hover-bg-success-800 hover-text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <a href="{{url('class/'.$value->id.'/edit')}}" class="bg-success-600 text-white py-2 px-14 rounded-pill hover-bg-success-800 hover-text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
                               </svg></a>
-                            <a href="{{url('ressources/'.$value->id.'/destroy')}}" class="bg-danger-600 text-white py-2 px-14 rounded-pill hover-bg-danger-800 hover-text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
-=======
-                            <a href="{{url('users/'.$value->id.'/edit')}}" class="bg-success-600 text-white py-2 px-14 rounded-pill hover-bg-success-800 hover-text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                              </svg></a>
-                            <a href="{{url('users/'.$value->id.'/destroy')}}" class="bg-danger-600 text-white py-2 px-14 rounded-pill hover-bg-danger-800 hover-text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
->>>>>>> 36375f142bf7f8c7d01d91a8362f48bf698e74ea
+                            <a href="{{url('class/'.$value->id.'/destroy')}}" class="bg-danger-600 text-white py-2 px-14 rounded-pill hover-bg-danger-800 hover-text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
                                 <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
                               </svg></a>
-                        
                         </td>
-                    </tr>  
+
+                    </tr>
                     @endforeach
-                   
-                   
-
-
                 </tbody>
             </table>
         </div>
@@ -117,9 +109,6 @@
                 </li>
                 <li class="page-item">
                     <a class="page-link h-44 w-44 flex-center text-15 rounded-8 fw-medium" href="#">2</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link h-44 w-44 flex-center text-15 rounded-8 fw-medium" href="#">3</a>
                 </li>
 
             </ul>

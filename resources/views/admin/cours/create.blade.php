@@ -96,6 +96,23 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-sm-12">
+                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Classe <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
+                                <div class="position-relative">
+                                    {{-- <input type="text" class="text-counte placeholder-13 form-control py-11 pe-76" name="classe" maxlength="500" id="courseTitle" placeholder=""> --}}
+                                    <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
+                                        {{--  <span id="current">3</span>
+                                        <span id="maximum">/ 300</span>  --}}
+                                    </div>
+                                    <select id="courseTitle" name="user_class_id" class="form-select py-9 placeholder-13 text-15" >
+                                        
+                                        @foreach($userClass as $value)
+                                        <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                    @endforeach
+                                        
+                                    </select>    
+                                </div>
+                            </div>
 
                         </div>
                         <div class="col-sm-12 mt-3">

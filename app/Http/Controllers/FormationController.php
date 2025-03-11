@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Formation;
 use App\Models\Difficulete;
+use App\Models\ClassUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -40,7 +41,8 @@ class FormationController extends Controller
     {
         $categorie=Category::all();
         $difficulte=Difficulete::all();
-        return view('admin.cours.create',compact('categorie','difficulte'));
+        $userClass=ClassUser::all();
+        return view('admin.cours.create',compact('categorie','difficulte','userClass'));
     }
 
     /**
@@ -56,6 +58,7 @@ class FormationController extends Controller
         $validatedData = $request->validate([
             'titre' => 'required|max:255|unique:formations,titre',
             'description' => 'required',
+            "user_class_id" => ['required'],
             'image_url' => 'required|max:255',
              'status' => 'required|max:255',
             'categorie_id' => 'nullable|exists:categories,id',
@@ -72,9 +75,10 @@ class FormationController extends Controller
             $file->move('assets/uploads/formation_images',$filename);
             $formation->image_url = $filename;
         }
-
+       
         $formation->titre = $request->titre;
         $formation->description = $request->description;
+        $formation->user_class_id = $request->user_class_id;
         $formation->categorie_id = $request->categorie_id;
         $formation->difficulte_id = $request->difficulte_id;
         $formation->status = $request->status;
@@ -111,7 +115,8 @@ class FormationController extends Controller
         $formation=Formation::findOrfail($id);
         $categorie=Category::all();
         $difficulte=Difficulete::all();
-        return view('admin.cours.edit',compact('formation','categorie','difficulte'));
+        $userClass=ClassUser::all();
+        return view('admin.cours.edit',compact('formation','categorie','difficulte','userClass'));
     }
 
     /**
@@ -126,6 +131,7 @@ class FormationController extends Controller
         $validatedData = $request->validate([
             'titre' => 'required|max:255',
             'description' => 'required|max:255',
+            "user_class_id" => ['required'],
             'image_url' => 'nullable|max:255',
             'status' => 'required|max:255',
             'categorie_id' => 'nullable|exists:categories,id',
@@ -150,6 +156,7 @@ class FormationController extends Controller
 
         $formation->titre = $request->titre;
         $formation->description = $request->description;
+        $formation->user_class_id = $request->user_class_id;
         $formation->categorie_id = $request->categorie_id;
         $formation->difficulte_id = $request->difficulte_id;
         $formation->status = $request->status;

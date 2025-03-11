@@ -29,7 +29,7 @@ class Formation extends Model
     /**
      * @var array
      */
-    protected $fillable = ['user_id', 'categorie_id', 'difficulte_id', 'titre', 'description', 'image_url', 'status', 'created_at', 'updated_at'];
+    protected $fillable = ['user_id', 'categorie_id' ,'user_class_id', 'difficulte_id', 'titre', 'description', 'image_url', 'status', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -38,7 +38,10 @@ class Formation extends Model
     {
         return $this->hasMany('App\Models\Certificate');
     }
-
+    public function userClass()
+    {
+        return $this->belongsTo('App\Models\ClassUser', 'user_class_id');
+    }
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

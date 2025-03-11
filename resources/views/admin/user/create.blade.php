@@ -95,7 +95,11 @@
                             </div>
 
                             <div class="col-sm-4">
+<<<<<<< HEAD
                                 <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Formation <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
+=======
+                                <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Groupe utilisateurs <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
+>>>>>>> 36375f142bf7f8c7d01d91a8362f48bf698e74ea
                                 <div class="position-relative">
                                     <select id="courseCategory" name="role_id" class="form-select py-9 placeholder-13 text-15" >
                                         
@@ -107,7 +111,11 @@
                                 </div>
                             </div>
                             <div class="col-sm-4">
+<<<<<<< HEAD
                                 <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Formation <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
+=======
+                                <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Grade <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
+>>>>>>> 36375f142bf7f8c7d01d91a8362f48bf698e74ea
                                 <div class="position-relative">
                                     <select id="courseCategory" name="user_categorie_id" class="form-select py-9 placeholder-13 text-15" >
                                         
@@ -181,11 +189,25 @@
                             <div class="col-sm-4">
                                 <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Classe <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
                                 <div class="position-relative">
+<<<<<<< HEAD
                                     <input type="text" class="text-counte placeholder-13 form-control py-11 pe-76" name="classe" maxlength="500" id="courseTitle" placeholder="">
+=======
+                                    {{-- <input type="text" class="text-counte placeholder-13 form-control py-11 pe-76" name="classe" maxlength="500" id="courseTitle" placeholder=""> --}}
+>>>>>>> 36375f142bf7f8c7d01d91a8362f48bf698e74ea
                                     <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
                                         {{--  <span id="current">3</span>
                                         <span id="maximum">/ 300</span>  --}}
                                     </div>
+<<<<<<< HEAD
+=======
+                                    <select id="courseTitle" name="user_class_id" class="form-select py-9 placeholder-13 text-15" >
+                                        
+                                        @foreach($userClass as $value)
+                                        <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                    @endforeach
+                                        
+                                    </select>    
+>>>>>>> 36375f142bf7f8c7d01d91a8362f48bf698e74ea
                                 </div>
                             </div>
                            

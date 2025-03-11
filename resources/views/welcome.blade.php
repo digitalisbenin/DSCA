@@ -1,79 +1,80 @@
 @extends('layouts.base')
-@section('title','Accueil')
+@section('title', 'Accueil')
 
 @section('content')
-@include ('partial.navbar')
-<section class="hero-area">
-    <div class="hero-slider">
-        <!-- Single Slider -->
-        <div class="hero-inner d-flex align-items-center" style="background-color: #f8f9fa; padding: 20px;">
-            <div class="container">
-                <h3 class="wow fadeInUp text-center scrolling-text" data-wow-delay=".5s" style="color: #000;">
-                    Bienvenue sur la Plateforme E-learning de la DCSCA
-                </h3>
-                <style>
-                    @keyframes scrollText {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
+    @include ('partial.navbar')
+    <section class="hero-area">
+        <div class="hero-slider">
+            <!-- Single Slider -->
+            <div class="hero-inner d-flex align-items-center" style="background-color: #f8f9fa; padding: 20px;">
+                <div class="container">
+                    <h3 class="wow fadeInUp text-center scrolling-text" data-wow-delay=".5s" style="color: #000;">
+                        Bienvenue sur la Plateforme E-learning de la DCSCA
+                    </h3>
+                    <style>
+                        @keyframes scrollText {
+                            from {
+                                transform: translateX(100%);
+                            }
 
-.scrolling-text {
-    display: inline-block;
-    white-space: nowrap;
-    animation: scrollText 20s linear infinite;
-}
+                            to {
+                                transform: translateX(-100%);
+                            }
+                        }
 
-                </style>
-                <div class="row align-items-center mt-3">
-                    <!-- Image à gauche -->
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <img
-                            src="assets/images/hero/slider.jpeg"
-                            alt="Hero Image"
-                            class="img-fluid rounded"
-                            style="max-width: 100%; height: auto;"
-                        />
-                    </div>
+                        .scrolling-text {
+                            display: inline-block;
+                            white-space: nowrap;
+                            animation: scrollText 20s linear infinite;
+                        }
+                    </style>
+                    <div class="row align-items-center mt-3">
+                        <!-- Image à gauche -->
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <img src="assets/images/hero/slider.jpeg" alt="Hero Image" class="img-fluid rounded"
+                                style="max-width: 100%; height: auto;" />
+                        </div>
 
-                    <!-- Texte à droite -->
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="hero-text d-none d-lg-block" style="color: #000; margin-top: -100px !important;">
-                           
-                            <p class="wow fadeInUp " data-wow-delay=".7s" style="color: #fff; font-size: 22px; background-color: rgb(199,175,13); padding: 10px; border-radius: 5px; display: inline-block;">
-                                 MOT DU DIRECTEUR
-                            </p>
-                            
-                            <p class="wow fadeInUp mt-5" data-wow-delay=".7s" style="color: #000; text-align: justify;"> 
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            </p>
+                        <!-- Texte à droite -->
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="hero-text d-none d-lg-block" style="color: #000; margin-top: -100px !important;">
 
-                            {{-- <div class="button wow fadeInUp" data-wow-delay=".9s">
+                                <p class="wow fadeInUp " data-wow-delay=".7s"
+                                    style="color: #fff; font-size: 22px; background-color: rgb(199,175,13); padding: 10px; border-radius: 5px; display: inline-block;">
+                                    MOT DU DIRECTEUR
+                                </p>
+
+                                <p class="wow fadeInUp mt-5" data-wow-delay=".7s" style="color: #000; text-align: justify;">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                </p>
+
+                                {{-- <div class="button wow fadeInUp" data-wow-delay=".9s">
                                 <a href="#about" class="btn btn-primary">En savoir plus</a>
                                 <a href="#courses" class="btn btn-outline-secondary">Nos cours</a>
                             </div> --}}
-                        </div>
-                        <div class="hero-text d-lg-none" style="color: #000; margin-top: 15px !important;">
-                            {{-- <h1 class="wow fadeInUp" data-wow-delay=".5s" style="color: #000;">
+                            </div>
+                            <div class="hero-text d-lg-none" style="color: #000; margin-top: 15px !important;">
+                                {{-- <h1 class="wow fadeInUp" data-wow-delay=".5s" style="color: #000;">
                                 Bienvenue sur la plateforme <br> E-learning de la DSCA
                             </h1> --}}
-                            <p class="wow fadeInUp " data-wow-delay=".7s" style="color: #fff; font-size: 22px; background-color: rgb(199,175,13); padding: 10px; border-radius: 5px; display: inline-block;">
-                                MOT DU DIRECTEUR
-                            </p>
-                        </div>
+                                <p class="wow fadeInUp " data-wow-delay=".7s"
+                                    style="color: #fff; font-size: 22px; background-color: rgb(199,175,13); padding: 10px; border-radius: 5px; display: inline-block;">
+                                    MOT DU DIRECTEUR
+                                </p>
+                            </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
-        <!--/ End Single Slider -->
-        <!-- Single Slider -->
-        {{--  <div class="hero-inner overlay" style="background-image: url('assets/images/hero/slider-bg2.jpg');">
+            <!--/ End Single Slider -->
+            <!-- Single Slider -->
+            {{--  <div class="hero-inner overlay" style="background-image: url('assets/images/hero/slider-bg2.jpg');">
             <div class="container">
                 <div class="row ">
                     <div class="col-lg-8 offset-lg-2 col-md-12 co-12">
@@ -95,9 +96,9 @@
                 </div>
             </div>
         </div>  --}}
-        <!--/ End Single Slider -->
-        <!-- Single Slider -->
-        {{--  <div class="hero-inner overlay" style="background-image: url('assets/images/hero/slider-bg3.jpg');">
+            <!--/ End Single Slider -->
+            <!-- Single Slider -->
+            {{--  <div class="hero-inner overlay" style="background-image: url('assets/images/hero/slider-bg3.jpg');">
             <div class="container">
                 <div class="row ">
                     <div class="col-lg-8 offset-lg-2 col-md-12 co-12">
@@ -119,106 +120,116 @@
                 </div>
             </div>
         </div>  --}}
-        <!--/ End Single Slider -->
-    </div>
-</section>
-<!--/ End Hero Area -->
+            <!--/ End Single Slider -->
+        </div>
+    </section>
+    <!--/ End Hero Area -->
 
-<!-- Start Features Area -->
-<section class="features">
-    <div class="container-fluid">
-        <div class="single-head">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-12 padding-zero">
-                    <!-- Start Single Feature -->
-                    <div class="single-feature">
-                        <h3><a href="javascript:void(0)">Cours actuels </a></h3>
-                        <p style="text-align: justify;">Les cours actuel sont des formations éducatives qui répondent aux besoins et intérêts
-                             actuels des apprenants. Ces cours reflètent les évolutions et innovations
-                              dans divers domaines, offrant des compétences et connaissances recherchées.</p>
-                        <div class="button">
-                            <a href="{{url('/formation')}}" class="btn">Voir plus <i class="lni lni-arrow-right"></i></a>
+    <!-- Start Features Area -->
+    <section class="features">
+        <div class="container-fluid">
+            <div class="single-head">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-12 padding-zero">
+                        <!-- Start Single Feature -->
+                        <div class="single-feature">
+                            <h3><a href="javascript:void(0)">Cours actuels </a></h3>
+                            <p style="text-align: justify;">Les cours actuel sont des formations éducatives qui répondent
+                                aux besoins et intérêts
+                                actuels des apprenants. Ces cours reflètent les évolutions et innovations
+                                dans divers domaines, offrant des compétences et connaissances recherchées.</p>
+                            <div class="button">
+                                <a href="{{ url('/formation') }}" class="btn">Voir plus <i
+                                        class="lni lni-arrow-right"></i></a>
+                            </div>
                         </div>
+                        <!-- End Single Feature -->
                     </div>
-                    <!-- End Single Feature -->
-                </div>
-                <div class="col-lg-4 col-md-4 col-12 padding-zero">
-                    <!-- Start Single Feature -->
-                    <div class="single-feature">
-                        <h3><a href="javascript:void(0)">Instructeurs certifiés</a></h3>
-                        <p style="text-align: justify;">Les professeurs certifiés sont des éducateurs ayant obtenu une certification officielle attestant
-                            de leurs compétences et qualifications dans un domaine spécifique. Cette certification, délivrée
-                             par des organismes reconnus.</p>
+                    <div class="col-lg-4 col-md-4 col-12 padding-zero">
+                        <!-- Start Single Feature -->
+                        <div class="single-feature">
+                            <h3><a href="javascript:void(0)">Instructeurs certifiés</a></h3>
+                            <p style="text-align: justify;">Les professeurs certifiés sont des éducateurs ayant obtenu une
+                                certification officielle attestant
+                                de leurs compétences et qualifications dans un domaine spécifique. Cette certification,
+                                délivrée
+                                par des organismes reconnus.</p>
 
-                        <div class="button">
-                            <a href="#" class="btn">Voir plus <i class="lni lni-arrow-right"></i></a>
+                            <div class="button">
+                                <a href="#" class="btn">Voir plus <i class="lni lni-arrow-right"></i></a>
+                            </div>
                         </div>
+                        <!-- End Single Feature -->
                     </div>
-                    <!-- End Single Feature -->
-                </div>
-                <div class="col-lg-4 col-md-4 col-12 padding-zero">
-                    <!-- Start Single Feature -->
-                    <div class="single-feature last">
-                        <h3><a href="javascript:void(0)">Documents</a></h3>
-                        <p style="text-align: justify;">Les documents laissés à la portée des stagiaires sont des ressources
-                             éducatives mises à disposition pour soutenir leur apprentissage et
-                              approfondir leurs connaissances. Ces documents peuvent inclure une
-                               variété de matériaux pédagogiques.</p>
+                    <div class="col-lg-4 col-md-4 col-12 padding-zero">
+                        <!-- Start Single Feature -->
+                        <div class="single-feature last">
+                            <h3><a href="javascript:void(0)">Documents</a></h3>
+                            <p style="text-align: justify;">Les documents laissés à la portée des stagiaires sont des
+                                ressources
+                                éducatives mises à disposition pour soutenir leur apprentissage et
+                                approfondir leurs connaissances. Ces documents peuvent inclure une
+                                variété de matériaux pédagogiques.</p>
 
-                        <div class="button">
-                            <a href="{{url('documents')}}" class="btn">Voir plus <i class="lni lni-arrow-right"></i></a>
+                            <div class="button">
+                                <a href="{{ url('documents') }}" class="btn">Voir plus <i
+                                        class="lni lni-arrow-right"></i></a>
+                            </div>
                         </div>
+                        <!-- End Single Feature -->
                     </div>
-                    <!-- End Single Feature -->
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- /End Features Area -->
+    </section>
+    <!-- /End Features Area -->
 
 
-<!-- Start Courses Area -->
-<section class="courses section" style=" padding-top: 0 !important; padding-bottom: 10px !important;">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-title">
-                    <div class="section-icon wow zoomIn" data-wow-delay=".4s">
-                        <i class="lni lni-graduation"></i>
-                    </div>
-                    <h2 class="wow fadeInUp" data-wow-delay=".4s">Quelques cours</h2>
-                    <p class="wow fadeInUp" data-wow-delay=".6s">Des cours variés et accessibles sont proposés afin de
-                         permettre aux apprenants de développer et d’améliorer leurs compétences dans divers domaines,
-                          en leur offrant des opportunités d’apprentissage adaptées à leurs besoins spécifiques et à leurs
-                          objectifs personnels et professionnels.
+    <!-- Start Courses Area -->
+    <section class="courses section" style=" padding-top: 0 !important; padding-bottom: 10px !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <div class="section-icon wow zoomIn" data-wow-delay=".4s">
+                            <i class="lni lni-graduation"></i>
+                        </div>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Quelques cours</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Des cours variés et accessibles sont proposés afin de
+                            permettre aux apprenants de développer et d’améliorer leurs compétences dans divers domaines,
+                            en leur offrant des opportunités d’apprentissage adaptées à leurs besoins spécifiques et à leurs
+                            objectifs personnels et professionnels.
                         </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="single-head">
-            <div class="row">
-               @foreach( $formation->sortByDesc('created_at') as $value)
-               <div class="col-lg-3 col-md-6 col-12">
-                <!-- Start Single Course -->
-                <div class="single-course wow fadeInUp" data-wow-delay=".2s">
-                    <div class="course-image" style="height: 200px">
-                        <a href="{{url('/details-cours/'.$value->id)}}"><img src="{{ asset('assets/uploads/formation_images/'.$value->image_url) }}"
-                                alt="#" style="height: 200px; width: 350px;"></a>
-                        <p class="price">{{$value->difficulete->name}}</p>
-                    </div>
-                    <div class="content">
-                        <h5 style="
+            <div class="single-head">
+                <div class="row">
+                    @foreach ($formation->sortByDesc('created_at') as $value)
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <!-- Start Single Course -->
+                            <div class="single-course wow fadeInUp" data-wow-delay=".2s">
+                                <div class="course-image" style="height: 200px">
+                                    <a href="{{ url('/details-formation/' . $value->id) }}"><img
+                                            src="{{ asset('assets/uploads/formation_images/' . $value->image_url) }}"
+                                            alt="#" style="height: 200px; width: 350px;"></a>
+                                    <p class="price">{{ $value->difficulete->name }}</p>
+                                </div>
+                                <div class="content">
+                                    <h5
+                                        style="
                         display: -webkit-box;
                         -webkit-line-clamp: 1;
                         -webkit-box-orient: vertical;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         text-align: justify;
-                    ">{{$value->titre}}</h5>
-                        <br>
-                        {{--  <p>{{$value->description}}</p>  --}}
-                        <p style="
+                    ">
+                                        {{ $value->titre }}</h5>
+                                    <br>
+                                    {{--  <p>{{$value->description}}</p>  --}}
+                                    <p
+                                        style="
                                         display: -webkit-box;
                                         -webkit-line-clamp: 3;
                                         -webkit-box-orient: vertical;
@@ -226,29 +237,29 @@
                                         text-overflow: ellipsis;
                                         text-align: justify;
                                     ">
-                                        {{$value->description}}
+                                        {{ $value->description }}
                                     </p>
 
-                    </div>
-                    <div class="bottom-content">
-                        <ul class="review">
-                            {{--  <li><i class="lni lni-star-filled"></i></li>
+                                </div>
+                                <div class="bottom-content">
+                                    <ul class="review">
+                                        {{--  <li><i class="lni lni-star-filled"></i></li>
                             <li><i class="lni lni-star-filled"></i></li>
                             <li><i class="lni lni-star-filled"></i></li>
                             <li><i class="lni lni-star-filled"></i></li>
                             <li><i class="lni lni-star-filled"></i></li>  --}}
-                            <button class="btn text-white  ajouter-formation" data-id="{{ $value->id }}" style="background-color: rgb(199,175,13)">Ajouter</button>
-                        </ul>
-                        <span class="tag">
-                            <i class="lni lni-tag"></i>
-                            <a href="javascript:void(0)">{{$value->category->name}}</a>
-                        </span>
-                    </div>
-                </div>
-                <!-- End Single Course -->
-            </div>
-               @endforeach
-                {{--  <div class="col-lg-4 col-md-6 col-12">
+                                        {{-- <button class="btn text-white  ajouter-formation" data-id="{{ $value->id }}" style="background-color: rgb(199,175,13)">Ajouter</button> --}}
+                                    </ul>
+                                    <span class="tag">
+                                        <i class="lni lni-tag"></i>
+                                        <a href="javascript:void(0)">{{ $value->category->name }}</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- End Single Course -->
+                        </div>
+                    @endforeach
+                    {{--  <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Course -->
                     <div class="single-course wow fadeInUp" data-wow-delay=".4s">
                         <div class="course-image">
@@ -277,7 +288,7 @@
                     </div>
                     <!-- End Single Course -->
                 </div>  --}}
-                {{--  <div class="col-lg-4 col-md-6 col-12">
+                    {{--  <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Course -->
                     <div class="single-course wow fadeInUp" data-wow-delay=".6s">
                         <div class="course-image">
@@ -306,7 +317,7 @@
                     </div>
                     <!-- End Single Course -->
                 </div>  --}}
-                {{--  <div class="col-lg-4 col-md-6 col-12">
+                    {{--  <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Course -->
                     <div class="single-course wow fadeInUp" data-wow-delay=".2s">
                         <div class="course-image">
@@ -335,7 +346,7 @@
                     </div>
                     <!-- End Single Course -->
                 </div>  --}}
-                {{--  <div class="col-lg-4 col-md-6 col-12">
+                    {{--  <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Course -->
                     <div class="single-course wow fadeInUp" data-wow-delay=".4s">
                         <div class="course-image">
@@ -367,7 +378,7 @@
                     </div>
                     <!-- End Single Course -->
                 </div>  --}}
-                {{--  <div class="col-lg-4 col-md-6 col-12">
+                    {{--  <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Course -->
                     <div class="single-course wow fadeInUp" data-wow-delay=".6s">
                         <div class="course-image">
@@ -396,7 +407,7 @@
                     </div>
                     <!-- End Single Course -->
                 </div>  --}}
-                {{--  <div class="col-lg-4 col-md-6 col-12">
+                    {{--  <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Course -->
                     <div class="single-course wow fadeInUp" data-wow-delay=".2s">
                         <div class="course-image">
@@ -427,7 +438,7 @@
                     </div>
                     <!-- End Single Course -->
                 </div>  --}}
-                {{--  <div class="col-lg-4 col-md-6 col-12">
+                    {{--  <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Course -->
                     <div class="single-course wow fadeInUp" data-wow-delay=".4s">
                         <div class="course-image">
@@ -456,7 +467,7 @@
                     </div>
                     <!-- End Single Course -->
                 </div>  --}}
-                {{--  <div class="col-lg-4 col-md-6 col-12">
+                    {{--  <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Course -->
                     <div class="single-course wow fadeInUp" data-wow-delay=".6s">
                         <div class="course-image">
@@ -488,47 +499,47 @@
                     </div>
                     <!-- End Single Course -->
                 </div>  --}}
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Courses Area -->
-
-<!-- Start Achivement Area -->
-<section class="our-achievement section overlay">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-12">
-                <div class="single-achievement wow fadeInUp" data-wow-delay=".2s">
-                    <h3 class="counter"><span id="secondo1" class="countup" cup-end="500">500</span>+</h3>
-                    <h4>Apprenants</h4>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-12">
-                <div class="single-achievement wow fadeInUp" data-wow-delay=".4s">
-                    <h3 class="counter"><span id="secondo2" class="countup" cup-end="70">70</span>+</h3>
-                    <h4> Cours</h4>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-12">
-                <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
-                    <h3 class="counter"><span id="secondo3" class="countup" cup-end="100">100</span>%</h3>
-                    <h4>Satisfaction</h4>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-12">
-                <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
-                    <h3 class="counter"><span id="secondo3" class="countup" cup-end="100">100</span>+</h3>
-                    <h4>Formateurs</h4>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- End Achivement Area -->
+    </section>
+    <!-- End Courses Area -->
 
-<!-- Start Events Area-->
-{{--  <section class="events section">
+    <!-- Start Achivement Area -->
+    <section class="our-achievement section overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-12">
+                    <div class="single-achievement wow fadeInUp" data-wow-delay=".2s">
+                        <h3 class="counter"><span id="secondo1" class="countup" cup-end="500">500</span>+</h3>
+                        <h4>Apprenants</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12">
+                    <div class="single-achievement wow fadeInUp" data-wow-delay=".4s">
+                        <h3 class="counter"><span id="secondo2" class="countup" cup-end="70">70</span>+</h3>
+                        <h4> Cours</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12">
+                    <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
+                        <h3 class="counter"><span id="secondo3" class="countup" cup-end="100">100</span>%</h3>
+                        <h4>Satisfaction</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12">
+                    <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
+                        <h3 class="counter"><span id="secondo3" class="countup" cup-end="100">100</span>+</h3>
+                        <h4>Formateurs</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Achivement Area -->
+
+    <!-- Start Events Area-->
+    {{--  <section class="events section">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -636,10 +647,10 @@
         </div>
     </div>
 </section>  --}}
-<!-- End Events Area-->
+    <!-- End Events Area-->
 
-<!-- Start Teachers -->
-{{--  <section id="teachers" class="teachers section">
+    <!-- Start Teachers -->
+    {{--  <section id="teachers" class="teachers section">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -945,10 +956,10 @@
         </div>
     </div>
 </section>  --}}
-<!-- End Testimonial Area -->
+    <!-- End Testimonial Area -->
 
-<!-- Start Newsletter Area -->
-{{--  <section class="newsletter-area section">
+    <!-- Start Newsletter Area -->
+    {{--  <section class="newsletter-area section">
     <div class="container">
         <div class="row ">
             <div class="col-lg-6 offset-lg-3 col-md-12 col-12">
@@ -981,10 +992,10 @@
         </div>
     </div>
 </section>  --}}
-<!-- /End Newsletter Area -->
+    <!-- /End Newsletter Area -->
 
-<!-- Start Call To Action Area -->
-{{--  <section class="call-action section overlay">
+    <!-- Start Call To Action Area -->
+    {{--  <section class="call-action section overlay">
     <div class="container">
         <div class="row ">
             <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
@@ -1001,10 +1012,10 @@
         </div>
     </div>
 </section>  --}}
-<!-- /End Call To Action Area -->
+    <!-- /End Call To Action Area -->
 
-<!-- Start Latest News Area -->
-{{--  <div class="latest-news-area section">
+    <!-- Start Latest News Area -->
+    {{--  <div class="latest-news-area section">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -1113,11 +1124,11 @@
         </div>
     </div>
 </div>  --}}
-<!-- End Latest News Area -->
+    <!-- End Latest News Area -->
 
-<!-- Start Clients Area -->
+    <!-- Start Clients Area -->
 
-<!-- End Clients Area -->
+    <!-- End Clients Area -->
 
 
 
@@ -1125,31 +1136,31 @@
 
 @section('scripts')
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('.ajouter-formation').on('click', function() {
-            var formationId = $(this).data('id'); // Récupérer l'ID de la formation
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.ajouter-formation').on('click', function() {
+                var formationId = $(this).data('id'); // Récupérer l'ID de la formation
 
 
-            $.ajax({
-                url: '/mes-cours',  // URL de la route Laravel pour ajouter la formation
-                type: 'POST',
-                data: {
-                    _token: '{{ csrf_token() }}',  // CSRF token pour la sécurité
-                    formation_id: formationId     // ID de la formation à envoyer au serveur
-                },
-                success: function(response) {
-                    swal("",response.status,"success")
-                },
-                error: function(xhr, status, error) {
-                    swal("","Erreur lors de l'enregistrement de ce cours.","error")
-                }
+                $.ajax({
+                    url: '/mes-cours', // URL de la route Laravel pour ajouter la formation
+                    type: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}', // CSRF token pour la sécurité
+                        formation_id: formationId // ID de la formation à envoyer au serveur
+                    },
+                    success: function(response) {
+                        swal("", response.status, "success")
+                    },
+                    error: function(xhr, status, error) {
+                        swal("", "Erreur lors de l'enregistrement de ce cours.", "error")
+                    }
+                });
             });
         });
-    });
-</script>
-{{--  <!DOCTYPE html>
+    </script>
+    {{--  <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">

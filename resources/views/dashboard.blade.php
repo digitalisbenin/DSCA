@@ -173,7 +173,15 @@
                                     </div>
 
                                     <div class="flex-between gap-4 flex-wrap mt-4">
-                                        <span class="text-15  d-flex">{{$value->description}}</span>
+                                        <p style="
+                                        display: -webkit-box;
+                                        -webkit-line-clamp: 3;
+                                        -webkit-box-orient: vertical;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                    ">
+                                        {{$value->description}}
+                                    </p>
                                         {{--  <div class="flex-align gap-4">
                                             <span class="text-15 fw-bold text-warning-600 d-flex"><i class="ph-fill ph-star"></i></span>
                                             <span class="text-13 fw-bold text-gray-600">4.9</span>

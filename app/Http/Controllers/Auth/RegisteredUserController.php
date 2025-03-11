@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Role;
 use App\Models\UserCategory;
+use App\Models\ClassUser;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -24,7 +25,8 @@ class RegisteredUserController extends Controller
     {
         $role=Role::where('id','!=',1)->get();
         $userCategory=UserCategory::all();
-        return view('auth.register', compact('role','userCategory'));
+        // $userClass=ClassUser::all();
+        return view('auth.register', compact('role','userCategory','userClass'));
     }
 
     /**
@@ -38,6 +40,7 @@ class RegisteredUserController extends Controller
         $request->validate([
             "role_id" => ['required'],
             "user_categorie_id" => ['required'],
+            "user_class_id" => ['required'],
             "prenom" => ['required'],
             "telephone" =>['required'],
             "post" => ['required'],

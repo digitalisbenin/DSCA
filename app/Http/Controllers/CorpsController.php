@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UserCategory;
+use App\Models\Corp;
 use Illuminate\Http\Request;
 
-class UserCategoryController extends Controller
+class CorpsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class UserCategoryController extends Controller
      */
     public function index()
     {
-        $userCategory=UserCategory::all();
-        return view('admin.grade.index',compact('userCategory'));
+        $corp=Corp::all();
+        return view('admin.corps.index',compact('corp'));
     }
 
     /**
@@ -25,7 +25,7 @@ class UserCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.grade.create');
+        return view('admin.corps.create');
     }
 
     /**
@@ -40,18 +40,18 @@ class UserCategoryController extends Controller
             'name' => 'required|max:255',
             'description' => 'nullable',
         ]);
-        $userCategory = UserCategory::create($validatedData);
+        $corp = Corp::create($validatedData);
 
-        return redirect('/user-categories');
+        return redirect('/corps');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\UserCategory  $userCategory
+     * @param  \App\Models\Corp  $corp
      * @return \Illuminate\Http\Response
      */
-    public function show(UserCategory $userCategory)
+    public function show(Corp $corp)
     {
         //
     }
@@ -59,46 +59,46 @@ class UserCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\UserCategory  $userCategory
+     * @param  \App\Models\Corp  $corp
      * @return \Illuminate\Http\Response
      */
-    public function edit( $id)
+    public function edit(Corp $corp, $id)
     {
-        $userCategory = UserCategory::findOrFail($id);
-        return view('admin.grade.edit',compact('userCategory'));
+        $corp = Corp::findOrFail($id);
+        return view('admin.corps.edit',compact('corp'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\UserCategory  $userCategory
+     * @param  \App\Models\Corp  $corp
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserCategory $userCategory, $id)
+    public function update(Request $request, Corp $corp, $id)
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'description' => 'nullable',
         ]);
-        $userCategory = UserCategory::findOrfail($id);
-        $userCategory->name = $request->name;
-        $userCategory->description = $request->description;
-        $userCategory->save();
-        return redirect('/user-categories');
+        $corp = Corp::findOrfail($id);
+        $corp->name = $request->name;
+        $corp->description = $request->description;
+        $corp->save();
+        return redirect('/corps');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\UserCategory  $userCategory
+     * @param  \App\Models\Corp  $corp
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UserCategory $userCategory, $id)
+    public function destroy(Corp $corp, $id)
     {
-        $userCategory = UserCategory::findOrfail($id);
-        $userCategory->delete();
+        $corp = Corp::findOrfail($id);
+        $corp->delete();
         // session()->flash('success', 'Suppression de la catégorie réussie !');
-        return redirect('/user-categories');
+        return redirect('/corps');
     }
 }

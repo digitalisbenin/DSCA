@@ -10,10 +10,12 @@ use App\Models\DiscutionReponse;
 use App\Models\Video;
 use App\Models\Difficulete;
 use App\Models\Quiz;
+use App\Http\Controllers\CorpsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\ClassUserController;
 use App\Http\Controllers\ChapitreController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\DifficuleteController;
@@ -75,6 +77,13 @@ Route::get('/details-cours/{id}', function ($id) {
     $commentaire=Commentaire::all();
     $repose=Answers::all();
     return view('details_cours',compact('chapitre','formationId','commentaire' ,'quiz','quizz','repose'));
+});
+
+Route::get('/details-formation/{id}', function ($id) {
+    $formation = Formation::where('id',$id)->first();
+    $formationId = $id;
+   
+    return view('detail_formation',compact('formation','formationId'));
 });
 Route::get('/video', function () {
     $video= Video::all();
@@ -171,6 +180,11 @@ Route::middleware('auth')->group(function () {
         $apprenants=User::where('role_id',3)->get();
         return view('admin.student',compact('apprenants'));
     });
+    Route::get('/nos-users', function () {
+        $apprenants=User::all();
+        return view('admin.user',compact('apprenants'));
+    });
+   
     Route::get('/admin-formateurs', function () {
         $formateurs=User::where('role_id',2)->get();
         return view('admin.formateurs',compact('formateurs'));
@@ -239,6 +253,13 @@ Route::post('difficultes', [DifficuleteController::class, 'store']);
 Route::put('difficultes/{id}/update', [DifficuleteController::class, 'update']);
 Route::get('difficultes/{id}/destroy', [DifficuleteController::class, 'destroy']);
 
+
+Route::get('class', [ClassUserController::class, 'index']);
+Route::get('create-class', [ClassUserController::class, 'create']);
+Route::get('class/{id}/edit', [ClassUserController::class, 'edit']);
+Route::post('class', [ClassUserController::class, 'store']);
+Route::put('class/{id}/update', [ClassUserController::class, 'update']);
+Route::get('class/{id}/destroy', [ClassUserController::class, 'destroy']);
 /*-----------------Discussion--------------------------*/
 Route::get('discussions', [DiscutionController::class, 'index']);
 Route::get('create-discussions', [DiscutionController::class, 'create']);
@@ -356,10 +377,20 @@ Route::get('users/{id}/destroy', [UserController::class, 'destroy']);
 Route::get('user-categories', [UserCategoryController::class, 'index']);
 Route::get('create-user-categories', [UserCategoryController::class, 'create']);
 Route::get('user-categories/{id}', [UserCategoryController::class, 'show']);
-Route::get('user-categories/{id}', [UserCategoryController::class, 'edit']);
+Route::get('user-categories/{id}/edit', [UserCategoryController::class, 'edit']);
 Route::post('user-categories', [UserCategoryController::class, 'store']);
-Route::put('user-categories/{id}', [UserCategoryController::class, 'update']);
-Route::get('user-categories/{id}', [UserCategoryController::class, 'destroy']);
+Route::put('user-categories/{id}/update', [UserCategoryController::class, 'update']);
+Route::get('user-categories/{id}/destroy', [UserCategoryController::class, 'destroy']);
+
+/*-----------------Corps--------------------------*/
+Route::get('corps', [ CorpsController::class, 'index']);
+Route::get('create-corps', [CorpsController::class, 'create']);
+Route::get('corps/{id}', [CorpsController::class, 'show']);
+Route::get('corps/{id}/edit', [CorpsController::class, 'edit']);
+Route::post('corps', [CorpsController::class, 'store']);
+Route::put('corps/{id}/update', [CorpsController::class, 'update']);
+Route::get('corps/{id}/destroy', [CorpsController::class, 'destroy']);
+
 
 /*-----------------Video--------------------------*/
 Route::get('videos', [VideoController::class, 'index']);
