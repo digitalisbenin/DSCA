@@ -26,7 +26,7 @@ class RegisteredUserController extends Controller
         $role=Role::where('id','!=',1)->get();
         $userCategory=UserCategory::all();
         // $userClass=ClassUser::all();
-        return view('auth.register', compact('role','userCategory','userClass'));
+        return view('auth.register', compact('role','userCategory'));
     }
 
     /**
@@ -37,18 +37,18 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         //dd($request);
-        $request->validate([
-            "role_id" => ['required'],
-            "user_categorie_id" => ['required'],
-            "user_class_id" => ['required'],
-            "prenom" => ['required'],
-            "telephone" =>['required'],
-            "post" => ['required'],
-            "adresse" => ['required'],
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        // $request->validate([
+        //     "role_id" => ['required'],
+        //     "user_categorie_id" => ['required'],
+        //     "user_class_id" => ['required'],
+        //     "prenom" => ['required'],
+        //     "telephone" =>['required'],
+        //     "post" => ['required'],
+        //     "adresse" => ['required'],
+        //     'name' => ['required', 'string', 'max:255'],
+        //     'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+        //     'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        // ]);
 
         $user = User::create([
             'name' => $request->name,

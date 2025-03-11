@@ -18,7 +18,7 @@ class MesCour extends Model
     /**
      * @var array
      */
-    protected $fillable = ['formation_id', 'user_id', 'created_at', 'updated_at'];
+    protected $fillable = ['module_id', 'user_id', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -27,7 +27,10 @@ class MesCour extends Model
     {
         return $this->belongsTo('App\Models\Formation');
     }
-
+    public function modules()
+    {
+        return $this->hasMany('App\Models\Module');
+    }
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

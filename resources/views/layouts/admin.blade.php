@@ -225,7 +225,7 @@
                         <div class="flex-align gap-8 mb-20 pb-20 border-bottom border-gray-100">
                             <img src="{{asset('admin/assets/images/thumbs/user-img.png')}}" alt="" class="w-54 h-54 rounded-circle">
                             <div class="">
-                                <h4 class="mb-0">{{Auth::user()->name}} {{Auth::user()->prenom}} </h4>
+                                <h4 class="mb-0">{{Auth::user()->userCategory->description}} {{Auth::user()->name}}  </h4>
                                 <p class="fw-medium text-13 text-gray-200">{{Auth::user()->email}}</p>
                             </div>
                         </div>

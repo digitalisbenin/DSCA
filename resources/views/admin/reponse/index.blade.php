@@ -8,27 +8,20 @@
         <!-- Breadcrumb Start -->
         <div class="breadcrumb mb-24">
             <ul class="flex-align gap-4">
-                <li><a href="index.html" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
+                <li><a href="#" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
                 <li> <span class="text-gray-500 fw-normal d-flex"><i class="ph ph-caret-right"></i></span> </li>
                 <li><span class="text-main-600 fw-normal text-15">Réponse</span></li>
             </ul>
         </div>
-
+                    <!-- Breadcrumb End -->
 
         <!-- Breadcrumb Right Start -->
         <div class="flex-align gap-8 flex-wrap">
             <div class="position-relative text-gray-500 flex-align gap-4 text-13">
-
-                <button onclick="window.history.back()" class="btn btn-secondary">Retour</button>
-
-                {{--  <a href="{{url('/create-answers')}}" class="btn btn-main rounded-pill py-7 flex-align gap-4 fw-normal">
+                <a href="{{url('/create-answers')}}" class="btn btn-main rounded-pill py-7 flex-align gap-4 fw-normal">
                     <span class="d-flex text-md"><i class="ph ph-plus"></i></span>
                     Ajouter une Réponse
-                </a>  --}}
-                {{--  <a href="#" class="btn btn-main rounded-pill py-7 flex-align gap-4 fw-normal" data-bs-toggle="modal" data-bs-target="#myModal" >
-                    <span class="d-flex text-md"><i class="ph ph-plus"></i></span>
-                    Ajouter une Réponse
-                </a>  --}}
+                </a>
                 <span class="text-inherit"> </span>
                 {{--  <div class="flex-align text-gray-500 text-13 border border-gray-100 rounded-4 ps-20 focus-border-main-600 bg-white">
 
@@ -54,141 +47,8 @@
     </div>
 
 
-
-
-<!-- Modal -->
-{{-- <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Ajouter une réponse</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Formulaire -->
-                <form action="{{ url('answers') }}" method="POST">
-                    @csrf
-                    <div class="mb-3">
-
-                        <input type="text" class="form-control" id="champ1" name="title"  placeholder="Réponse" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="hidden"  value="{{$questionID}}"name="question_id"   class="form-control" id="champ2">
-                    </div>
-                    <div class="mb-3">
-                        <select id="courseCategory" name="is_correct" class="form-select py-9 placeholder-13 text-15">
-                            <option value="" selected>Répondre par vrai ou faux</option>
-
-                           <option value="1">Vrai </option>
-                           <option value="0">Faux </option>
-
-
-                        </select>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                        <button type="submit" class="btn btn-success">Envoyer</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div> --}}
-
-
     <div class="card overflow-hidden">
         <div class="card-body p-0 overflow-x-auto">
-
-            {{--  <div class="container">
-                <div class=" ">
-                    <div class="">
-                        <form action="{{ url('answers') }}" method="POST">
-                            @csrf
-                            <div class="">
-                                <!-- Champ réponse (4 colonnes) -->
-                                <div class="col-md-4">
-                                    <input type="text" class="form-control" name="title" placeholder="Réponse" required>
-                                </div>
-
-                                <!-- Champ caché pour question_id -->
-                                <input type="hidden" value="{{ $questionID }}" name="question_id">
-
-                                <!-- Boutons radio (2 colonnes) -->
-                                <div class="col-md-4">
-                                    <div class="form-check me-2">
-                                        <input class="form-check-input" type="radio" name="is_correct" id="vrai" value="1" required>
-                                        <label class="form-check-label" for="vrai">Vrai</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="is_correct" id="faux" value="0" required>
-                                        <label class="form-check-label" for="faux">Faux</label>
-                                    </div>
-                                </div>
-
-                                <!-- Bouton d'envoi (2 colonnes) -->
-                                <div class="col-md-2">
-                                    <button type="submit" class="btn btn-success w-100">Ajouter</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-              --}}
-
-              <div class="container">
-                <h5 class="mb-0 text-center py-8">{{$question->title}}</h5>
-                <div class="card-header border-bottom border-gray-100 flex-align gap-8">
-                    <h5 class="mb-0">Nouvelle Réponse</h5>
-                    <button type="button" class="text-main-600 text-md d-flex" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Nouveau chapitre">
-                        <i class="ph-fill ph-question"></i>
-                    </button>
-                </div>
-                <div class="col-md-12 py-44">
-                <form action="{{ url('answers') }}" method="POST">
-                    @csrf
-                    <div class="row d-flex align-items-center">
-                        <!-- Champ réponse (4 colonnes) -->
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" name="title" placeholder="Réponse" required>
-                        </div>
-
-                        <!-- Champ caché pour question_id -->
-                        <input type="hidden" value="{{ $questionID }}" name="question_id">
-
-                        <!-- Boutons radio (4 colonnes) -->
-                        <div class="col-md-2 flex">
-
-
-                            <div class="form-check form-check-inline ">
-                                <input class="form-check-input" type="radio" name="is_correct" id="vrai" value="1" checked>
-                                <label class="form-check-label" for="exampleRadios1">
-                                  Vrai
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline  ">
-                                <input class="form-check-input" type="radio" name="is_correct" id="faux" value="0"checked>
-                                <label class="form-check-label" for="exampleRadios2">
-                                  Faux
-                                </label>
-                              </div>
-                        </div>
-
-
-
-                        <!-- Bouton d'envoi (2 colonnes) -->
-                        <div class="col-md-2">
-                            <button type="submit" class="btn btn-success w-100" style="white-space: nowrap;">
-                                Ajouter une réponse
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            </div>
-
-
-            <hr>
             <table id="studentTable" class="table table-striped">
                 <thead>
                     <tr class="">
@@ -198,7 +58,7 @@
                             </div>
                         </th>
                         <th class="h6 text-gray-300">N°</th>
-                        {{--  <th class="h6 text-gray-300">Question</th>  --}}
+                        <th class="h6 text-gray-300">Question</th>
                         <th class="h6 text-gray-300">Titre</th>
                         <th class="h6 text-gray-300">Réponse</th>
 
@@ -206,7 +66,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($answers as $key => $value)
+                    @foreach($reponse as $key => $value)
                     <tr>
                         <td class="fixed-width">
                             <div class="form-check">
@@ -217,9 +77,9 @@
                         <td>
                             <span class="h6 mb-0 fw-medium text-gray-300">{{$key + 1}}</span>
                         </td>
-                        {{--  <td>
+                        <td>
                             <span class="h6 mb-0 fw-medium text-gray-300">{{$value->question->title}}</span>
-                        </td>  --}}
+                        </td>
                         <td>
                             <span class="h6 mb-0 fw-medium text-gray-300">{{$value->title}}</span>
                         </td>
@@ -232,15 +92,15 @@
                             @else
                                 Faux
                             @endif
-
+                            
                             </span>
                         </td>
                         <td>
-                            <a href="{{url('answers/'.$value->id.'/edit')}}" class="bg-success-600 text-white py-2 px-14 rounded-pill hover-bg-success-800 hover-text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <a href="{{url('reponses/'.$value->id.'/edit')}}" class="bg-success-600 text-white py-2 px-14 rounded-pill hover-bg-success-800 hover-text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
                               </svg></a>
-                            <a href="{{url('answers/'.$value->id.'/destroy')}}" class="bg-danger-600 text-white py-2 px-14 rounded-pill hover-bg-danger-800 hover-text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                            <a href="{{url('reponses/'.$value->id.'/destroy')}}" class="bg-danger-600 text-white py-2 px-14 rounded-pill hover-bg-danger-800 hover-text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
                                 <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
                               </svg></a>
                         </td>

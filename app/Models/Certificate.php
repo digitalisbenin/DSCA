@@ -27,6 +27,10 @@ class Certificate extends Model
     {
         return $this->belongsTo('App\Models\Formation');
     }
+    public function modules()
+    {
+        return $this->hasMany('App\Models\Module');
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

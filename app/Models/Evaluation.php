@@ -20,7 +20,7 @@ class Evaluation extends Model
     /**
      * @var array
      */
-    protected $fillable = ['formation_id', 'user_id', 'evaluation', 'nameProf', 'created_at', 'updated_at'];
+    protected $fillable = ['module_id', 'user_id', 'evaluation', 'nameProf', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -28,6 +28,11 @@ class Evaluation extends Model
     public function formation()
     {
         return $this->belongsTo('App\Models\Formation');
+    }
+
+    public function modules()
+    {
+        return $this->belongsTo('App\Models\Module');
     }
 
     /**

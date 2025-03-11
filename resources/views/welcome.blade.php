@@ -6,9 +6,9 @@
     <section class="hero-area">
         <div class="hero-slider">
             <!-- Single Slider -->
-            <div class="hero-inner d-flex align-items-center" style="background-color: #f8f9fa; padding: 20px;">
+            <div class="hero-inner d-flex align-items-center" style="background-color: #ffffff; padding: 20px;">
                 <div class="container">
-                    <h3 class="wow fadeInUp text-center scrolling-text" data-wow-delay=".5s" style="color: #000;">
+                    <h3 class="wow fadeInUp text-center scrolling-text" data-wow-delay=".5s" style="color: #34495e;">
                         Bienvenue sur la Plateforme E-learning de la DCSCA
                     </h3>
                     <style>
@@ -40,7 +40,7 @@
                             <div class="hero-text d-none d-lg-block" style="color: #000; margin-top: -100px !important;">
 
                                 <p class="wow fadeInUp " data-wow-delay=".7s"
-                                    style="color: #fff; font-size: 22px; background-color: rgb(199,175,13); padding: 10px; border-radius: 5px; display: inline-block;">
+                                    style="color: #fff; font-size: 22px; background-color: #2c3e50; padding: 10px; border-radius: 5px; display: inline-block;">
                                     MOT DU DIRECTEUR
                                 </p>
 
@@ -61,7 +61,7 @@
                                 Bienvenue sur la plateforme <br> E-learning de la DSCA
                             </h1> --}}
                                 <p class="wow fadeInUp " data-wow-delay=".7s"
-                                    style="color: #fff; font-size: 22px; background-color: rgb(199,175,13); padding: 10px; border-radius: 5px; display: inline-block;">
+                                    style="color: #fff; font-size: 22px; background-color: #2c3e50; padding: 10px; border-radius: 5px; display: inline-block;">
                                     MOT DU DIRECTEUR
                                 </p>
                             </div>
@@ -133,8 +133,8 @@
                     <div class="col-lg-4 col-md-4 col-12 padding-zero">
                         <!-- Start Single Feature -->
                         <div class="single-feature">
-                            <h3><a href="javascript:void(0)">Cours actuels </a></h3>
-                            <p style="text-align: justify;">Les cours actuel sont des formations éducatives qui répondent
+                            <h3><a href="javascript:void(0)" style="color: #34495e">Formations </a></h3>
+                            <p style="text-align: justify;">Les formations éducatives qui répondent
                                 aux besoins et intérêts
                                 actuels des apprenants. Ces cours reflètent les évolutions et innovations
                                 dans divers domaines, offrant des compétences et connaissances recherchées.</p>
@@ -148,7 +148,7 @@
                     <div class="col-lg-4 col-md-4 col-12 padding-zero">
                         <!-- Start Single Feature -->
                         <div class="single-feature">
-                            <h3><a href="javascript:void(0)">Instructeurs certifiés</a></h3>
+                            <h3><a href="javascript:void(0)" style="color: #34495e">Formateurs</a></h3>
                             <p style="text-align: justify;">Les professeurs certifiés sont des éducateurs ayant obtenu une
                                 certification officielle attestant
                                 de leurs compétences et qualifications dans un domaine spécifique. Cette certification,
@@ -164,11 +164,11 @@
                     <div class="col-lg-4 col-md-4 col-12 padding-zero">
                         <!-- Start Single Feature -->
                         <div class="single-feature last">
-                            <h3><a href="javascript:void(0)">Documents</a></h3>
-                            <p style="text-align: justify;">Les documents laissés à la portée des stagiaires sont des
+                            <h3><a href="javascript:void(0)" style="color: #34495e">Resources</a></h3>
+                            <p style="text-align: justify;">Les Resources laissés à la portée des stagiaires sont des
                                 ressources
                                 éducatives mises à disposition pour soutenir leur apprentissage et
-                                approfondir leurs connaissances. Ces documents peuvent inclure une
+                                approfondir leurs connaissances. Ces Resources peuvent inclure une
                                 variété de matériaux pédagogiques.</p>
 
                             <div class="button">
@@ -183,6 +183,70 @@
         </div>
     </section>
     <!-- /End Features Area -->
+    <style>
+        .scrolling-container {
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .scrolling-content {
+            display: flex;
+            gap: 20px;
+            animation: scrollAnimation 60s linear infinite;
+        }
+        .scrolling-container:hover .scrolling-content {
+    animation-play-state: paused;
+}
+        @keyframes scrollAnimation {
+            from {
+                transform: translateX(0%);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        .single-course {
+            flex: 0 0 auto;
+            width: 300px;
+        }
+    </style>
+    <div class="row">
+        <div class="col-12">
+            <div class="section-title">
+                <div class="section-icon wow zoomIn" data-wow-delay=".4s">
+                    <i class="lni lni-graduation"></i>
+                </div>
+                <h2 class="wow fadeInUp" data-wow-delay=".4s" style="color: #34495e"> QUELQUES FORMATIONS DISPONIBLES</h2>
+                {{-- <p class="wow fadeInUp" data-wow-delay=".6s">Des cours variés et accessibles sont proposés afin de
+                    permettre aux apprenants de développer et d’améliorer leurs compétences dans divers domaines,
+                    en leur offrant des opportunités d’apprentissage adaptées à leurs besoins spécifiques et à leurs
+                    objectifs personnels et professionnels.
+                </p> --}}
+            </div>
+        </div>
+    </div>
+    <div class="scrolling-container">
+        <div class="scrolling-content">
+            @foreach ($formation->sortByDesc('created_at') as $value)
+                <div class="single-course wow fadeInUp">
+                    <div class="course-image" style="height: 200px">
+                        <a href="{{ url('/details-formation/' . $value->id) }}">
+                            <img src="{{ asset('assets/uploads/formation_images/' . $value->image_url) }}" alt="#"
+                                style="height: 200px; width: 300px;">
+                        </a>
+                    </div>
+                    <div class="content mb-5">
+                        <h5 class="text-center mt-2">{{ $value->titre }}</h5>
+
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
 
 
     <!-- Start Courses Area -->
@@ -194,7 +258,7 @@
                         <div class="section-icon wow zoomIn" data-wow-delay=".4s">
                             <i class="lni lni-graduation"></i>
                         </div>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Quelques cours</h2>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s" style="color: #34495e">COURS DISPONIBLES</h2>
                         <p class="wow fadeInUp" data-wow-delay=".6s">Des cours variés et accessibles sont proposés afin de
                             permettre aux apprenants de développer et d’améliorer leurs compétences dans divers domaines,
                             en leur offrant des opportunités d’apprentissage adaptées à leurs besoins spécifiques et à leurs
@@ -203,20 +267,21 @@
                     </div>
                 </div>
             </div>
+
             <div class="single-head">
                 <div class="row">
-                    @foreach ($formation->sortByDesc('created_at') as $value)
+                    @foreach ($cours->sortByDesc('created_at') as $value)
                         <div class="col-lg-3 col-md-6 col-12">
                             <!-- Start Single Course -->
                             <div class="single-course wow fadeInUp" data-wow-delay=".2s">
                                 <div class="course-image" style="height: 200px">
-                                    <a href="{{ url('/details-formation/' . $value->id) }}"><img
+                                    <a href="{{ url('/cours-details/' . $value->id) }}"><img
                                             src="{{ asset('assets/uploads/formation_images/' . $value->image_url) }}"
                                             alt="#" style="height: 200px; width: 350px;"></a>
-                                    <p class="price">{{ $value->difficulete->name }}</p>
+
                                 </div>
                                 <div class="content">
-                                    <h5
+                                    <h6
                                         style="
                         display: -webkit-box;
                         -webkit-line-clamp: 1;
@@ -224,8 +289,9 @@
                         overflow: hidden;
                         text-overflow: ellipsis;
                         text-align: justify;
+                        text-transform: uppercase;
                     ">
-                                        {{ $value->titre }}</h5>
+                                        {{ $value->name }}</h6>
                                     <br>
                                     {{--  <p>{{$value->description}}</p>  --}}
                                     <p
@@ -241,264 +307,12 @@
                                     </p>
 
                                 </div>
-                                <div class="bottom-content">
-                                    <ul class="review">
-                                        {{--  <li><i class="lni lni-star-filled"></i></li>
-                            <li><i class="lni lni-star-filled"></i></li>
-                            <li><i class="lni lni-star-filled"></i></li>
-                            <li><i class="lni lni-star-filled"></i></li>
-                            <li><i class="lni lni-star-filled"></i></li>  --}}
-                                        {{-- <button class="btn text-white  ajouter-formation" data-id="{{ $value->id }}" style="background-color: rgb(199,175,13)">Ajouter</button> --}}
-                                    </ul>
-                                    <span class="tag">
-                                        <i class="lni lni-tag"></i>
-                                        <a href="javascript:void(0)">{{ $value->category->name }}</a>
-                                    </span>
-                                </div>
+
                             </div>
                             <!-- End Single Course -->
                         </div>
                     @endforeach
-                    {{--  <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Course -->
-                    <div class="single-course wow fadeInUp" data-wow-delay=".4s">
-                        <div class="course-image">
-                            <a href="{{url('/details-cours')}}"><img src="assets/images/courses/courses-2.jpg"
-                                    alt="#"></a>
-                            <p class="price"></p>
-                        </div>
-                        <div class="content">
-                            <h3><a href="{{url('/details-cours')}}">Génie</a></h3>
-                            <p>Génie ou ingénieur militaire est un spécialiste dans la construction et la destruction d'infrastructures militaires, comme des ponts, des routes, et des fortifications.</p>
-                        </div>
-                        <div class="bottom-content">
-                            <ul class="review">
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
 
-                            </ul>
-                            <span class="tag">
-                                <i class="lni lni-tag"></i>
-                                <a href="javascript:void(0)">Génie</a>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- End Single Course -->
-                </div>  --}}
-                    {{--  <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Course -->
-                    <div class="single-course wow fadeInUp" data-wow-delay=".6s">
-                        <div class="course-image">
-                            <a href="{{url('/details-cours')}}"><img src="assets/images/courses/courses-3.jpg"
-                                    alt="#"></a>
-                            <p class="price"></p>
-                        </div>
-                        <div class="content">
-                            <h3><a href="{{url('/details-cours')}}">Aéronautique</a></h3>
-                            <p>L'aéronautique est la science et la pratique de la conception, de la construction, et de l'exploitation des aéronefs.</p>
-                        </div>
-                        <div class="bottom-content">
-                            <ul class="review">
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-
-                            </ul>
-                            <span class="tag">
-                                <i class="lni lni-tag"></i>
-                                <a href="javascript:void(0)">Aéronefs.</a>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- End Single Course -->
-                </div>  --}}
-                    {{--  <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Course -->
-                    <div class="single-course wow fadeInUp" data-wow-delay=".2s">
-                        <div class="course-image">
-                            <a href="{{url('/details-cours')}}"><img src="assets/images/courses/courses-4.jpeg"
-                                    alt="#"></a>
-                            <p class="price"></p>
-                        </div>
-                        <div class="content">
-                            <h3><a href="{{url('/details-cours')}}">Transmission</a></h3>
-                            <p>Transmission ou spécialiste des communications est le responsable de l'installation, de la maintenance et de l'opération des systèmes de communication militaire.</p>
-                        </div>
-                        <div class="bottom-content">
-                            <ul class="review">
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-
-                            </ul>
-                            <span class="tag">
-                                <i class="lni lni-tag"></i>
-                                <a href="javascript:void(0)">Science</a>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- End Single Course -->
-                </div>  --}}
-                    {{--  <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Course -->
-                    <div class="single-course wow fadeInUp" data-wow-delay=".4s">
-                        <div class="course-image">
-                            <a href="{{url('/details-cours')}}"><img src="assets/images/courses/courses-5.jpg"
-                                    alt="#"></a>
-                            <p class="price"></p>
-                        </div>
-                        <div class="content">
-                            <h3><a href="course-details.html">Artilleur</a></h3>
-                            <p>Artilleur ou Artillerie de campagne est un spécialiste des systèmes
-                                 d'artillerie, tirant des obus à longue distance pour soutenir
-                                  les troupes au sol.
-                                </p>
-                        </div>
-                        <div class="bottom-content">
-                            <ul class="review">
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-
-                            </ul>
-                            <span class="tag">
-                                <i class="lni lni-tag"></i>
-                                <a href="javascript:void(0)">Conception</a>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- End Single Course -->
-                </div>  --}}
-                    {{--  <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Course -->
-                    <div class="single-course wow fadeInUp" data-wow-delay=".6s">
-                        <div class="course-image">
-                            <a href="{{url('/details-cours')}}"><img src="assets/images/courses/courses-6.jpg"
-                                    alt="#"></a>
-                            <p class="price"></p>
-                        </div>
-                        <div class="content">
-                            <h3><a href="{{url('/details-cours')}}">Médecin militaire</a></h3>
-                            <p>Un médécin militaire est un spécialiste qui fournit des soins médicaux aux soldats blessés sur le terrain , au combat et dans les installations militaires.</p>
-                        </div>
-                        <div class="bottom-content">
-                            <ul class="review">
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-
-                            </ul>
-                            <span class="tag">
-                                <i class="lni lni-tag"></i>
-                                <a href="javascript:void(0)">Médical</a>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- End Single Course -->
-                </div>  --}}
-                    {{--  <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Course -->
-                    <div class="single-course wow fadeInUp" data-wow-delay=".2s">
-                        <div class="course-image">
-                            <a href="{{url('/details-cours')}}"><img src="assets/images/courses/courses-4.jpeg"
-                                    alt="#"></a>
-                            <p class="price"></p>
-                        </div>
-                        <div class="content">
-                            <h3><a href="{{url('/details-cours')}}">Génie électrique</a></h3>
-                            <p>Le génie électrique est une branche de l'ingénierie qui traite de l'étude
-                                 et de l'application des équipements, dispositifs et systèmes utilisant
-                                l'électricité, l'électronique et l'électromagnétisme.</p>
-                        </div>
-                        <div class="bottom-content">
-                            <ul class="review">
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-
-                            </ul>
-                            <span class="tag">
-                                <i class="lni lni-tag"></i>
-                                <a href="javascript:void(0)">Science</a>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- End Single Course -->
-                </div>  --}}
-                    {{--  <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Course -->
-                    <div class="single-course wow fadeInUp" data-wow-delay=".4s">
-                        <div class="course-image">
-                            <a href="{{url('/details-cours')}}"><img src="assets/images/courses/courses-5.jpg"
-                                    alt="#"></a>
-                            <p class="price"></p>
-                        </div>
-                        <div class="content">
-                            <h3><a href="{{url('/details-cours')}}">Pilote d'hélicoptère</a></h3>
-                            <p>Pilote d'hélicoptère est un spécialiste qui Opère des hélicoptères pour diverses missions, incluant le transport, la reconnaissance et le combat..</p>
-                        </div>
-                        <div class="bottom-content">
-                            <ul class="review">
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-
-                            </ul>
-                            <span class="tag">
-                                <i class="lni lni-tag"></i>
-                                <a href="javascript:void(0)">Conception</a>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- End Single Course -->
-                </div>  --}}
-                    {{--  <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Course -->
-                    <div class="single-course wow fadeInUp" data-wow-delay=".6s">
-                        <div class="course-image">
-                            <a href="{{url('/details-cours')}}"><img src="assets/images/courses/courses-6.jpg"
-                                    alt="#"></a>
-                            <p class="price"></p>
-                        </div>
-                        <div class="content">
-                            <h3><a href="{{url('/details-cours')}}">Technologie médicale</a></h3>
-                            <p>La technologie médicale
-                                 englobe l'ensemble des outils, équipements, dispositifs et logiciels
-                                  utilisés pour diagnostiquer, traiter, surveiller et améliorer la
-                                   santé des patients.</p>
-                        </div>
-                        <div class="bottom-content">
-                            <ul class="review">
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-
-                            </ul>
-                            <span class="tag">
-                                <i class="lni lni-tag"></i>
-                                <a href="javascript:void(0)">Médical</a>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- End Single Course -->
-                </div>  --}}
                 </div>
             </div>
         </div>

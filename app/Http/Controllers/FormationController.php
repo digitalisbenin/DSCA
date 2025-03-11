@@ -5,6 +5,9 @@ use App\Models\Category;
 use App\Models\Formation;
 use App\Models\Difficulete;
 use App\Models\ClassUser;
+use App\Models\User;
+use App\Models\MesCour;
+use App\Models\Cours;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -42,7 +45,8 @@ class FormationController extends Controller
         $categorie=Category::all();
         $difficulte=Difficulete::all();
         $userClass=ClassUser::all();
-        return view('admin.cours.create',compact('categorie','difficulte','userClass'));
+        $cours=Cours::all();
+        return view('admin.cours.create',compact('categorie','difficulte','userClass','cours'));
     }
 
     /**
@@ -81,12 +85,20 @@ class FormationController extends Controller
         $formation->user_class_id = $request->user_class_id;
         $formation->categorie_id = $request->categorie_id;
         $formation->difficulte_id = $request->difficulte_id;
+        $formation->cours_id = $request->cours_id;
         $formation->status = $request->status;
         $formation->user_id= Auth::id();
         $formation->save();
 
         // session()->flash('success', 'La Formation à été bien créée !');
+        $users = User::where('user_class_id', $formation->user_class_id)->get();
 
+        foreach ($users as $user) {
+            MesCour::create([
+                'formation_id' => $formation->id,
+                'user_id' => $user->id,
+            ]);
+        }
 
         return redirect('/formations');
         // ->with('success', 'Formations créée avec succès!');
@@ -116,7 +128,8 @@ class FormationController extends Controller
         $categorie=Category::all();
         $difficulte=Difficulete::all();
         $userClass=ClassUser::all();
-        return view('admin.cours.edit',compact('formation','categorie','difficulte','userClass'));
+        $cours=Cours::all();
+        return view('admin.cours.edit',compact('formation','categorie','difficulte','userClass','cours'));
     }
 
     /**
@@ -128,16 +141,16 @@ class FormationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'titre' => 'required|max:255',
-            'description' => 'required|max:255',
-            "user_class_id" => ['required'],
-            'image_url' => 'nullable|max:255',
-            'status' => 'required|max:255',
-            'categorie_id' => 'nullable|exists:categories,id',
-            'difficulte_id' => 'nullable|exists:difficuletes,id',
-            'user_id' => 'nullable|exists:users,id',
-        ]);
+        // $validatedData = $request->validate([
+        //     'titre' => 'required|max:255',
+        //     'description' => 'required|max:255',
+        //     "user_class_id" => ['required'],
+        //     'image_url' => 'nullable|max:255',
+        //     'status' => 'required|max:255',
+        //     'categorie_id' => 'nullable|exists:categories,id',
+        //     'difficulte_id' => 'nullable|exists:difficuletes,id',
+        //     'user_id' => 'nullable|exists:users,id',
+        // ]);
        // $formation->update($validatedData);
         $formation = Formation::findOrfail($id);
 
@@ -159,6 +172,7 @@ class FormationController extends Controller
         $formation->user_class_id = $request->user_class_id;
         $formation->categorie_id = $request->categorie_id;
         $formation->difficulte_id = $request->difficulte_id;
+        $formation->cours_id = $request->cours_id;
         $formation->status = $request->status;
         //$formation->user_id= Auth::id();
         $formation->save();

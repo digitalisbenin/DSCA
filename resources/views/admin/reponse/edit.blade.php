@@ -10,7 +10,7 @@
         <!-- Breadcrumb Start -->
 <div class="breadcrumb mb-24">
 <ul class="flex-align gap-4">
-<li><a href="index.html" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
+<li><a href="#" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
 <li> <span class="text-gray-500 fw-normal d-flex"><i class="ph ph-caret-right"></i></span> </li>
 <li><span class="text-main-600 fw-normal text-15">Modifier une Réponse</span></li>
 </ul>
@@ -36,7 +36,7 @@
             </button>
         </div>
         <div class="card-body">
-            <form action="{{ url('answers/' . $answers->id.'/update') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ url('answers/' . $reponse->id.'/update') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                 <div class="row gy-20">
@@ -75,7 +75,7 @@
                                 <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Répondre par vrai ou faux <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
                                 <div class="position-relative">
                                     <select id="courseCategory" name="is_correct" class="form-select py-9 placeholder-13 text-15">
-                                        <option value="{{$answers->is_correct}}">{{$answers->is_correct==0 ? "Faux":"Vrai"}} </option> 
+                                        <option value="{{$reponse->is_correct}}">{{$reponse->is_correct==0 ? "Faux":"Vrai"}} </option> 
                                         <option value="0">Faux </option> 
                                        <option value="1">Vrai </option>    
                                         
@@ -89,7 +89,7 @@
                         
                     </div>
                     <div class="flex-align justify-content-end gap-8">
-                        <a href="{{url('create-categories')}}" class="btn btn-outline-main rounded-pill py-9">Cancel</a>
+                        <a href="{{url('create-categories')}}" class="btn btn-outline-main rounded-pill py-9">Annuler</a>
                         <button type="submit" class="btn btn-success rounded-pill py-9">Mettre à jour</button>
                     </div>
                 </div>

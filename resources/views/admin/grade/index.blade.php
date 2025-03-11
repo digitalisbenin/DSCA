@@ -58,7 +58,11 @@
                             </div>
                         </th>
                         <th class="h6 text-gray-300">N°</th>
+<<<<<<< HEAD
                         <th class="h6 text-gray-300">Nom du grade</th>
+=======
+                        <th class="h6 text-gray-300">Abréviation</th>
+>>>>>>> 758af20ded3cd43b4cd55039958b1f3c10f229d7
                         <th class="h6 text-gray-300">Description</th>
 
                         <th class="h6 text-gray-300">Actions</th>

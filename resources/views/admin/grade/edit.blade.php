@@ -10,7 +10,11 @@
         <!-- Breadcrumb Start -->
 <div class="breadcrumb mb-24">
 <ul class="flex-align gap-4">
+<<<<<<< HEAD
 <li><a href="index.html" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
+=======
+<li><a href="#" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
+>>>>>>> 758af20ded3cd43b4cd55039958b1f3c10f229d7
 <li> <span class="text-gray-500 fw-normal d-flex"><i class="ph ph-caret-right"></i></span> </li>
 <li><span class="text-main-600 fw-normal text-15">Modifier une grade</span></li>
 </ul>
@@ -44,7 +48,11 @@
                     <div class="col-xxl-12 col-md-12 col-sm-7">
                         <div class="row g-20 mb-6">
                             <div class="col-sm-6">
+<<<<<<< HEAD
                                 <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Nom du grade<span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
+=======
+                                <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Abréviation du grade<span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
+>>>>>>> 758af20ded3cd43b4cd55039958b1f3c10f229d7
                                 <div class="position-relative">
                                     <input type="text" class="text-counter placeholder-13 form-control py-11 pe-76" name="name" value="{{ old('name', $userCategory->name) }}"  maxlength="200" id="courseTitle" placeholder="">
                                     <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
@@ -67,7 +75,11 @@
                         
                     </div>
                     <div class="flex-align justify-content-end gap-8">
+<<<<<<< HEAD
                         <a href="#" class="btn btn-outline-main rounded-pill py-9">Cancel</a>
+=======
+                        <a href="#" class="btn btn-outline-main rounded-pill py-9">Annuler</a>
+>>>>>>> 758af20ded3cd43b4cd55039958b1f3c10f229d7
                         <button type="submit" class="btn btn-success rounded-pill py-9">Mettre à jour</button>
                     </div>
                 </div>

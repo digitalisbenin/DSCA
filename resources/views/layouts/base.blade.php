@@ -127,7 +127,7 @@
                                     onfocus="this.placeholder = ''"
                                     onblur="this.placeholder = 'Your email address'" required="" type="email">
                                 <div class="button text-center">
-                                    <button class="btn " style="background-color: rgb(199,175,13)">Abonnez-vous Maintenant !</button>
+                                    <button class="btn " style="background-color: #bdc3c7">Abonnez-vous Maintenant !</button>
                                 </div>
                             </form>
                         </div>
@@ -159,7 +159,7 @@
 
         <!-- Deuxième ligne : Centre -->
         <div class="d-flex flex-column align-items-center text-center ">
-            <div  style="color:black;" class="d-flex flex-column flex-md-row mb-2 text-black text-center text-md-start">
+            <div  style="color:#34495e;" class="d-flex flex-column flex-md-row mb-2 text-black text-center text-md-start">
     {{-- <p class="fw-bold me-md-3">01 BP 2493 Cotonou</p> --}}
     <p class="me-md-3 fs-6"><i class="fa-solid fa-envelope"></i> courrierdcsca@mil.bj</p>
     {{-- <p><i class="fa-solid fa-phone"></i> +229 21 30 05 36</p> --}}

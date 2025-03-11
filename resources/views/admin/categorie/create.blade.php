@@ -10,7 +10,7 @@
         <!-- Breadcrumb Start -->
 <div class="breadcrumb mb-24">
 <ul class="flex-align gap-4">
-<li><a href="index.html" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
+<li><a href="#" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
 <li> <span class="text-gray-500 fw-normal d-flex"><i class="ph ph-caret-right"></i></span> </li>
 <li><span class="text-main-600 fw-normal text-15">Créer une catégorie</span></li>
 </ul>
@@ -100,8 +100,8 @@
                         
                     </div>
                     <div class="flex-align justify-content-end gap-8">
-                        <a href="{{url('create-categories')}}" class="btn btn-outline-main rounded-pill py-9">Cancel</a>
-                        <button type="submit" class="btn btn-success rounded-pill py-9">Envoyer</button>
+                        <a href="{{url('create-categories')}}" class="btn btn-outline-main rounded-pill py-9">Annuler</a>
+                        <button type="submit" class="btn btn-success rounded-pill py-9">Ajouter</button>
                     </div>
                 </div>
             </form>

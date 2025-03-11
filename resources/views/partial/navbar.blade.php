@@ -107,7 +107,7 @@
                                             <li class="nav-item">
                                                 <a href="{{ url('categorie/' . $value->id) }}"
                                                     class=" montserrat fw-bold  {{ Request::is('categorie') ? 'active' : '' }}"
-                                                    style="font-size: 18px;"
+                                                    style="font-size: 18px; white-space: nowrap; text-transform: none"
                                                     aria-expanded="false">{{ $value->name }}</a>
 
                                             </li>
@@ -152,7 +152,7 @@
                                             <circle cx="12" cy="7" r="4"></circle>
                                         </svg>
                                         @auth
-                                            {{ Auth::user()->prenom }}
+                                        {{Auth::user()->userCategory->description}}  {{ Auth::user()->name }}
                                         @endauth
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -169,9 +169,14 @@
                                             @if (Auth::user()->role_id == '1')
                                                 <li><a class="dropdown-item" href="{{ url('dashboard') }}">Tableau de
                                                         bord</a></li>
+                                                        
                                             @elseif (Auth::user()->role_id == '2')
                                                 <li><a class="dropdown-item" href="{{ url('formations') }}">Tableau de
                                                         bord</a></li>
+                                                           <li><a class="dropdown-item" href="{{ url('mes-cours#cours') }}"> Mes
+                                                    Cours</a></li>
+                                            <li><a class="dropdown-item" href="{{ url('user-resultes#resultats') }}"> Mes
+                                                    resultats</a></li>
                                             @endif
                                         @endauth
                                         @if (Auth::user()->role_id == '3')

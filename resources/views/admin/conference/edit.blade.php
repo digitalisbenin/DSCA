@@ -76,7 +76,7 @@
                         
                     </div>
                     <div class="flex-align justify-content-end gap-8">
-                        <a href="{{url('create-visio-conferences')}}" class="btn btn-outline-main rounded-pill py-9">Cancel</a>
+                        <a href="{{url('create-visio-conferences')}}" class="btn btn-outline-main rounded-pill py-9">Annuler</a>
                         <button type="submit" class="btn btn-success rounded-pill py-9">Mettre à jour</button>
                     </div>
                 </div>

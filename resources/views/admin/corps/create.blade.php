@@ -10,7 +10,11 @@
         <!-- Breadcrumb Start -->
 <div class="breadcrumb mb-24">
 <ul class="flex-align gap-4">
+<<<<<<< HEAD
 <li><a href="index.html" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
+=======
+<li><a href="#" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
+>>>>>>> 758af20ded3cd43b4cd55039958b1f3c10f229d7
 <li> <span class="text-gray-500 fw-normal d-flex"><i class="ph ph-caret-right"></i></span> </li>
 <li><span class="text-main-600 fw-normal text-15">Créer un Corps</span></li>
 </ul>
@@ -69,8 +73,13 @@
 
                     </div>
                     <div class="flex-align justify-content-end gap-8">
+<<<<<<< HEAD
                         <a href="#" class="btn btn-outline-main rounded-pill py-9">Cancel</a>
                         <button type="submit" class="btn btn-success rounded-pill py-9">Envoyer</button>
+=======
+                        <a href="#" class="btn btn-outline-main rounded-pill py-9">Annuler</a>
+                        <button type="submit" class="btn btn-success rounded-pill py-9">Ajouter</button>
+>>>>>>> 758af20ded3cd43b4cd55039958b1f3c10f229d7
                     </div>
                 </div>
             </form>

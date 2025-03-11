@@ -1,18 +1,18 @@
 @extends('layouts.admin')
 
 @section('content')
-@include ('partial.sidebar')
+    @include ('partial.sidebar')
 
     <div class="dashboard-body">
         <!-- Breadcrumb Start -->
-    <div class="breadcrumb mb-24">
-<ul class="flex-align gap-4">
-    <li><a href="{{url('dashboard')}}" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
-    <li> <span class="text-gray-500 fw-normal d-flex"><i class="ph ph-caret-right"></i></span> </li>
-    <li><span class="text-main-600 fw-normal text-15">Formations</span></li>
-</ul>
-</div>
-<!-- Breadcrumb End -->
+        <div class="breadcrumb mb-24">
+            <ul class="flex-align gap-4">
+                <li><a href="#" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
+                <li> <span class="text-gray-500 fw-normal d-flex"><i class="ph ph-caret-right"></i></span> </li>
+                <li><span class="text-main-600 fw-normal text-15">Cours</span></li>
+            </ul>
+        </div>
+        <!-- Breadcrumb End -->
 
         <!-- Course Tab Start -->
         <div class="card">
@@ -32,41 +32,62 @@
                           <button class="nav-link" id="pills-favourite-tab" data-bs-toggle="pill" data-bs-target="#pills-favourite" type="button" role="tab" aria-controls="pills-favourite" aria-selected="false">Favorite (25)</button>
                         </li>  --}}
                     </ul>
-                    <a href="{{url('/create-formations')}}" class="btn btn-main rounded-pill py-7 flex-align gap-4 fw-normal">
+                    <a href="{{ url('/create-cours') }}" class="btn btn-main rounded-pill py-7 flex-align gap-4 fw-normal">
                         <span class="d-flex text-md"><i class="ph ph-plus"></i></span>
-                        Ajouter une formation
+                        Ajouter un cours
                     </a>
                 </div>
                 <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-onGoing" role="tabpanel" aria-labelledby="pills-onGoing-tab" tabindex="0">
+                    <div class="tab-pane fade show active" id="pills-onGoing" role="tabpanel"
+                        aria-labelledby="pills-onGoing-tab" tabindex="0">
                         <div class="row g-20">
-                           @foreach($formation->sortByDesc('created_at') as $value)
-                           <div class="col-xxl-3 col-lg-4 col-sm-6">
-                            <div class="card border border-gray-100">
-                                <div class="card-body p-8">
-                                    <a href="#" class="bg-main-100 rounded-8 overflow-hidden text-center mb-8 h-164 flex-center p-8">
-                                        {{--  <img src="admin/assets/images/thumbs/course-img1.png" alt="Course Image">  --}}
-                                        <img src="{{ asset('assets/uploads/formation_images/'.$value->image_url) }}" alt="Course Image">
-                                    </a>
-                                    <div class="p-8">
-                                        <span class="text-13 py-2 px-10 rounded-pill bg-success-50 text-success-600 mb-16">{{$value->titre}}</span>
-                                        <p style="
+                            @foreach ($cours->sortByDesc('created_at') as $value)
+                                <div class="col-xxl-3 col-lg-4 col-sm-6">
+                                    <div class="card border border-gray-100">
+                                        <div class="card-body p-8">
+                                            <a href="#"
+                                                class="bg-main-100 rounded-8 overflow-hidden text-center mb-8 h-164 flex-center p-8">
+                                                {{--  <img src="admin/assets/images/thumbs/course-img1.png" alt="Course Image">  --}}
+                                                <img src="{{ asset('assets/uploads/formation_images/' . $value->image_url) }}"
+                                                    alt="Course Image">
+                                            </a>
+                                            <div class="p-8">
+                                                <span
+                                                    class="text-13 py-2 px-10 rounded-pill bg-success-50 text-success-600 mb-16">{{ $value->name }}</span>
+                                                <p
+                                                    style="
                         display: -webkit-box;
                         -webkit-line-clamp: 3;
                         -webkit-box-orient: vertical;
                         overflow: hidden;
                         text-overflow: ellipsis;
                     ">
-                        {{$value->description}}
-                    </p>
-                                        <br>
-                                        <span class="text-16  text-gray-600"> catégorie: {{$value->category->name}} </span>
+                                                    {{ $value->description }}
+                                                </p>
 
-                                        {{-- <div class="flex-align gap-8 mt-12">
-                                            <span class="text-main-600 flex-shrink-0 text-13 fw-medium">32%</span>
-                                            <div class="progress w-100  bg-main-100 rounded-pill h-8" role="progressbar" aria-label="Basic example" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="progress-bar bg-main-600 rounded-pill" style="width: 32%"></div>
+
+
+
+                                                <a href="{{ url('cours/' . $value->id . '/edit') }}"
+                                                    class="bg-success-600 text-white py-2 px-14 rounded-pill hover-bg-success-800 hover-text-white"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                                    </svg></a>
+                                                <a href="{{ url('cours/' . $value->id . '/destroy') }}"
+                                                    class="bg-danger-600 text-white py-2 px-14 rounded-pill hover-bg-danger-800 hover-text-white"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+                                                    </svg></a>
+
+
                                             </div>
+<<<<<<< HEAD
                                         </div> --}}
                                         <span class="text-16  text-gray-600 mt-3"> Difficulté: {{$value->difficulete->name}} </span>
                                         {{--  <div class="flex-align gap-8 flex-wrap mt-16">
@@ -92,11 +113,12 @@
 
                                         <a href="{{url('/chapitres/'.$value->id)}}" class="btn btn-outline-main rounded-pill py-9 w-100 mt-24">Ajouter un chapitre</a>
                                         <a href="{{url('/quizs/'.$value->id)}}" class="btn btn-outline-main rounded-pill py-9 w-100 mt-24">Quizs</a>
+=======
+                                        </div>
+>>>>>>> 758af20ded3cd43b4cd55039958b1f3c10f229d7
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                           @endforeach
+                            @endforeach
                             {{--  <div class="col-xxl-3 col-lg-4 col-sm-6">
                                 <div class="card border border-gray-100">
                                     <div class="card-body p-8">
@@ -195,36 +217,49 @@
                             </div>  --}}
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="pills-completed" role="tabpanel" aria-labelledby="pills-completed-tab" tabindex="0">
+                    <div class="tab-pane fade" id="pills-completed" role="tabpanel" aria-labelledby="pills-completed-tab"
+                        tabindex="0">
                         <div class="row g-20">
                             <div class="col-xxl-3 col-lg-4 col-sm-6">
                                 <div class="card border border-gray-100">
                                     <div class="card-body p-8">
-                                        <a href="{{url('/admin-cours-detail')}}" class="bg-main-100 rounded-8 overflow-hidden text-center mb-8 h-164 flex-center p-8">
+                                        <a href="{{ url('/admin-cours-detail') }}"
+                                            class="bg-main-100 rounded-8 overflow-hidden text-center mb-8 h-164 flex-center p-8">
                                             <img src="admin/assets/images/thumbs/course-img1.png" alt="Course Image">
                                         </a>
                                         <div class="p-8">
-                                            <span class="text-13 py-2 px-10 rounded-pill bg-success-50 text-success-600 mb-16">Development</span>
-                                            <h5 class="mb-0"><a href="{{url('/admin-cours-detail')}}" class="hover-text-main-600">Full Stack Web Development</a></h5>
+                                            <span
+                                                class="text-13 py-2 px-10 rounded-pill bg-success-50 text-success-600 mb-16">Development</span>
+                                            <h5 class="mb-0"><a href="{{ url('/admin-cours-detail') }}"
+                                                    class="hover-text-main-600">Full Stack Web Development</a></h5>
 
                                             <div class="flex-align gap-8 mt-12">
                                                 <span class="text-main-600 flex-shrink-0 text-13 fw-medium">32%</span>
-                                                <div class="progress w-100  bg-main-100 rounded-pill h-8" role="progressbar" aria-label="Basic example" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100">
-                                                    <div class="progress-bar bg-main-600 rounded-pill" style="width: 32%"></div>
+                                                <div class="progress w-100  bg-main-100 rounded-pill h-8" role="progressbar"
+                                                    aria-label="Basic example" aria-valuenow="32" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    <div class="progress-bar bg-main-600 rounded-pill" style="width: 32%">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="flex-align gap-8 flex-wrap mt-16">
-                                                <img src="admin/assets/images/thumbs/user-img1.png" class="w-32 h-32 rounded-circle object-fit-cover" alt="User Image">
+                                                <img src="admin/assets/images/thumbs/user-img1.png"
+                                                    class="w-32 h-32 rounded-circle object-fit-cover" alt="User Image">
                                                 <div>
-                                                    <span class="text-gray-600 text-13">Created by <a href="profile.html" class="fw-semibold text-gray-700 hover-text-main-600 hover-text-decoration-underline">Albert James</a> </span>
+                                                    <span class="text-gray-600 text-13">Created by <a href="profile.html"
+                                                            class="fw-semibold text-gray-700 hover-text-main-600 hover-text-decoration-underline">Albert
+                                                            James</a> </span>
                                                     <div class="flex-align gap-4">
-                                                        <span class="text-15 fw-bold text-warning-600 d-flex"><i class="ph-fill ph-star"></i></span>
+                                                        <span class="text-15 fw-bold text-warning-600 d-flex"><i
+                                                                class="ph-fill ph-star"></i></span>
                                                         <span class="text-13 fw-bold text-gray-600">4.9</span>
                                                         <span class="text-13 fw-bold text-gray-600">(12k)</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="{{url('/admin-cours-detail')}}" class="btn btn-outline-main rounded-pill py-9 w-100 mt-24">Continue Classes</a>
+                                            <a href="{{ url('/admin-cours-detail') }}"
+                                                class="btn btn-outline-main rounded-pill py-9 w-100 mt-24">Continue
+                                                Classes</a>
                                         </div>
                                     </div>
                                 </div>
@@ -232,31 +267,43 @@
                             <div class="col-xxl-3 col-lg-4 col-sm-6">
                                 <div class="card border border-gray-100">
                                     <div class="card-body p-8">
-                                        <a href="{{url('/admin-cours-detail')}}" class="bg-main-100 rounded-8 overflow-hidden text-center mb-8 h-164 flex-center p-8">
+                                        <a href="{{ url('/admin-cours-detail') }}"
+                                            class="bg-main-100 rounded-8 overflow-hidden text-center mb-8 h-164 flex-center p-8">
                                             <img src="admin/assets/images/thumbs/course-img2.png" alt="Course Image">
                                         </a>
                                         <div class="p-8">
-                                            <span class="text-13 py-2 px-10 rounded-pill bg-warning-50 text-warning-600 mb-16">Design</span>
-                                            <h5 class="mb-0"><a href="{{url('/admin-cours-detail')}}" class="hover-text-main-600">UI/UX Design Course</a></h5>
+                                            <span
+                                                class="text-13 py-2 px-10 rounded-pill bg-warning-50 text-warning-600 mb-16">Design</span>
+                                            <h5 class="mb-0"><a href="{{ url('/admin-cours-detail') }}"
+                                                    class="hover-text-main-600">UI/UX Design Course</a></h5>
 
                                             <div class="flex-align gap-8 mt-12">
                                                 <span class="text-main-600 flex-shrink-0 text-13 fw-medium">20%</span>
-                                                <div class="progress w-100  bg-main-100 rounded-pill h-8" role="progressbar" aria-label="Basic example" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                    <div class="progress-bar bg-main-600 rounded-pill" style="width: 20%"></div>
+                                                <div class="progress w-100  bg-main-100 rounded-pill h-8"
+                                                    role="progressbar" aria-label="Basic example" aria-valuenow="20"
+                                                    aria-valuemin="0" aria-valuemax="100">
+                                                    <div class="progress-bar bg-main-600 rounded-pill" style="width: 20%">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="flex-align gap-8 flex-wrap mt-16">
-                                                <img src="admin/assets/images/thumbs/user-img2.png" class="w-32 h-32 rounded-circle object-fit-cover" alt="User Image">
+                                                <img src="admin/assets/images/thumbs/user-img2.png"
+                                                    class="w-32 h-32 rounded-circle object-fit-cover" alt="User Image">
                                                 <div>
-                                                    <span class="text-gray-600 text-13">Created by <a href="profile.html" class="fw-semibold text-gray-700 hover-text-main-600 hover-text-decoration-underline">Albert James</a> </span>
+                                                    <span class="text-gray-600 text-13">Created by <a href="profile.html"
+                                                            class="fw-semibold text-gray-700 hover-text-main-600 hover-text-decoration-underline">Albert
+                                                            James</a> </span>
                                                     <div class="flex-align gap-4">
-                                                        <span class="text-15 fw-bold text-warning-600 d-flex"><i class="ph-fill ph-star"></i></span>
+                                                        <span class="text-15 fw-bold text-warning-600 d-flex"><i
+                                                                class="ph-fill ph-star"></i></span>
                                                         <span class="text-13 fw-bold text-gray-600">4.9</span>
                                                         <span class="text-13 fw-bold text-gray-600">(12k)</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="{{url('/admin-cours-detail')}}" class="btn btn-outline-main rounded-pill py-9 w-100 mt-24">Continue Classes</a>
+                                            <a href="{{ url('/admin-cours-detail') }}"
+                                                class="btn btn-outline-main rounded-pill py-9 w-100 mt-24">Continue
+                                                Classes</a>
                                         </div>
                                     </div>
                                 </div>
@@ -264,31 +311,43 @@
                             <div class="col-xxl-3 col-lg-4 col-sm-6">
                                 <div class="card border border-gray-100">
                                     <div class="card-body p-8">
-                                        <a href="{{url('/admin-cours-detail')}}" class="bg-main-100 rounded-8 overflow-hidden text-center mb-8 h-164 flex-center p-8">
+                                        <a href="{{ url('/admin-cours-detail') }}"
+                                            class="bg-main-100 rounded-8 overflow-hidden text-center mb-8 h-164 flex-center p-8">
                                             <img src="admin/assets/images/thumbs/course-img3.png" alt="Course Image">
                                         </a>
                                         <div class="p-8">
-                                            <span class="text-13 py-2 px-10 rounded-pill bg-danger-50 text-danger-600 mb-16">Frontend</span>
-                                            <h5 class="mb-0"><a href="{{url('/admin-cours-detail')}}" class="hover-text-main-600">React Native Courese</a></h5>
+                                            <span
+                                                class="text-13 py-2 px-10 rounded-pill bg-danger-50 text-danger-600 mb-16">Frontend</span>
+                                            <h5 class="mb-0"><a href="{{ url('/admin-cours-detail') }}"
+                                                    class="hover-text-main-600">React Native Courese</a></h5>
 
                                             <div class="flex-align gap-8 mt-12">
                                                 <span class="text-main-600 flex-shrink-0 text-13 fw-medium">45%</span>
-                                                <div class="progress w-100  bg-main-100 rounded-pill h-8" role="progressbar" aria-label="Basic example" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-                                                    <div class="progress-bar bg-main-600 rounded-pill" style="width: 45%"></div>
+                                                <div class="progress w-100  bg-main-100 rounded-pill h-8"
+                                                    role="progressbar" aria-label="Basic example" aria-valuenow="45"
+                                                    aria-valuemin="0" aria-valuemax="100">
+                                                    <div class="progress-bar bg-main-600 rounded-pill" style="width: 45%">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="flex-align gap-8 flex-wrap mt-16">
-                                                <img src="admin/assets/images/thumbs/user-img3.png" class="w-32 h-32 rounded-circle object-fit-cover" alt="User Image">
+                                                <img src="admin/assets/images/thumbs/user-img3.png"
+                                                    class="w-32 h-32 rounded-circle object-fit-cover" alt="User Image">
                                                 <div>
-                                                    <span class="text-gray-600 text-13">Created by <a href="profile.html" class="fw-semibold text-gray-700 hover-text-main-600 hover-text-decoration-underline">Albert James</a> </span>
+                                                    <span class="text-gray-600 text-13">Created by <a href="profile.html"
+                                                            class="fw-semibold text-gray-700 hover-text-main-600 hover-text-decoration-underline">Albert
+                                                            James</a> </span>
                                                     <div class="flex-align gap-4">
-                                                        <span class="text-15 fw-bold text-warning-600 d-flex"><i class="ph-fill ph-star"></i></span>
+                                                        <span class="text-15 fw-bold text-warning-600 d-flex"><i
+                                                                class="ph-fill ph-star"></i></span>
                                                         <span class="text-13 fw-bold text-gray-600">4.9</span>
                                                         <span class="text-13 fw-bold text-gray-600">(12k)</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="{{url('/admin-cours-detail')}}" class="btn btn-outline-main rounded-pill py-9 w-100 mt-24">Continue Classes</a>
+                                            <a href="{{ url('/admin-cours-detail') }}"
+                                                class="btn btn-outline-main rounded-pill py-9 w-100 mt-24">Continue
+                                                Classes</a>
                                         </div>
                                     </div>
                                 </div>
@@ -327,8 +386,9 @@
                             </div>  --}}
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="pills-saved" role="tabpanel" aria-labelledby="pills-saved-tab" tabindex="0">
-                         <div class="row g-20">
+                    <div class="tab-pane fade" id="pills-saved" role="tabpanel" aria-labelledby="pills-saved-tab"
+                        tabindex="0">
+                        <div class="row g-20">
                             {{--  <div class="col-xxl-3 col-lg-4 col-sm-6">
                                 <div class="card border border-gray-100">
                                     <div class="card-body p-8">
@@ -997,10 +1057,9 @@
         </div>
 
     </div>
-
 @endsection
 <script>
-    $('.wishlist-btn').on('click', function () {
+    $('.wishlist-btn').on('click', function() {
         $(this).toggleClass('bg-danger-600 text-white')
     });
 </script>

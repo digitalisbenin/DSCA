@@ -40,7 +40,7 @@
                                 <input class="form-check-input border-gray-200 rounded-4" type="checkbox" id="selectAll">
                             </div>
                         </th>
-                        <th class="h6 text-gray-300">Utilisateurs</th>
+                        <th class="h6 text-gray-300">Nom</th>
                         <th class="h6 text-gray-300">Role</th>
                         <th class="h6 text-gray-300">Email</th>
                         <th class="h6 text-gray-300">Adresse</th>
@@ -78,7 +78,9 @@
                             <span class="h6 mb-0 fw-medium text-gray-300">{{$value->telephone}}</span>
                         </td>
                         <td>
-                            <span class="h6 mb-0 fw-medium text-gray-300">{{$value->post}}</span>
+                            <span class="h6 mb-0 fw-medium text-gray-300">
+                                {{ $value->poste ? $value->poste->name : 'Aucun poste' }}
+                            </span>
                            
                         </td>
                         <td>
