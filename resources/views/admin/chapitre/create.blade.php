@@ -115,14 +115,14 @@
                                 </div>
                             </div>  --}}
                             <div class="col-sm-6">
-                                <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Formation <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
+                                <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Module <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
                                 <div class="position-relative">
 
 
-                                       @foreach($formation as $value)
+                                       @foreach($module as $value)
                                        {{--  <option value="{{$value->id}}">{{$value->titre}} </option>  --}}
-                                       <input type="hidden" name="formation_id" value="{{ $formation->first()->id ?? '' }}">
-                                       <input type="text"  name="" class="form-control py-9 placeholder-13 text-15"  style=" background-color: #d6d6d6;"  disabled value="{{ $formation->first()->titre ?? '' }}">
+                                       <input type="hidden" name="module_id" value="{{ $module->first()->id ?? '' }}">
+                                       <input type="text"  name="" class="form-control py-9 placeholder-13 text-15"  style=" background-color: #d6d6d6;"  disabled value="{{ $module->first()->titre ?? '' }}">
 
                                        {{--  <input type="text" name=""class="form-control py-9 placeholder-13 text-15" readonly  value="{{ $formation->first()->titre ?? '' }}">  --}}
                                        @endforeach

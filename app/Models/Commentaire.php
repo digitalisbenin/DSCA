@@ -19,7 +19,7 @@ class Commentaire extends Model
     /**
      * @var array
      */
-    protected $fillable = ['user_id', 'chapitre_id', 'content', 'created_at', 'updated_at'];
+    protected $fillable = ['user_id', 'chapitre_id', 'content','reponse', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

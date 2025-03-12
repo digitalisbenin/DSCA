@@ -31,7 +31,7 @@
             <div class="col-12 ">
                 <div class="section-title">
                     {{--  <span class="wow zoomIn" data-wow-delay="0.2s"></span>  --}}
-                    <h3 class="wow fadeInUp" style="text-transform: uppercase;" data-wow-delay=".4s"> {{$formation->titre}}</h3>
+                    <h3 class="wow fadeInUp" style="text-transform: uppercase;" data-wow-delay=".4s"> {{$module->titre}}</h3>
                     <p class="wow fadeInUp" data-wow-delay=".6s"></p>
                 </div>
             </div>
@@ -53,10 +53,10 @@
 
          
           <p style="text-align: justify; font-size: 20px;">
-            <img src="{{ asset('assets/uploads/formation_images/'.$formation->image_url) }}" 
-                 style="float: left; margin-right: 15px; margin-bottom: 10px; max-width: 40%;" 
+            <img src="{{ asset('assets/uploads/formation_images/'.$module->image_url) }}" 
+                 style="float: left; margin-right: 15px; margin-bottom: 10px; " 
                  alt="Image">
-            {!! $formation->description !!}
+            {!! $module->description !!}
         </p>
           
           
@@ -68,14 +68,14 @@
         
 
       </div>
-      <div class="col-xl-6 cta-btn-container ">
+      <div class="col-xl-12 cta-btn-container ">
        
         <h4 class="mt-3 mb-3">Les chapitres du module
         </h4>
-        <div class="chapitre-container">
-            @foreach($formation->chapitres as $value)
-                <div class="chapitre">
-                    <h6 class="py-3 ml-3" style="text-align: justify;">
+        <div class="grid-container">
+            @foreach($module->chapitres as $value)
+                <div class="grid-item">
+                    <h6>
                         <ol>
                             <li>{{ $value->titre }}</li>
                         </ol>
@@ -85,30 +85,24 @@
         </div>
         
         <style>
-            .chapitre-container {
+            .grid-container {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
-                gap: 20px; /* Espacement entre les éléments */
-            }
-        
-            /* .chapitre {
+                gap: 20px; /* Espacement entre les colonnes */
                 padding: 10px;
-                border: 1px solid #ddd; 
-                background: #f9f9f9;
-            } */
-        
-            @media (max-width: 768px) {
-                .chapitre-container {
-                    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablettes */
-                }
             }
         
-            @media (max-width: 480px) {
-                .chapitre-container {
-                    grid-template-columns: repeat(1, 1fr); /* 1 colonne sur mobiles */
-                }
+            .grid-item {
+                background: #f9f9f9;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+                text-align: center; /* Centrer le texte */
             }
         </style>
+        
+        
+     
         
   </div>
     </div>

@@ -12,7 +12,7 @@ class Module extends Model
      /**
      * @var array
      */
-    protected $fillable = ['user_id', 'categorie_id' ,'user_class_id','cours_id', 'difficulte_id', 'titre', 'description', 'image_url', 'status', 'created_at', 'updated_at'];
+    protected $fillable = ['user_id', 'categorie_id' ,'user_class_id','cours_id', 'difficulte_id','nombre_chapitre', 'titre', 'description', 'image_url', 'status', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

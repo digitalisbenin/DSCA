@@ -18,7 +18,7 @@
         <!-- Breadcrumb Right Start -->
         <div class="flex-align gap-8 flex-wrap">
             <div class="position-relative text-gray-500 flex-align gap-4 text-13">
-                <a href="{{url('/create-chapitres/'.$formation)}}" class="btn btn-main rounded-pill py-7 flex-align gap-4 fw-normal">
+                <a href="{{url('/create-chapitres/'.$module)}}" class="btn btn-main rounded-pill py-7 flex-align gap-4 fw-normal">
                     <span class="d-flex text-md"><i class="ph ph-plus"></i></span>
                     Ajouter un chapitre
                 </a>
@@ -69,7 +69,7 @@
                         <th class="h6 text-gray-300">Image</th>
                         <th class="h6 text-gray-300">Titre du chapitre</th>
                         {{--  <th class="h6 text-gray-300">Description</th>  --}}
-                        <th class="h6 text-gray-300">Formation</th>
+                        <th class="h6 text-gray-300">Module</th>
 {{--
                         <th class="h6 text-gray-300">Documents</th>
                         <th class="h6 text-gray-300">Vidéos</th>  --}}
@@ -100,25 +100,11 @@
                             <span class="h6 mb-0 fw-medium text-gray-300">{{$value->titre}}</span>
                         </td>
 
-                        {{--  <td>
-                            <span class="h6 mb-0 fw-medium text-gray-300"
-    style="
-        display: block;
-        max-width: 30ch; /* Limite à environ trois colonnes (30 caractères) */
-        white-space: normal; /* Autorise les retours à la ligne */
-        overflow: hidden;
-        text-overflow: ellipsis; /* Ajoute les points de suspension (...) */
-        word-wrap: break-word; /* Coupe le texte si nécessaire */
-    ">
-   
- {!! $value->description !!} 
-</span>
-
-                        </td>  --}}
+                       
                         <td>
                             <span class="h6 mb-0 fw-medium text-gray-300">
 
-                                {{$value->formation->titre}}
+                                {{$value->module->titre}}
                             </span>
                         </td>
 

@@ -36,7 +36,7 @@
             </button>
         </div>
         <div class="card-body">
-            <form action="{{ url('formations/'.$formation->id.'/update') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ url('modules/'.$module->id.'/update') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                 <div class="row gy-20">
@@ -61,7 +61,7 @@
                                       
                                        @foreach($cours as $value)
                                        <option
-                                           value="{{ $value -> id }}"@if($value->id == $formation->cours_id) selected @endif>{{ $value -> name }}</option>
+                                           value="{{ $value -> id }}"@if($value->id == $module->cours_id) selected @endif>{{ $value -> name }}</option>
                                    @endforeach
                                         
                                     </select>                                            
@@ -75,7 +75,7 @@
                                       
                                        @foreach($categorie as $value)
                                        <option
-                                           value="{{ $value -> id }}"@if($value->id == $formation->categorie_id) selected @endif>{{ $value -> name }}</option>
+                                           value="{{ $value -> id }}"@if($value->id == $module->categorie_id) selected @endif>{{ $value -> name }}</option>
                                    @endforeach
                                         
                                     </select>                                            
@@ -84,7 +84,7 @@
                             <div class="col-sm-6">
                                 <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Titre <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
                                 <div class="position-relative">
-                                    <input type="text" class="text-counter placeholder-13 form-control py-11 pe-77" name="titre" value="{{ old('titre', $formation->titre) }}"  maxlength="100" id="courseTitle" placeholder="">
+                                    <input type="text" class="text-counter placeholder-13 form-control py-11 pe-77" name="titre" value="{{ old('titre', $module->titre) }}"  maxlength="100" id="courseTitle" placeholder="">
                                     <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
                                         <span id="current">3</span>
                                         <span id="maximum">/ 100</span>
@@ -99,7 +99,7 @@
                                         class="form-select py-9 placeholder-13 text-15">
                                         @foreach ($userClass as $value)
                                             <option value="{{ $value->id }}"
-                                                {{ $value->id == old('user_class_id', $formation->user_class_id) ? 'selected' : '' }}>
+                                                {{ $value->id == old('user_class_id', $module->user_class_id) ? 'selected' : '' }}>
                                                 {{ $value->name }}</option>
                                         @endforeach
                                     </select>
@@ -109,7 +109,7 @@
                                 <label for="courseLesson" class="h5 mb-8 fw-semibold font-heading">Statut <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
                                 <div class="position-relative">
                                     <select id="courseLesson" name="status"   class="form-select py-9 placeholder-13 text-15">
-                                        <option value="{{ old('status', $formation->status) }}"  selected>{{$formation->status}}</option>
+                                        <option value="{{ old('status', $module->status) }}"  selected>{{$module->status}}</option>
                                         <option value="abandonné">abandonné</option>
                                         <option value="valider">valider</option>
                                         <option value="terminer">terminer</option>
@@ -117,14 +117,14 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <label for="courseLevel" class="h5 mb-8 fw-semibold font-heading">Difficultés <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
+                                <label for="courseLevel" class="h5 mb-8 fw-semibold font-heading">Niveau de Difficultés  <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
                                 <div class="position-relative">
                                     <select id="courseLevel" name="difficulte_id" class="form-select py-9 placeholder-13 text-15">
                                         <option value="" selected>Aucune</option>
                                        
                                         @foreach($difficulte as $value)
                                         <option
-                                            value="{{ $value -> id }}"@if($value->id == $formation->difficulte_id) selected @endif>{{ $value -> name }}</option>
+                                            value="{{ $value -> id }}"@if($value->id == $module->difficulte_id) selected @endif>{{ $value -> name }}</option>
                                     @endforeach                              
 
                                     </select>                                            
@@ -138,7 +138,7 @@
                                               name="description" 
                                               id="courseDescription" 
                                               
-                                              placeholder="" rows="7">{{ old('description', $formation->description) }}</textarea>
+                                              placeholder="" rows="7">{{ old('description', $module->description) }}</textarea>
                                 </div>
                             </div>
                             

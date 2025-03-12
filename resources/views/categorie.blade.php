@@ -79,7 +79,7 @@
                 <!-- Start Single Course -->
                 <div class="single-course wow fadeInUp" data-wow-delay=".2s">
                     <div class="course-image" style="height: 200px">
-                        <a href="{{url('details-formation/'.$value->id)}}"><img src="{{ asset('assets/uploads/formation_images/'.$value->image_url) }}"
+                        <a href="{{url('module-details/'.$value->id)}}"><img src="{{ asset('assets/uploads/formation_images/'.$value->image_url) }}"
                                 alt="#" style="height: 200px; width: 350px;">
                             </a>
                             {{--  <p class="price">Categorie</p>     --}}

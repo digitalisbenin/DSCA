@@ -230,10 +230,10 @@
     </div>
     <div class="scrolling-container">
         <div class="scrolling-content">
-            @foreach ($formation->sortByDesc('created_at') as $value)
+            @foreach ($module->sortByDesc('created_at') as $value)
                 <div class="single-course wow fadeInUp">
                     <div class="course-image" style="height: 200px">
-                        <a href="{{ url('/details-formation/' . $value->id) }}">
+                        <a href="{{ url('/module-details/' . $value->id) }}">
                             <img src="{{ asset('assets/uploads/formation_images/' . $value->image_url) }}" alt="#"
                                 style="height: 200px; width: 300px;">
                         </a>

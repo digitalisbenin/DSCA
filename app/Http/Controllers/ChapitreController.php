@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Chapitre;
-use App\Models\Formation;
+use App\Models\Module;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
@@ -31,7 +31,7 @@ class ChapitreController extends Controller
             $chapitre = Chapitre::all();
         } else {
             // L'utilisateur est un formateur ou autre, récupère les chapitres liés à ses formations
-            $chapitre = Chapitre::whereHas('formation', function ($query) use ($user) {
+            $chapitre = Chapitre::whereHas('module', function ($query) use ($user) {
                 $query->where('user_id', $user->id);
             })->get();
         }
@@ -45,8 +45,8 @@ class ChapitreController extends Controller
      */
     public function create($id)
     {
-        $formation=Formation::where('id',$id)->get();
-        return view('admin.chapitre.create',compact('formation'));
+        $module=Module::where('id',$id)->get();
+        return view('admin.chapitre.create',compact('module'));
     }
 
     /**
@@ -59,15 +59,15 @@ class ChapitreController extends Controller
     {
         //dd($request);
 
-        $validatedData = $request->validate([
-            'titre' => 'required|max:255',
-            'description' => 'nullable',
-            'image_url' => 'nullable',
-            'video_url' => 'nullable',
-            'document_url' => 'nullable',
-            'formation_id' => 'required|exists:formations,id',
+        // $validatedData = $request->validate([
+        //     'titre' => 'required|max:255',
+        //     'description' => 'nullable',
+        //     'image_url' => 'nullable',
+        //     'video_url' => 'nullable',
+        //     'document_url' => 'nullable',
+        //     'module_id' => 'required|exists:formations,id',
 
-        ]);
+        // ]);
         //$chapitre = Chapitre::create($validatedData);
         $chapitre = new Chapitre();
 
@@ -95,10 +95,10 @@ class ChapitreController extends Controller
 
         $chapitre->titre = $request->titre;
         $chapitre->description = $request->description;
-        $chapitre->formation_id = $request->formation_id;
+        $chapitre->module_id = $request->module_id;
         $chapitre->save();
 
-        return redirect('/formations');
+        return redirect('/modules');
         // ->with('success', 'Chapitre créée avec succès!');
     }
 
@@ -111,20 +111,20 @@ class ChapitreController extends Controller
     public function show( $id)
     {
         $user = Auth::user(); // Récupère l'utilisateur connecté
-        $formation=$id;
+        $module=$id;
         // Vérifie le rôle de l'utilisateur
         if ($user->role->name === 'Administrateurs') {
             // L'utilisateur est un administrateur, récupère tous les chapitres
             $chapitre = Chapitre::all();
         } else {
             // L'utilisateur est un formateur ou autre, récupère les chapitres liés à ses formations
-            $chapitre = Chapitre::whereHas('formation', function ($query) use ($user) {
+            $chapitre = Chapitre::whereHas('module', function ($query) use ($user) {
                 $query->where('user_id', $user->id);
-            })->where('formation_id', $id)
+            })->where('module_id', $id)
             ->get();
         }
 
-        return view('admin.chapitre.show', compact('chapitre','formation'));
+        return view('admin.chapitre.show', compact('chapitre','module'));
     }
 
     /**
@@ -136,8 +136,8 @@ class ChapitreController extends Controller
     public function edit( $id)
     {
         $chapitre= Chapitre::findOrfail($id);
-        $formation=Formation::all();
-        return view('admin.chapitre.edit', compact('chapitre','formation'));
+        $module=Module::all();
+        return view('admin.chapitre.edit', compact('chapitre','module'));
     }
 
     /**
@@ -157,7 +157,7 @@ class ChapitreController extends Controller
             'image_url' => 'nullable',
             'video_url' => 'nullable',
             'document_url' => 'nullable',
-            'formation_id' => 'required|exists:formations,id',
+            'module_id' => 'required|exists:formations,id',
         ]);
 
         $chapitre = Chapitre::findOrfail($id);
@@ -203,9 +203,9 @@ class ChapitreController extends Controller
 
         $chapitre->titre = $request->titre;
         $chapitre->description = $request->description;
-        $chapitre->formation_id = $request->formation_id;
+        $chapitre->module_id = $request->module_id;
         $chapitre->save();
-        return redirect('/formations');
+        return redirect('/modules');
         // ->with('success', 'Chapitre mise à jour avec succès!');
     }
 

@@ -29,7 +29,7 @@
                 <!-- Course Details Wrapper Start -->
                 @if ($chapitre->isNotEmpty())
                     {{-- Vérifie si la liste des chapitres n'est pas vide --}}
-                    <h3 class="title text-center mb-3"> {{ $chapitre->first()->formation->titre }}</h3>
+                    <h3 class="title text-center mb-3"> {{ $chapitre->first()->module->titre }}</h3>
                 @endif
                 <div class="col-lg-12 col-12">
                     @if (!$quiz->isEmpty())
@@ -76,7 +76,7 @@
 
                                         @if ($chapter->video_url)
                                             <div class="overview-course-video" style=" padding-top: 0 !important; margin-top: 0 !important;">
-                                                <iframe title="{{ $chapter->formation->titre }}"
+                                                <iframe title="{{ $chapter->module->titre }}"
                                                     src="/assets/uploads/chapitre_video/{{ $chapter->video_url }}">
                                                 </iframe>
                                             </div>

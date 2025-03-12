@@ -142,7 +142,7 @@
 
                             @auth
                                 <div class="dropdown ms-4 ">
-                                    <a class=" dropdown-toggle  montserrat fw-bold  {{ Request::is('mes-cours') ? 'active' : '' }}"
+                                    <a class=" dropdown-toggle  montserrat fw-bold  {{ Request::is('mes-modules') ? 'active' : '' }}"
                                         style="font-size: 18px;" type="button" id="dropdownMenuButton1"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -159,7 +159,7 @@
                                         {{--  <li><a class="dropdown-item" href="#">{{ Auth::user()->name }} {{ Auth::user()->prenom }}</a></li>  --}}
                                         <li><a class="dropdown-item" href="{{ url('profile') }}">Profil</a></li>
                                         @if (Auth::user()->role_id == '3')
-                                            <li><a class="dropdown-item" href="{{ url('mes-cours#cours') }}"> Mes
+                                            <li><a class="dropdown-item" href="{{ url('mes-modules#cours') }}"> Mes
                                                     Cours</a></li>
                                             <li><a class="dropdown-item" href="{{ url('user-resultes#resultats') }}"> Mes
                                                     resultats</a></li>
@@ -173,7 +173,7 @@
                                             @elseif (Auth::user()->role_id == '2')
                                                 <li><a class="dropdown-item" href="{{ url('formations') }}">Tableau de
                                                         bord</a></li>
-                                                           <li><a class="dropdown-item" href="{{ url('mes-cours#cours') }}"> Mes
+                                                           <li><a class="dropdown-item" href="{{ url('mes-modules#cours') }}"> Mes
                                                     Cours</a></li>
                                             <li><a class="dropdown-item" href="{{ url('user-resultes#resultats') }}"> Mes
                                                     resultats</a></li>
@@ -395,7 +395,7 @@ $difficulte = Difficulete::all();
                         </form>  --}}
 {{--  @auth
                       <div class="dropdown ">
-                        <a class=" dropdown-toggle  montserrat fw-bold  {{ Request::is('mes-cours') ? 'active' : '' }}"  style="font-size: 18px;"  type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"  >
+                        <a class=" dropdown-toggle  montserrat fw-bold  {{ Request::is('mes-modules') ? 'active' : '' }}"  style="font-size: 18px;"  type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"  >
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
                                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                 <circle cx="12" cy="7" r="4"></circle>
@@ -408,7 +408,7 @@ $difficulte = Difficulete::all();
 {{--  <li><a class="dropdown-item" href="#">{{ Auth::user()->name }} {{ Auth::user()->prenom }}</a></li>  --}}
 {{--  <li><a class="dropdown-item" href="#">Profil</a></li>  --}}
 {{-- @if (Auth::user()->role_id == '3') --}}
-{{--  <li><a class="dropdown-item" href="{{url('mes-cours#cours')}}"> Mes Cours</a></li>
+{{--  <li><a class="dropdown-item" href="{{url('mes-modules#cours')}}"> Mes Cours</a></li>
                           <li><a class="dropdown-item" href="{{url('user-resultes#resultats')}}"> Mes resultats</a></li>  --}}
 {{-- @endif --}}
 {{--  @if (Auth::user()->role_id == '1')

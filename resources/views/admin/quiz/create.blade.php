@@ -76,11 +76,11 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Formation <span class="text-13 text-gray-400 fw-medium">(Requis)</span></label>
+                                <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Module <span class="text-13 text-gray-400 fw-medium">(Requis)</span></label>
                                 <div class="position-relative">
-                                    <select id="courseCategory" name="formation_id" class="form-select py-9 placeholder-13 text-15" disabled>
+                                    <select id="courseCategory" name="module_id" class="form-select py-9 placeholder-13 text-15" disabled>
                                         
-                                       @foreach($formation as $value)
+                                       @foreach($module as $value)
                                        <option value="{{$value->id}}">{{$value->titre}} </option>    
                                        @endforeach
                                         

@@ -12,7 +12,7 @@
 <ul class="flex-align gap-4">
 <li><a href="#" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
 <li> <span class="text-gray-500 fw-normal d-flex"><i class="ph ph-caret-right"></i></span> </li>
-<li><span class="text-main-600 fw-normal text-15">Créer une formation</span></li>
+<li><span class="text-main-600 fw-normal text-15">Créer un module</span></li>
 </ul>
 </div>
 <!-- Breadcrumb End -->
@@ -30,7 +30,7 @@
     <!-- Course Tab Start -->
     <div class="card">
         <div class="card-header border-bottom border-gray-100 flex-align gap-8">
-            <h5 class="mb-0">Nouvelle Formation</h5>
+            <h5 class="mb-0">Nouveau module de formation</h5>
             <button type="button" class="text-main-600 text-md d-flex" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Nouvelle Formation">
                 <i class="ph-fill ph-question"></i>
             </button>
@@ -41,13 +41,19 @@
                 <div class="row gy-20">
                     <div class="col-xxl-3 col-md-4 col-sm-5">
                         <div class="mb-20">
-                            <label class="h5 fw-semibold font-heading mb-0">Image de la Formation <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
+                            <label class="h5 fw-semibold font-heading mb-0">Image du module <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
                         </div>
 
-                        <div class="">
+                        <div class="mb-20">
                             <input type="file" class=" placeholder-13 form-control py-11 pe-76" name="image_url" id="">
                         </div>
-
+                        <div class="col-sm-12 mt-5">
+                            <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Nombre de chapitre <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
+                            <div class="position-relative">
+                                <input type="number" class="text-counter placeholder-13 form-control py-11 pe-77" name="nombre_chapitre" maxlength="500" id="courseTitle" placeholder="">
+                               
+                            </div>
+                        </div>
                     </div>
                     <div class="col-xxl-9 col-md-8 col-sm-7">
                         <div class="row g-20">
@@ -115,7 +121,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <label for="courseLevel" class="h5 mb-8 fw-semibold font-heading">Difficultés <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
+                                <label for="courseLevel" class="h5 mb-8 fw-semibold font-heading">Niveau de Difficultés <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
                                 <div class="position-relative">
                                     <select id="courseLevel" name="difficulte_id" class="form-select py-9 placeholder-13 text-15">
                                         <option value="" selected>Aucune</option>

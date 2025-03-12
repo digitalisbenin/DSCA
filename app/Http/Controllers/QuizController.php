@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Quiz;
 use App\Models\Formation;
+use App\Models\Module;
 use App\Models\Chapitre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +30,7 @@ class QuizController extends Controller
             $quiz = Quiz::all();
         } else {
             // L'utilisateur est un formateur ou autre, récupère les chapitres liés à ses formations
-            $quiz = Quiz::whereHas('formation', function ($query) use ($user) {
+            $quiz = Quiz::whereHas('module', function ($query) use ($user) {
                 $query->where('user_id', $user->id);
             })->get();
         }
@@ -43,8 +44,8 @@ class QuizController extends Controller
      */
     public function create($id)
     {
-        $formation=Formation::where('id', $id)->get();
-        return view('admin.quiz.create',compact('formation'));
+        $module=Module::where('id', $id)->get();
+        return view('admin.quiz.create',compact('module'));
     }
     public function creates($id)
     {
@@ -66,7 +67,7 @@ class QuizController extends Controller
             'title' => 'required|max:255',
             'status' => 'required',
             'description' => 'nullable',
-            'formation_id' => 'nullable|exists:formations,id',
+            'module_id' => 'nullable|exists:modules,id',
             'chapitre_id' => 'nullable|exists:chapitres,id',
         ]);
         $quiz=Quiz ::create($validatedData);
@@ -92,13 +93,13 @@ class QuizController extends Controller
             $quiz = Quiz::all();
         } else {
             // L'utilisateur est un formateur ou autre, récupère les chapitres liés à ses formations
-            $quiz = Quiz::whereHas('formation', function ($query) use ($user) {
+            $quiz = Quiz::whereHas('module', function ($query) use ($user) {
                 $query->where('user_id', $user->id);
-            })->where('formation_id', $id)->get();
+            })->where('module_id', $id)->get();
         }
-        $formation=Formation::where('id', $id)->get();
+        $module=Module::where('id', $id)->get();
             $quizid =$id;
-        return view('admin.quiz.show',compact('quiz','quizid', 'formation'));
+        return view('admin.quiz.show',compact('quiz','quizid', 'module'));
     }
     public function shows($id)
     {
@@ -129,8 +130,8 @@ class QuizController extends Controller
 
     {
         $quiz= Quiz::findOrfail($id);
-        $formation=Formation::all();
-        return view('admin.quiz.edit', compact('quiz','formation'));
+        $module=Module::all();
+        return view('admin.quiz.edit', compact('quiz','module'));
     }
 
     /**
@@ -153,7 +154,7 @@ class QuizController extends Controller
         $quiz = Quiz::findOrfail($id);
         $quiz->update($validatedData);
 
-        return redirect('/formations');
+        return redirect('/modules');
     }
 
     /**

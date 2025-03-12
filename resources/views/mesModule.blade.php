@@ -38,7 +38,7 @@
         </div>
         <div class="single-head">
             <div class="row">
-               @foreach($mesCour as $value)
+               @foreach($mesModule as $value)
                <div class="col-lg-3 col-md-6 col-12">
                 <!-- Start Single Course -->
                 <div class="single-course wow fadeInUp" data-wow-delay=".2s">
@@ -51,7 +51,7 @@
                     <div class="content">
                         <p class="date">{{$value->category->name}} </p>
 
-                        <p class="date"> {{$value->difficulete->name}}</p>
+                        <p class="date"> {{$value->niveaudifficulete->name}}</p>
                         <h5 style="
                         display: -webkit-box;
                         -webkit-line-clamp: 1;

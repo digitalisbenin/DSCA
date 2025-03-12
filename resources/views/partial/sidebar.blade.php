@@ -20,6 +20,13 @@
                 </a>
 
             </li>
+
+            <li class="sidebar-menu__item">
+                <a href="{{url('cours')}}" class="sidebar-menu__link">
+                    <span class="icon"><i class="ph ph-coins"></i></span>
+                    <span class="text">Cours</span>
+                </a>
+            </li>
             @endif
             <li class="sidebar-menu__item">
                 <a href="{{url('/modules')}}" class="sidebar-menu__link">
@@ -28,34 +35,15 @@
                 </a>
 
             </li>
-            @if (Auth::user()->role_id == '1' )
-            <li class="sidebar-menu__item">
-                <a href="{{url('/apprenants')}}" class="sidebar-menu__link">
-                    <span class="icon"><i class="ph ph-users-three"></i></span>
-                    <span class="text">Apprenants</span>
-                </a>
-            </li>
-
-            <li class="sidebar-menu__item">
-                <a href="{{url('/categories')}}" class="sidebar-menu__link">
-                    <span class="icon"><i class="ph ph-clipboard-text"></i></span>
-                    <span class="text">Categories</span>
-                </a>
-            </li>
-            @endif
+            
             {{-- <li class="sidebar-menu__item">
                 <a href="{{url('chapitres')}}" class="sidebar-menu__link">
                     <span class="icon"><i class="ph ph-users"></i></span>
                     <span class="text">Chapitres</span>
                 </a>
             </li> --}}
-            @if (Auth::user()->role_id == '1' )
-            <li class="sidebar-menu__item">
-                <a href="{{url('difficultes')}}" class="sidebar-menu__link">
-                    <span class="icon"><i class="ph ph-books"></i></span>
-                    <span class="text">Difficultés</span>
-                </a>
-            </li>
+            {{-- @if (Auth::user()->role_id == '1' )
+            
 
             <li class="sidebar-menu__item">
                 <a href="{{url('admin-formateurs')}}" class="sidebar-menu__link">
@@ -63,7 +51,7 @@
                     <span class="text">Formateurs</span>
                 </a>
             </li>
-            @endif
+            @endif --}}
 
             <li class="sidebar-menu__item">
                 <a href="{{url('suivis')}}" class="sidebar-menu__link">
@@ -85,13 +73,6 @@
                     <span class="text">Visio Conférence</span>
                 </a>
             </li>
-            {{-- <li class="sidebar-menu__item">
-                <a href="{{url('meets')}}" class="sidebar-menu__link">
-                    <span class="icon"><i class="ph ph-calendar-dots"></i></span>
-                    <span class="text">Meet</span>
-                </a>
-            </li> --}}
-           <hr>
             <li class="sidebar-menu__item">
                 <a href="{{url('ressources')}}" class="sidebar-menu__link">
                     <span class="icon"><i class="ph ph-books"></i></span>
@@ -104,13 +85,37 @@
                     <span class="text">Vidéos</span>
                 </a>
             </li>
+            {{-- <li class="sidebar-menu__item">
+                <a href="{{url('meets')}}" class="sidebar-menu__link">
+                    <span class="icon"><i class="ph ph-calendar-dots"></i></span>
+                    <span class="text">Meet</span>
+                </a>
+            </li> --}}
+           <hr>
+            <h6>Paramètres</h6>
             @if (Auth::user()->role_id == '1' )
+            {{-- <li class="sidebar-menu__item">
+                <a href="{{url('/apprenants')}}" class="sidebar-menu__link">
+                    <span class="icon"><i class="ph ph-users-three"></i></span>
+                    <span class="text">Apprenants</span>
+                </a>
+            </li> --}}
+
             <li class="sidebar-menu__item">
-                <a href="{{url('cours')}}" class="sidebar-menu__link">
-                    <span class="icon"><i class="ph ph-coins"></i></span>
-                    <span class="text">Cours</span>
+                <a href="{{url('/categories')}}" class="sidebar-menu__link">
+                    <span class="icon"><i class="ph ph-clipboard-text"></i></span>
+                    <span class="text">Categories</span>
                 </a>
             </li>
+            <li class="sidebar-menu__item">
+                <a href="{{url('difficultes')}}" class="sidebar-menu__link">
+                    <span class="icon"><i class="ph ph-books"></i></span>
+                    <span class="text">Niveau Difficultés</span>
+                </a>
+            </li>
+            @endif
+            @if (Auth::user()->role_id == '1' )
+           
             <li class="sidebar-menu__item">
                 <a href="{{url('user-categories')}}" class="sidebar-menu__link">
                     <span class="icon"><i class="ph ph-coins"></i></span>

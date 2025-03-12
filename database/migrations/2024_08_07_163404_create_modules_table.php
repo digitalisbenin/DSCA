@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('modules', function (Blueprint $table) {
             $table->id();
             $table->string('titre');
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->string('image_url')->nullable();
             $table->enum('status', ['abandonné', 'valider', 'terminer'])->nullable();
             $table->unsignedBigInteger('user_id')->nullable();

@@ -8,7 +8,7 @@
         <!-- Breadcrumb Start -->
         <div class="breadcrumb mb-24">
             <ul class="flex-align gap-4">
-                <li><a href="{{url('dashboard')}}" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
+                <li><a href="{{url('#')}}" class="text-gray-200 fw-normal text-15 hover-text-main-600">Accueil</a></li>
                 <li> <span class="text-gray-500 fw-normal d-flex"><i class="ph ph-caret-right"></i></span> </li>
                 <li><span class="text-main-600 fw-normal text-15">Quiz</span></li>
             </ul>
@@ -102,14 +102,14 @@
                                         </div>
                                     </div>  --}}
                                     <div class="col-sm-6">
-                                        <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Formation <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
+                                        <label for="courseCategory" class="h5 mb-8 fw-semibold font-heading">Module <span class="text-13 text-gray-400 fw-medium">(*)</span></label>
                                         <div class="position-relative">
 
 
-                                               @foreach($formation as $value)
+                                               @foreach($module as $value)
 
-                                               <input type="hidden" name="formation_id" value="{{ $formation->first()->id ?? '' }}">
-                                               <input type="text" class="form-control py-9 placeholder-13 text-15" disabled  name="" value="{{ $formation->first()->titre ?? '' }}">
+                                               <input type="hidden" name="module_id" value="{{ $module->first()->id ?? '' }}">
+                                               <input type="text" class="form-control py-9 placeholder-13 text-15" disabled  name="" value="{{ $module->first()->titre ?? '' }}">
                                                @endforeach
 
                                             </select>
@@ -172,7 +172,7 @@
                         <th class="h6 text-gray-300">Statut</th>
                         {{--  <th class="h6 text-gray-300">Description</th>
                         <th class="h6 text-gray-300">Chapitre</th>  --}}
-                        <th class="h6 text-gray-300">Formation</th>
+                        <th class="h6 text-gray-300">Module</th>
 {{--
                         <th class="h6 text-gray-300">Documents</th>
                         <th class="h6 text-gray-300">Vidéos</th>  --}}
@@ -223,7 +223,7 @@
                         <td>
                             <span class="h6 mb-0 fw-medium text-gray-300">
 
-                                {{$value->formation->titre ?? ""}}
+                                {{$value->module->titre ?? ""}}
                             </span>
                         </td>
 

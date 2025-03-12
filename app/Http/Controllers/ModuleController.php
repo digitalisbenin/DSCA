@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Module;
 use App\Models\Category;
-use App\Models\Difficulete;
+use App\Models\NiveauDificulte;
 use App\Models\ClassUser;
 use App\Models\User;
-use App\Models\MesCour;
+use App\Models\MesModule;
 use App\Models\Cours;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -43,7 +43,7 @@ class ModuleController extends Controller
     public function create()
     {
         $categorie=Category::all();
-        $difficulte=Difficulete::all();
+        $difficulte=NiveauDificulte::all();
         $userClass=ClassUser::all();
         $cours=Cours::all();
         return view('admin.module.create',compact('categorie','difficulte','userClass','cours'));
@@ -59,16 +59,16 @@ class ModuleController extends Controller
     {
         //dd($request);
 
-        $validatedData = $request->validate([
-            'titre' => 'required|max:255|unique:formations,titre',
-            'description' => 'required',
-            "user_class_id" => ['required'],
-            'image_url' => 'required|max:255',
-             'status' => 'required|max:255',
-            'categorie_id' => 'nullable|exists:categories,id',
-            'difficulte_id' => 'nullable|exists:difficuletes,id',
-            'user_id' => 'nullable|exists:users,id',
-        ]);
+        // $validatedData = $request->validate([
+        //     'titre' => 'required|max:255|unique:formations,titre',
+        //     'description' => 'required',
+        //     "user_class_id" => ['required'],
+        //     'image_url' => 'required|max:255',
+        //      'status' => 'required|max:255',
+        //     'categorie_id' => 'nullable|exists:categories,id',
+        //     'difficulte_id' => 'nullable|exists:difficuletes,id',
+        //     'user_id' => 'nullable|exists:users,id',
+        // ]);
         //$formation = Formation::create($validatedData);
         $module = new Module();
 
@@ -82,6 +82,7 @@ class ModuleController extends Controller
        
         $module->titre = $request->titre;
         $module->description = $request->description;
+        $module->nombre_chapitre = $request->nombre_chapitre;
         $module->user_class_id = $request->user_class_id;
         $module->categorie_id = $request->categorie_id;
         $module->difficulte_id = $request->difficulte_id;
@@ -94,7 +95,7 @@ class ModuleController extends Controller
         $users = User::where('user_class_id', $module->user_class_id)->get();
 
         foreach ($users as $user) {
-            MesCour::create([
+            MesModule::create([
                 'module_id' => $module->id,
                 'user_id' => $user->id,
             ]);
@@ -127,7 +128,7 @@ class ModuleController extends Controller
         
         $module=Module::findOrfail($id);
         $categorie=Category::all();
-        $difficulte=Difficulete::all();
+        $difficulte=NiveauDificulte::all();
         $userClass=ClassUser::all();
         $cours=Cours::all();
         return view('admin.module.edit',compact('module','categorie','difficulte','userClass','cours'));

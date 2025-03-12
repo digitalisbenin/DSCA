@@ -10,6 +10,7 @@ use App\Models\DiscutionReponse;
 use App\Models\Video;
 use App\Models\Difficulete;
 use App\Models\Quiz;
+use App\Models\Module;
 use App\Models\Cours;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
@@ -24,6 +25,8 @@ use App\Http\Controllers\DiscutionReponseController;
 use App\Http\Controllers\EvaluationController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\MesCourController;
+use App\Http\Controllers\ReponseController;
+use App\Http\Controllers\MesModuleController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\RoleController;
@@ -62,8 +65,8 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     $cours=Cours::orderBy('created_at', 'desc')->take(9)->get();
-    $formation=Formation::all();
-    return view('welcome',compact('cours','formation'));
+    $module=Module::all();
+    return view('welcome',compact('cours','module'));
 });
 Route::get('/cours', function () {
     return view('cours');
@@ -78,9 +81,9 @@ Route::get('/admin-cours-detail', function () {
 //     return view('admin.cours.create');
 // });
 Route::get('/details-cours/{id}', function ($id) {
-    $chapitre = Chapitre::where('formation_id',$id)->get();
+    $chapitre = Chapitre::where('module_id',$id)->get();
     $formationId = $id;
-    $quiz = Quiz::where('formation_id',$id)->get();
+    $quiz = Quiz::where('module_id',$id)->get();
     $quizz = Quiz::all();
     $commentaire=Commentaire::all();
     $repose=Answers::all();
@@ -90,16 +93,16 @@ Route::get('/details-cours/{id}', function ($id) {
 Route::get('/cours-details/{id}', function ($id) {
     $cours=Cours::where('id',$id)->first();
     //$formation=Formation::where('id',$id)->first();
-    $formation = Formation::where('cours_id',$id)->get();
+    $module = Module::where('cours_id',$id)->get();
     $coursId = $id;
    
-    return view('detail_formation',compact('cours','coursId','formation'));
+    return view('cours_detail',compact('cours','coursId','module'));
 });
-Route::get('/details-formation/{id}', function ($id) {
-    $formation=Formation::where('id',$id)->first();
+Route::get('/module-details/{id}', function ($id) {
+    $module=Module::where('id',$id)->first();
     $formationId = $id;
    
-    return view('formation_detail',compact('formation','formationId'));
+    return view('module_detail',compact('module','formationId'));
 });
 Route::get('/video', function () {
     $video= Video::all();
@@ -360,13 +363,13 @@ Route::post('modules', [ModuleController::class, 'store']);
 Route::put('modules/{id}/update', [ModuleController::class, 'update']);
 Route::get('modules/{id}/destroy', [ModuleController::class, 'destroy']);
 /*-----------------Mes cours--------------------------*/
-Route::get('mes-cours', [MesCourController::class, 'index']);
-Route::get('create-mes-cours', [MesCourController::class, 'create']);
-Route::get('mes-cours/{id}', [MesCourController::class, 'show']);
-Route::get('mes-cours/{id}', [MesCourController::class, 'edit']);
-Route::post('mes-cours', [MesCourController::class, 'store']);
-Route::put('mes-cours/{id}', [MesCourController::class, 'update']);
-Route::get('mes-cours/{id}', [MesCourController::class, 'destroy']);
+Route::get('mes-modules', [MesModuleController::class, 'index']);
+Route::get('create-mes-modules', [MesModuleController::class, 'create']);
+Route::get('mes-modules/{id}', [MesModuleController::class, 'show']);
+Route::get('mes-modules/{id}', [MesModuleController::class, 'edit']);
+Route::post('mes-modules', [MesModuleController::class, 'store']);
+Route::put('mes-modules/{id}', [MesModuleController::class, 'update']);
+Route::get('mes-modules/{id}', [MesModuleController::class, 'destroy']);
 
 /*-----------------Notification--------------------------*/
 Route::get('notifications', [NotificationController::class, 'index']);
@@ -468,6 +471,16 @@ Route::post('answers', [AnswersController::class, 'store']);
 Route::put('answers/{id}/update', [AnswersController::class, 'update']);
 Route::get('answers/{id}/destroy', [AnswersController::class, 'destroy']);
 
+/*-----------------Reponse --------------------------*/
+Route::get('reponses', [ReponseController::class, 'index']);
+Route::get('create-reponses', [ReponseController::class, 'create']);
+Route::get('create-reponses/{id}', [ReponseController::class, 'creates']);
+Route::get('create-reponses/{id}', [ReponseController::class, 'createe']);
+Route::get('reponses/{id}', [ReponseController::class, 'show']);
+Route::get('reponses/{id}/edit', [ReponseController::class, 'edit']);
+Route::post('reponses', [ReponseController::class, 'store']);
+Route::put('reponses/{id}/update', [ReponseController::class, 'update']);
+Route::get('reponses/{id}/destroy', [ReponseController::class, 'destroy']);
 /*-----------------Video--------------------------*/
 Route::get('questions', [QuestionController::class, 'index']);
 Route::get('create-question/{id}', [QuestionController::class, 'createe']);
