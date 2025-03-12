@@ -25,7 +25,7 @@
 
 
 <!-- Teacher Details -->
-@if($userResults->isEmpty())
+@if($userReponse->isEmpty())
 <h5 class="text-center py-5">Aucune donnée disponible pour ce utilisateur.</h5>
 @else
 <div class="teacher-details-area section" id="resultats">
@@ -62,7 +62,7 @@
         <tbody>
             @php
                 // Grouper les résultats par quiz_id
-                $quizzes = $userResults->groupBy('quiz_id');
+                $quizzes = $userReponse->groupBy('quiz_id');
             @endphp
         
             @foreach($quizzes as $quizId => $results) 
