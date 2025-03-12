@@ -18,18 +18,18 @@ class Certificate extends Model
     /**
      * @var array
      */
-    protected $fillable = ['formation_id', 'user_id','note', 'created_at', 'updated_at'];
+    protected $fillable = ['module_id','note_quiz_id', 'user_id','note', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function formation()
+    public function module()
     {
-        return $this->belongsTo('App\Models\Formation');
+        return $this->belongsTo('App\Models\Module');
     }
-    public function modules()
+    public function note_quiz()
     {
-        return $this->hasMany('App\Models\Module');
+        return $this->belongsTo('App\Models\Notequiz');
     }
 
     /**

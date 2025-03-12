@@ -9,7 +9,7 @@ class UserReponse extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'quiz_id', 'reponse_id', 'question_id', 'note', 'created_at', 'updated_at'];
+    protected $fillable = ['user_apprend_id', 'quiz_id', 'reponse_id', 'question_id', 'note', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -26,7 +26,10 @@ class UserReponse extends Model
     {
         return $this->belongsTo('App\Models\Reponse', 'reponse_id');
     }
-
+    public function note_quiz()
+    {
+        return $this->hasMany('App\Models\Notequiz');
+    }
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

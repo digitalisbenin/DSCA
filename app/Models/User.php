@@ -45,7 +45,7 @@ class User extends Authenticatable implements MustVerifyEmail
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function certificates()
+    public function certificate()
     {
         return $this->hasMany('App\Models\Certificate');
     }

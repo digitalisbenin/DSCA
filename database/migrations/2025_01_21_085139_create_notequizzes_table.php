@@ -21,12 +21,18 @@ return new class extends Migration
             $table->enum('status', ['echouer', 'valider'])->nullable();
             $table->unsignedBigInteger('quiz_id')->nullable();
             $table->unsignedBigInteger('module_id')->nullable();
+            $table->unsignedBigInteger('user_reponse_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')
             ->references('id')
             ->on('users')
+            ->onDelete('cascade');
+
+            $table->foreign('user_reponse_id')
+            ->references('id')
+            ->on('user_reponses')
             ->onDelete('cascade');
 
             $table->foreign('module_id')
