@@ -18,7 +18,11 @@ class NiveauDificulte extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     
-
+     public function affecter()
+    {
+        return $this->hasMany('App\Models\Affecter');
+    }
+    
     public function modules()
     {
         return $this->hasMany('App\Models\Module', 'difficulte_id');

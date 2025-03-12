@@ -47,10 +47,13 @@ class CoursController extends Controller
            $filename = time().'.'.$ext;
            $file->move('assets/uploads/formation_images',$filename);
            $cours->image_url = $filename;
-       }
+       } else {
+        $cours->image_url = null; // Assurez-vous que la colonne accepte NULL dans la DB
+    }
       
        $cours->name = $request->name;
-       $cours->description = $request->description;
+       $cours->objectifs = $request->objectifs;
+       $cours->nombre_module = $request->nombre_module;
        
        $cours->save();
        return redirect('/cours');
@@ -104,7 +107,8 @@ class CoursController extends Controller
         }
 
         $cours->name = $request->name;
-        $cours->description = $request->description;
+        $cours->objectifs = $request->objectifs;
+        $cours->nombre_module = $request->nombre_module;
         $cours->save();
 
 

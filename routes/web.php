@@ -180,13 +180,13 @@ Route::get('/documents', function () {
 
 
 Route::get('/dashboard', function () {
-    $formation=Formation::all();
-    $formations = Formation::orderBy('created_at', 'desc')->take(3)->get();
+    // $formation=Formation::all();
+    // $formations = Formation::orderBy('created_at', 'desc')->take(3)->get();
     $apprenants=User::where('role_id',3)->get();
     $formateurs=User::where('role_id',2)->get();
     $certificate=Certificate::all();
     $ressource=Resource::all();
-    return view('dashboard', compact('formation','formations','apprenants','formateurs','certificate','ressource'));
+    return view('dashboard', compact('apprenants','formateurs','certificate','ressource'));
 
 })->middleware(['auth', 'verified'])->name('dashboard');
 

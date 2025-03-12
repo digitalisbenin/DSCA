@@ -16,12 +16,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('role_id');
-            $table->unsignedBigInteger('user_categorie_id');
              $table->unsignedBigInteger('user_class_id')->nullable();
-             $table->unsignedBigInteger('user_corps_id')->nullable();
-             $table->unsignedBigInteger('service_user_id')->nullable();
-             $table->unsignedBigInteger('post_user_id')->nullable();
-            
             $table->string('name');
             $table->string('prenom');
             $table->string('adresse');
@@ -47,25 +42,9 @@ return new class extends Migration
             ->on('roles')
             ->onDelete('cascade');
 
-
-            $table->foreign('user_categorie_id')
-            ->references('id')
-            ->on('user_categories')
-            ->onDelete('cascade');
-
-            $table->foreign('user_corps_id')
+                $table->foreign('user_class_id')
                 ->references('id')
-                ->on('corps')
-                ->onDelete('cascade');
-
-                $table->foreign('service_user_id')
-                ->references('id')
-                ->on('services')
-                ->onDelete('cascade');
-
-                $table->foreign('post_user_id')
-                ->references('id')
-                ->on('postes')
+                ->on('class_users')
                 ->onDelete('cascade');
 
             

@@ -48,6 +48,14 @@
                             <input type="file" class=" placeholder-13 form-control py-11 pe-76" name="image_url" id="">
                         </div>
 
+                        <div class="col-sm-12 mt-5">
+                            <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading">Nombre de mobule <span class="text-13 text-gray-400 fw-medium">(*)</span> </label>
+                            <div class="position-relative">
+                                <input type="number" class="text-counter placeholder-13 form-control py-11 pe-77" name="nombre_module" maxlength="500" id="courseTitle" placeholder="">
+                               
+                            </div>
+                        </div>
+
                     </div>
                     <div class="col-xxl-9 col-md-8 col-sm-7">
                         <div class="row g-20">
@@ -65,9 +73,9 @@
 
                         </div>
                         <div class="col-sm-12 mt-3">
-                            <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading mt-3">Description <span class="text-13 text-gray-400 fw-medium"></span> </label>
+                            <label for="courseTitle" class="h5 mb-8 fw-semibold font-heading mt-3">Objectifs <span class="text-13 text-gray-400 fw-medium"></span> </label>
                             <div class="position-relative">
-                                <textarea type="text" class="text-counte placeholder-13 form-control py-11 pe-76" name="description"  id="course" placeholder="" rows="7"></textarea>
+                                <textarea type="text" class="text-counte placeholder-13 form-control py-11 pe-76" name="objectifs"  id="course" placeholder="" rows="7"></textarea>
 
                             </div>
                         </div>

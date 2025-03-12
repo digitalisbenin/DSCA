@@ -19,14 +19,14 @@ class Suivy extends Model
     /**
      * @var array
      */
-    protected $fillable = ['user_id', 'chapitre_id', 'tauxprogression', 'created_at', 'updated_at'];
+    protected $fillable = ['user_id', 'module_id', 'tauxprogression', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function chapitre()
+    public function module()
     {
-        return $this->belongsTo('App\Models\Chapitre');
+        return $this->belongsTo('App\Models\Module');
     }
 
     /**

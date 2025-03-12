@@ -29,14 +29,14 @@
                 <div class="col-xxl-3 col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            @if($formateurs->count()> 0)
+                            {{-- @if($formateurs->count()> 0)
                             <h4 class="mb-2">{{$formateurs->count()}}</h4>
                          
                             @else
                             <h4 class="mb-2">0</h4>
                             
-                            @endif
-
+                            @endif --}}
+                            <h4 class="mb-2">0</h4>
                             <span class="text-gray-600">Formateurs</span>
                             <div class="flex-between gap-8 mt-16">
                                 <span class="flex-shrink-0 w-48 h-48 flex-center rounded-circle bg-main-600 text-white text-2xl"><i class="ph-fill ph-book-open"></i></span>
@@ -66,13 +66,14 @@
                 <div class="col-xxl-3 col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            @if($formation->count()> 0)
+                            {{-- @if($formation->count()> 0)
                             <h4 class="mb-2">{{$formation->count()}}</h4>
                          
                             @else
                             <h4 class="mb-2">0</h4>
                             
-                            @endif
+                            @endif --}}
+                            <h4 class="mb-2">0</h4>
                             <span class="text-gray-600">Cours</span>
                             <div class="flex-between gap-8 mt-16">
                                 <span class="flex-shrink-0 w-48 h-48 flex-center rounded-circle bg-purple-600 text-white text-2xl"> <i class="ph-fill ph-graduation-cap"></i></span>
@@ -142,7 +143,7 @@
                     </div>
 
                     <div class="row g-20">
-                       @foreach( $formations as $value)
+                       {{-- @foreach( $formations as $value)
                        <div class="col-lg-4 col-sm-6">
                         <div class="card border border-gray-100">
                             <div class="card-body p-8">
@@ -155,21 +156,14 @@
                                     <h5 class="mb-0"><a href="" class="hover-text-main-600">{{$value->titre}}</a></h5>
 
                                     <div class="flex-align gap-8 flex-wrap mt-16">
-                                        {{--  <img src="admin/assets/images/thumbs/user-img1.png" class="w-28 h-28 rounded-circle object-fit-cover" alt="User Image">  --}}
+                                        
                                         <div>
                                             <span class="text-gray-600 text-13">Difficulte: <a href="#" class="fw-semibold text-gray-700 hover-text-main-600 hover-text-decoration-underline">{{$value->difficulete->name}}</a> </span>
                                         </div>
                                     </div>
 
                                     <div class="flex-align gap-8 mt-12 pt-12 border-top border-gray-100">
-                                        {{--  <div class="flex-align gap-4">
-                                            <span class="text-sm text-main-600 d-flex"><i class="ph ph-video-camera"></i></span>
-                                            <span class="text-13 text-gray-600"></span>
-                                        </div>  --}}
-                                        {{--  <div class="flex-align gap-4">
-                                            <span class="text-sm text-main-600 d-flex"><i class="ph ph-clock"></i></span>
-                                            <span class="text-13 text-gray-600">40 Hours</span>
-                                        </div>  --}}
+                                        
                                     </div>
 
                                     <div class="flex-between gap-4 flex-wrap mt-4">
@@ -182,18 +176,13 @@
                                     ">
                                         {{$value->description}}
                                     </p>
-                                        {{--  <div class="flex-align gap-4">
-                                            <span class="text-15 fw-bold text-warning-600 d-flex"><i class="ph-fill ph-star"></i></span>
-                                            <span class="text-13 fw-bold text-gray-600">4.9</span>
-                                            <span class="text-13 fw-bold text-gray-600">(12k)</span>
-                                        </div>  --}}
-                                        {{--  <a href="course-details.html" class="btn btn-outline-main rounded-pill py-9">Voir plus</a>  --}}
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                       @endforeach
+                       @endforeach --}}
                         {{--  <div class="col-lg-4 col-sm-6">
                             <div class="card border border-gray-100">
                                 <div class="card-body p-8">

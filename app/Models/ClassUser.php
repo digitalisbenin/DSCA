@@ -19,12 +19,9 @@ class ClassUser extends Model
     {
         return $this->hasMany('App\Models\User', 'user_class_id');
     }
-    public function formations()
+    
+    public function affecter()
     {
-        return $this->hasMany('App\Models\Formation', 'user_class_id');
-    }
-    public function modules()
-    {
-        return $this->hasMany('App\Models\Module', 'user_class_id');
+        return $this->hasMany('App\Models\Affecter');
     }
 }

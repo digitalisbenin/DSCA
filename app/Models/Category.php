@@ -22,13 +22,8 @@ class Category extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function formations()
+    public function affecter()
     {
-        return $this->hasMany('App\Models\Formation', 'categorie_id');
-    }
-
-    public function modules()
-    {
-        return $this->hasMany('App\Models\Module', 'categorie_id');
+        return $this->hasMany('App\Models\Affecter');
     }
 }

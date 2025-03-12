@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('tauxprogression');
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('chapitre_id')->nullable();
+            $table->unsignedBigInteger('module_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('chapitre_id')
+            $table->foreign('module_id')
             ->references('id')
-            ->on('chapitres')
+            ->on('modules')
             ->onDelete('cascade');
 
             $table->foreign('user_id')

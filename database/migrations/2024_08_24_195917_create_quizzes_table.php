@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->enum('status', ['question', 'reponse']);
             $table->unsignedBigInteger('module_id')->nullable();
-            $table->unsignedBigInteger('chapitre_id')->nullable();
             $table->timestamps();
 
 
@@ -28,10 +27,7 @@ return new class extends Migration
             ->on('modules')
             ->onDelete('cascade');
 
-            $table->foreign('chapitre_id')
-                ->references('id')
-                ->on('chapitres')
-                ->onDelete('cascade');
+          
             
         });
     }

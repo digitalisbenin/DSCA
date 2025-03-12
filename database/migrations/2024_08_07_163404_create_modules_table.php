@@ -17,41 +17,25 @@ return new class extends Migration
             $table->id();
             $table->string('titre');
             $table->longText('description')->nullable();
-            $table->string('image_url')->nullable();
+            $table->longText('numero_module')->nullable();
             $table->enum('status', ['abandonné', 'valider', 'terminer'])->nullable();
+            $table->string('image_url')->nullable();
+            $table->string('video_url')->nullable();
+            $table->string('document_url')->nullable();
+            $table->unsignedBigInteger('cours_id');
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('categorie_id')->nullable();
-            $table->unsignedBigInteger('difficulte_id')->nullable();
-            $table->unsignedBigInteger('user_class_id')->nullable();
-            $table->unsignedBigInteger('cours_id')->nullable();
             $table->timestamps();
 
 
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
-
-
-            $table->foreign('user_class_id')
-                ->references('id')
-                ->on('class_users')
-                ->onDelete('cascade');
-
             $table->foreign('cours_id')
-                ->references('id')
-                ->on('cours')
-                ->onDelete('cascade');
+            ->references('id')
+            ->on('cours')
+            ->onDelete('cascade');
 
-            $table->foreign('categorie_id')
-                ->references('id')
-                ->on('categories')
-                ->onDelete('cascade');
-
-            $table->foreign('difficulte_id')
-                ->references('id')
-                ->on('niveau_dificultes')
-                ->onDelete('cascade');
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
         });
     }
 

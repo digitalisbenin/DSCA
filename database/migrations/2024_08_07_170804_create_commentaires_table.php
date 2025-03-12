@@ -16,13 +16,14 @@ return new class extends Migration
         Schema::create('commentaires', function (Blueprint $table) {
             $table->id();
             $table->string('content');
+            $table->longText('reponse')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('chapitre_id')->nullable();
+            $table->unsignedBigInteger('module_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('chapitre_id')
+            $table->foreign('module_id')
             ->references('id')
-            ->on('chapitres')
+            ->on('modules')
             ->onDelete('cascade');
 
             $table->foreign('user_id')

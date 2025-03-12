@@ -20,15 +20,14 @@ class UserSeeder extends Seeder
     {
         if (!count(User::all())) {
             $roleSupAdm = Role::where('name', 'Administrateurs')->first();
-            $categorieSupAdm = UserCategory::where('name', 'Officiers')->first();
+
             
                 User::create(
                 [
                     'name' => 'Super',
-                    'email' => 'administrateurs@gmail.com',
+                    'email' => 'gaglozoungagnon@gmail.com',
                     'password' => bcrypt('password'),
                     'role_id' => $roleSupAdm->id,
-                    'user_categorie_id'=> $categorieSupAdm->id,
                     'prenom'=>'Admin', 
                     'adresse'=>'Cotonou',
                     'telephone'=> '97825820',

@@ -1,8 +1,8 @@
 @php
+ 
     use App\Models\Category;
-    use App\Models\Difficulete;
     $category = Category::all();
-    $difficulte = Difficulete::all();
+
 
 @endphp
 
@@ -152,7 +152,7 @@
                                             <circle cx="12" cy="7" r="4"></circle>
                                         </svg>
                                         @auth
-                                        {{Auth::user()->userCategory->description}}  {{ Auth::user()->name }}
+                                         {{ Auth::user()->name }}
                                         @endauth
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
